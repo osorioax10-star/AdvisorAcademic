@@ -42,6 +42,14 @@ public class AccesoController : Controller
         return RedirectToAction(nameof(Index));
     }
 
+    // Acceso directo sin formulario (para testing)
+    [HttpGet]
+    public IActionResult Admin()
+    {
+        PerfilActual.Guardar(Response, "admin");
+        return RedirectToAction("Index", "Home");
+    }
+
     public IActionResult Salir()
     {
         PerfilActual.Borrar(Response);
