@@ -1,22 +1,23 @@
-FROM ://microsoft.com AS build
-WORKDIR /app
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
 
-# 1. Copiar todos los archivos de la raiz para no perder ninguna referencia
+# Copiar el archivo .csproj y restaurar dependencias
+COPY SmartAcademicAdvisor.Web/SmartAcademicAdvisor.Web.csproj SmartAcademicAdvisor.Web/
+RUN dotnet restore SmartAcademicAdvisor.Web/SmartAcademicAdvisor.Web.csproj
+
+# Copiar todo el código y compilar
 COPY . .
+WORKDIR /src/SmartAcademicAdvisor.Web
+RUN dotnet build -c Release -o /app/build
+RUN dotnet publish -c Release -o /app/publish
 
-# 2. Restaurar dependencias usando la solucion completa (.sln)
-RUN dotnet restore
-
-# 3. Compilar y publicar la solucion entera
-RUN dotnet publish -c Release -o /out
-
-# 4. Etapa de ejecucion con el runtime oficial
-FROM ://microsoft.com AS runtime
+# Etapa final - imagen de runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
-COPY --from=build /out .
+COPY --from=build /app/publish .
 
-# Configurar puerto requerido por Render
-ENV ASPNETCORE_URLS=http://+:8080
+# Configurar puerto para Render
 EXPOSE 8080
+ENV ASPNETCORE_URLS=http://+:8080
 
-ENTRYPOINT ["dotnet", "SmartAcademicAdvisor.Web.dll"]]
+ENTRYPOINT ["dotnet", "SmartAcademicAdvisor.Web.dll"]l"]
