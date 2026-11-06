@@ -1,0 +1,1498 @@
+[
+  {
+    "id": "ALU-001",
+    "nombre": "Ana García Pérez",
+    "correo": "ana.garcia@tese.edu.mx",
+    "semestre": 6,
+    "promedio": 92.5,
+    "intereses": [
+      "Inteligencia Artificial",
+      "Programación",
+      "Matemáticas Aplicadas"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2022-08-15T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-002",
+    "nombre": "Carlos Rodríguez López",
+    "correo": "carlos.rodriguez@tese.edu.mx",
+    "semestre": 5,
+    "promedio": 85.3,
+    "intereses": [
+      "Redes",
+      "Seguridad Informática",
+      "Infraestructura"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2022-08-15T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-003",
+    "nombre": "María Fernanda Sánchez",
+    "correo": "maria.sanchez@tese.edu.mx",
+    "semestre": 7,
+    "promedio": 88.7,
+    "intereses": [
+      "Bases de Datos",
+      "Análisis de Datos",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2021-08-20T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-004",
+    "nombre": "José Luis Martínez",
+    "correo": "jose.martinez@tese.edu.mx",
+    "semestre": 4,
+    "promedio": 79.2,
+    "intereses": [
+      "Programación",
+      "Desarrollo Web",
+      "Desarrollo Móvil"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-01-10T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-005",
+    "nombre": "Laura Beatriz Hernández",
+    "correo": "laura.hernandez@tese.edu.mx",
+    "semestre": 6,
+    "promedio": 91.8,
+    "intereses": [
+      "Seguridad Informática",
+      "Redes",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2022-08-15T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-006",
+    "nombre": "Diego Alejandro Torres",
+    "correo": "diego.torres@tese.edu.mx",
+    "semestre": 5,
+    "promedio": 83.4,
+    "intereses": [
+      "Análisis de Datos",
+      "Matemáticas Aplicadas",
+      "Bases de Datos"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2022-08-15T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-007",
+    "nombre": "Sofía Alejandra Ramírez",
+    "correo": "sofia.ramirez@tese.edu.mx",
+    "semestre": 3,
+    "promedio": 87.1,
+    "intereses": [
+      "Programación",
+      "Hardware",
+      "IoT"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-01-08T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-008",
+    "nombre": "Alexa Pérez Cruz",
+    "correo": "alexa.perez@tese.edu.mx",
+    "semestre": 4,
+    "promedio": 92.8,
+    "intereses": [
+      "Bases de Datos",
+      "Análisis de Datos",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-01-15T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-009",
+    "nombre": "Jimena Javier González Sánchez",
+    "correo": "jimena.gonzalez@tese.edu.mx",
+    "semestre": 7,
+    "promedio": 77.2,
+    "intereses": [
+      "Hardware",
+      "IoT",
+      "Desarrollo Web"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-08-15T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-010",
+    "nombre": "Mariana Rojas Hernández",
+    "correo": "mariana.rojas@tese.edu.mx",
+    "semestre": 3,
+    "promedio": 83.4,
+    "intereses": [
+      "Seguridad Informática",
+      "Redes",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-08-16T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-011",
+    "nombre": "Oscar Medina González",
+    "correo": "oscar.medina@tese.edu.mx",
+    "semestre": 8,
+    "promedio": 80.6,
+    "intereses": [
+      "Bases de Datos",
+      "Análisis de Datos",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-01-15T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-012",
+    "nombre": "Camila Domínguez Núñez",
+    "correo": "camila.dominguez@tese.edu.mx",
+    "semestre": 9,
+    "promedio": 69.6,
+    "intereses": [
+      "Seguridad Informática",
+      "Redes",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2022-08-20T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-013",
+    "nombre": "Sergio Torres Núñez",
+    "correo": "sergio.torres@tese.edu.mx",
+    "semestre": 2,
+    "promedio": 82.8,
+    "intereses": [
+      "Análisis de Datos",
+      "Matemáticas Aplicadas",
+      "Bases de Datos"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2026-01-15T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-014",
+    "nombre": "Itzel Fernanda Chávez Ibarra",
+    "correo": "itzel.chavez@tese.edu.mx",
+    "semestre": 9,
+    "promedio": 86.9,
+    "intereses": [
+      "Análisis de Datos",
+      "Matemáticas Aplicadas",
+      "Bases de Datos"
+    ],
+    "estatus": 2,
+    "fechaRegistro": "2022-08-16T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-015",
+    "nombre": "Montserrat Contreras Salazar",
+    "correo": "montserrat.contreras@tese.edu.mx",
+    "semestre": 1,
+    "promedio": 75.0,
+    "intereses": [
+      "Bases de Datos",
+      "Análisis de Datos",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2026-08-19T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-016",
+    "nombre": "María Ramos Vega",
+    "correo": "maria.ramos@tese.edu.mx",
+    "semestre": 5,
+    "promedio": 87.2,
+    "intereses": [
+      "Hardware",
+      "IoT",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-08-14T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-017",
+    "nombre": "Regina Ortiz Salazar",
+    "correo": "regina.ortiz@tese.edu.mx",
+    "semestre": 8,
+    "promedio": 82.2,
+    "intereses": [
+      "Seguridad Informática",
+      "Redes",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-01-08T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-018",
+    "nombre": "Fernando González Silva",
+    "correo": "fernando.gonzalez@tese.edu.mx",
+    "semestre": 1,
+    "promedio": 85.6,
+    "intereses": [
+      "Bases de Datos",
+      "Análisis de Datos",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2026-08-17T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-019",
+    "nombre": "Fernando Salazar Ramírez",
+    "correo": "fernando.salazar@tese.edu.mx",
+    "semestre": 1,
+    "promedio": 78.2,
+    "intereses": [
+      "Redes",
+      "Seguridad Informática",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2026-08-20T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-020",
+    "nombre": "Daniela Navarro Chávez",
+    "correo": "daniela.navarro@tese.edu.mx",
+    "semestre": 2,
+    "promedio": 76.0,
+    "intereses": [
+      "Inteligencia Artificial",
+      "Análisis de Datos"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2026-01-08T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-021",
+    "nombre": "Mariana Rodríguez Rodríguez",
+    "correo": "mariana.rodriguez@tese.edu.mx",
+    "semestre": 4,
+    "promedio": 83.6,
+    "intereses": [
+      "Hardware",
+      "IoT",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-01-09T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-022",
+    "nombre": "Brenda Flores Torres",
+    "correo": "brenda.flores@tese.edu.mx",
+    "semestre": 9,
+    "promedio": 79.4,
+    "intereses": [
+      "Seguridad Informática",
+      "Redes",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2022-08-20T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-023",
+    "nombre": "Jorge Beatriz Martínez Aguilar",
+    "correo": "jorge.martinez@tese.edu.mx",
+    "semestre": 1,
+    "promedio": 81.0,
+    "intereses": [
+      "Seguridad Informática",
+      "Redes",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2026-08-12T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-024",
+    "nombre": "Ricardo Contreras Ramírez",
+    "correo": "ricardo.contreras@tese.edu.mx",
+    "semestre": 6,
+    "promedio": 92.2,
+    "intereses": [
+      "Redes",
+      "Seguridad Informática",
+      "Programación"
+    ],
+    "estatus": 3,
+    "fechaRegistro": "2024-01-12T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-025",
+    "nombre": "Camila Herrera Gutiérrez",
+    "correo": "camila.herrera@tese.edu.mx",
+    "semestre": 4,
+    "promedio": 97.0,
+    "intereses": [
+      "Redes",
+      "Seguridad Informática",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-01-12T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-026",
+    "nombre": "Ricardo Guadalupe Vega Mendoza",
+    "correo": "ricardo.vega@tese.edu.mx",
+    "semestre": 2,
+    "promedio": 72.3,
+    "intereses": [
+      "Hardware",
+      "IoT",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2026-01-10T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-027",
+    "nombre": "Brenda Díaz Sánchez",
+    "correo": "brenda.diaz@tese.edu.mx",
+    "semestre": 6,
+    "promedio": 91.6,
+    "intereses": [
+      "Inteligencia Artificial",
+      "Programación",
+      "Matemáticas Aplicadas"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-01-12T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-028",
+    "nombre": "Arturo Isabel Pérez Medina",
+    "correo": "arturo.perez@tese.edu.mx",
+    "semestre": 3,
+    "promedio": 89.8,
+    "intereses": [
+      "Programación",
+      "Desarrollo Web",
+      "Desarrollo Móvil"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-08-20T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-029",
+    "nombre": "Laura Eduardo Flores Reyes",
+    "correo": "laura.flores@tese.edu.mx",
+    "semestre": 3,
+    "promedio": 94.7,
+    "intereses": [
+      "Inteligencia Artificial",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-08-16T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-030",
+    "nombre": "José Alejandra Chávez Sánchez",
+    "correo": "jose.chavez@tese.edu.mx",
+    "semestre": 10,
+    "promedio": 92.5,
+    "intereses": [
+      "Seguridad Informática",
+      "Redes",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2022-01-08T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-031",
+    "nombre": "Ricardo Medina Sánchez",
+    "correo": "ricardo.medina@tese.edu.mx",
+    "semestre": 4,
+    "promedio": 89.7,
+    "intereses": [
+      "Seguridad Informática",
+      "Redes",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-01-14T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-032",
+    "nombre": "Mariana Fernanda Rodríguez Gutiérrez",
+    "correo": "mariana.rodriguez.g32@tese.edu.mx",
+    "semestre": 9,
+    "promedio": 81.8,
+    "intereses": [
+      "Inteligencia Artificial",
+      "Programación",
+      "Matemáticas Aplicadas"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2022-08-17T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-033",
+    "nombre": "Itzel Gómez Ibarra",
+    "correo": "itzel.gomez@tese.edu.mx",
+    "semestre": 9,
+    "promedio": 77.8,
+    "intereses": [
+      "Redes",
+      "Desarrollo Web",
+      "Desarrollo Móvil"
+    ],
+    "estatus": 2,
+    "fechaRegistro": "2022-08-17T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-034",
+    "nombre": "Emilio Javier Ramírez Vargas",
+    "correo": "emilio.ramirez@tese.edu.mx",
+    "semestre": 6,
+    "promedio": 77.3,
+    "intereses": [
+      "Programación",
+      "Desarrollo Web",
+      "Desarrollo Móvil"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-01-08T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-035",
+    "nombre": "Itzel Romero Reyes",
+    "correo": "itzel.romero@tese.edu.mx",
+    "semestre": 7,
+    "promedio": 88.0,
+    "intereses": [
+      "Análisis de Datos",
+      "Matemáticas Aplicadas",
+      "Bases de Datos",
+      "IoT"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-08-17T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-036",
+    "nombre": "Fernando Antonio Ibarra López",
+    "correo": "fernando.ibarra@tese.edu.mx",
+    "semestre": 9,
+    "promedio": 72.0,
+    "intereses": [
+      "Redes",
+      "Seguridad Informática",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2022-08-17T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-037",
+    "nombre": "Ana Morales Núñez",
+    "correo": "ana.morales@tese.edu.mx",
+    "semestre": 6,
+    "promedio": 67.5,
+    "intereses": [
+      "Bases de Datos",
+      "Análisis de Datos",
+      "Matemáticas Aplicadas"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-01-14T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-038",
+    "nombre": "Paola Ortiz Mendoza",
+    "correo": "paola.ortiz@tese.edu.mx",
+    "semestre": 10,
+    "promedio": 89.0,
+    "intereses": [
+      "Análisis de Datos",
+      "Matemáticas Aplicadas",
+      "Bases de Datos"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2022-01-12T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-039",
+    "nombre": "Natalia Alejandra Vargas Contreras",
+    "correo": "natalia.vargas@tese.edu.mx",
+    "semestre": 2,
+    "promedio": 78.1,
+    "intereses": [
+      "Redes",
+      "Seguridad Informática",
+      "Programación"
+    ],
+    "estatus": 3,
+    "fechaRegistro": "2026-01-13T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-040",
+    "nombre": "Valeria Pérez Rodríguez",
+    "correo": "valeria.perez@tese.edu.mx",
+    "semestre": 7,
+    "promedio": 68.8,
+    "intereses": [
+      "Programación",
+      "Desarrollo Web",
+      "Desarrollo Móvil",
+      "Hardware"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-08-20T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-041",
+    "nombre": "Daniela Pérez González",
+    "correo": "daniela.perez@tese.edu.mx",
+    "semestre": 6,
+    "promedio": 80.8,
+    "intereses": [
+      "Hardware",
+      "Desarrollo Web",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-01-11T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-042",
+    "nombre": "Ximena Vargas Ramírez",
+    "correo": "ximena.vargas@tese.edu.mx",
+    "semestre": 9,
+    "promedio": 89.1,
+    "intereses": [
+      "Redes",
+      "Seguridad Informática"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2022-08-18T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-043",
+    "nombre": "Itzel Beatriz Rodríguez Rivera",
+    "correo": "itzel.rodriguez@tese.edu.mx",
+    "semestre": 8,
+    "promedio": 83.1,
+    "intereses": [
+      "Inteligencia Artificial",
+      "Programación",
+      "Redes"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-01-08T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-044",
+    "nombre": "Oscar Guerrero Torres",
+    "correo": "oscar.guerrero@tese.edu.mx",
+    "semestre": 4,
+    "promedio": 79.1,
+    "intereses": [
+      "Hardware",
+      "Matemáticas Aplicadas"
+    ],
+    "estatus": 3,
+    "fechaRegistro": "2025-01-12T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-045",
+    "nombre": "Miguel Salazar Sánchez",
+    "correo": "miguel.salazar@tese.edu.mx",
+    "semestre": 4,
+    "promedio": 80.5,
+    "intereses": [
+      "Programación",
+      "Desarrollo Web",
+      "Desarrollo Móvil"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-01-13T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-046",
+    "nombre": "Diego Chávez Reyes",
+    "correo": "diego.chavez@tese.edu.mx",
+    "semestre": 1,
+    "promedio": 84.1,
+    "intereses": [
+      "Bases de Datos",
+      "Análisis de Datos",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2026-08-19T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-047",
+    "nombre": "Fernanda Cruz Vargas",
+    "correo": "fernanda.cruz@tese.edu.mx",
+    "semestre": 4,
+    "promedio": 78.3,
+    "intereses": [
+      "Seguridad Informática",
+      "Redes",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-01-11T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-048",
+    "nombre": "Brenda Ramírez Medina",
+    "correo": "brenda.ramirez@tese.edu.mx",
+    "semestre": 5,
+    "promedio": 82.3,
+    "intereses": [
+      "Redes",
+      "Seguridad Informática",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-08-16T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-049",
+    "nombre": "Luis Sánchez Ortiz",
+    "correo": "luis.sanchez@tese.edu.mx",
+    "semestre": 4,
+    "promedio": 99.1,
+    "intereses": [
+      "Redes",
+      "Seguridad Informática",
+      "Programación"
+    ],
+    "estatus": 1,
+    "fechaRegistro": "2025-01-13T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-050",
+    "nombre": "Sofía Salazar Guerrero",
+    "correo": "sofia.salazar@tese.edu.mx",
+    "semestre": 4,
+    "promedio": 75.6,
+    "intereses": [
+      "Análisis de Datos",
+      "Matemáticas Aplicadas"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-01-12T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-051",
+    "nombre": "Valeria Silva Herrera",
+    "correo": "valeria.silva@tese.edu.mx",
+    "semestre": 7,
+    "promedio": 83.1,
+    "intereses": [
+      "Programación",
+      "Desarrollo Web",
+      "Desarrollo Móvil"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-08-12T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-052",
+    "nombre": "Miguel Ortiz Ramos",
+    "correo": "miguel.ortiz@tese.edu.mx",
+    "semestre": 7,
+    "promedio": 89.4,
+    "intereses": [
+      "Bases de Datos",
+      "Análisis de Datos",
+      "Programación"
+    ],
+    "estatus": 3,
+    "fechaRegistro": "2023-08-15T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-053",
+    "nombre": "Sofía Daniel Vega Díaz",
+    "correo": "sofia.vega@tese.edu.mx",
+    "semestre": 7,
+    "promedio": 84.6,
+    "intereses": [
+      "Programación",
+      "Desarrollo Web",
+      "Desarrollo Móvil"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-08-20T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-054",
+    "nombre": "Valeria Isabel Herrera López",
+    "correo": "valeria.herrera@tese.edu.mx",
+    "semestre": 6,
+    "promedio": 89.2,
+    "intereses": [
+      "Análisis de Datos",
+      "Matemáticas Aplicadas",
+      "Bases de Datos"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-01-13T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-055",
+    "nombre": "Montserrat Salazar Ramos",
+    "correo": "montserrat.salazar@tese.edu.mx",
+    "semestre": 4,
+    "promedio": 96.0,
+    "intereses": [
+      "Inteligencia Artificial",
+      "Programación"
+    ],
+    "estatus": 1,
+    "fechaRegistro": "2025-01-13T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-056",
+    "nombre": "Adrián Isabel Rojas Romero",
+    "correo": "adrian.rojas@tese.edu.mx",
+    "semestre": 8,
+    "promedio": 80.5,
+    "intereses": [
+      "Inteligencia Artificial",
+      "Programación",
+      "Matemáticas Aplicadas"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-01-12T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-057",
+    "nombre": "Alexa Cortés Ramos",
+    "correo": "alexa.cortes@tese.edu.mx",
+    "semestre": 6,
+    "promedio": 94.0,
+    "intereses": [
+      "Seguridad Informática",
+      "Redes",
+      "Programación"
+    ],
+    "estatus": 3,
+    "fechaRegistro": "2024-01-10T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-058",
+    "nombre": "Eduardo Jiménez Pérez",
+    "correo": "eduardo.jimenez@tese.edu.mx",
+    "semestre": 3,
+    "promedio": 99.5,
+    "intereses": [
+      "Seguridad Informática",
+      "IoT",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-08-15T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-059",
+    "nombre": "Mauricio Eduardo Castillo Romero",
+    "correo": "mauricio.castillo@tese.edu.mx",
+    "semestre": 8,
+    "promedio": 73.9,
+    "intereses": [
+      "Hardware",
+      "IoT",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-01-10T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-060",
+    "nombre": "Brenda Alejandra Ortiz Chávez",
+    "correo": "brenda.ortiz@tese.edu.mx",
+    "semestre": 2,
+    "promedio": 88.7,
+    "intereses": [
+      "Análisis de Datos",
+      "Matemáticas Aplicadas",
+      "Bases de Datos"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2026-01-10T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-061",
+    "nombre": "Jorge Herrera Silva",
+    "correo": "jorge.herrera@tese.edu.mx",
+    "semestre": 1,
+    "promedio": 82.2,
+    "intereses": [
+      "Análisis de Datos",
+      "Matemáticas Aplicadas",
+      "Bases de Datos",
+      "Seguridad Informática"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2026-08-20T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-062",
+    "nombre": "Natalia Eduardo Torres Rojas",
+    "correo": "natalia.torres@tese.edu.mx",
+    "semestre": 5,
+    "promedio": 85.0,
+    "intereses": [
+      "Bases de Datos",
+      "Desarrollo Web",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-08-13T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-063",
+    "nombre": "Fernanda Flores Morales",
+    "correo": "fernanda.flores@tese.edu.mx",
+    "semestre": 7,
+    "promedio": 84.2,
+    "intereses": [
+      "Seguridad Informática",
+      "Redes",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-08-18T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-064",
+    "nombre": "Oscar Chávez Aguilar",
+    "correo": "oscar.chavez@tese.edu.mx",
+    "semestre": 5,
+    "promedio": 93.4,
+    "intereses": [
+      "Análisis de Datos",
+      "Matemáticas Aplicadas",
+      "Bases de Datos"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-08-13T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-065",
+    "nombre": "Sergio Sánchez Rivera",
+    "correo": "sergio.sanchez@tese.edu.mx",
+    "semestre": 7,
+    "promedio": 79.9,
+    "intereses": [
+      "Inteligencia Artificial",
+      "Programación",
+      "Matemáticas Aplicadas"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-08-18T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-066",
+    "nombre": "Luis Ortiz Gutiérrez",
+    "correo": "luis.ortiz@tese.edu.mx",
+    "semestre": 6,
+    "promedio": 83.4,
+    "intereses": [
+      "Bases de Datos",
+      "Análisis de Datos",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-01-10T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-067",
+    "nombre": "Arturo Eduardo Vega Jiménez",
+    "correo": "arturo.vega@tese.edu.mx",
+    "semestre": 8,
+    "promedio": 76.0,
+    "intereses": [
+      "Bases de Datos",
+      "Análisis de Datos",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-01-13T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-068",
+    "nombre": "Diego Vargas Guerrero",
+    "correo": "diego.vargas@tese.edu.mx",
+    "semestre": 3,
+    "promedio": 88.5,
+    "intereses": [
+      "Hardware",
+      "IoT"
+    ],
+    "estatus": 1,
+    "fechaRegistro": "2025-08-12T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-069",
+    "nombre": "Jimena Jiménez Domínguez",
+    "correo": "jimena.jimenez@tese.edu.mx",
+    "semestre": 5,
+    "promedio": 75.3,
+    "intereses": [
+      "Bases de Datos",
+      "Análisis de Datos",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-08-17T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-070",
+    "nombre": "Raúl Beatriz Reyes Rodríguez",
+    "correo": "raul.reyes@tese.edu.mx",
+    "semestre": 1,
+    "promedio": 97.1,
+    "intereses": [
+      "Redes",
+      "Seguridad Informática",
+      "Inteligencia Artificial"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2026-08-16T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-071",
+    "nombre": "Adrián Romero Morales",
+    "correo": "adrian.romero@tese.edu.mx",
+    "semestre": 3,
+    "promedio": 81.7,
+    "intereses": [
+      "Seguridad Informática",
+      "Redes",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-08-14T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-072",
+    "nombre": "Miguel Navarro Jiménez",
+    "correo": "miguel.navarro@tese.edu.mx",
+    "semestre": 3,
+    "promedio": 82.6,
+    "intereses": [
+      "Seguridad Informática",
+      "Redes",
+      "Programación",
+      "IoT"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-08-16T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-073",
+    "nombre": "Renata Fernanda Navarro Rodríguez",
+    "correo": "renata.navarro@tese.edu.mx",
+    "semestre": 8,
+    "promedio": 84.2,
+    "intereses": [
+      "Redes",
+      "Seguridad Informática",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-01-13T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-074",
+    "nombre": "Laura Vega Romero",
+    "correo": "laura.vega@tese.edu.mx",
+    "semestre": 3,
+    "promedio": 89.1,
+    "intereses": [
+      "Hardware",
+      "IoT",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-08-12T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-075",
+    "nombre": "Daniela Castillo González",
+    "correo": "daniela.castillo@tese.edu.mx",
+    "semestre": 7,
+    "promedio": 70.5,
+    "intereses": [
+      "Inteligencia Artificial",
+      "Programación",
+      "Matemáticas Aplicadas",
+      "Redes"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-08-20T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-076",
+    "nombre": "Adrián Rojas López",
+    "correo": "adrian.rojas.l76@tese.edu.mx",
+    "semestre": 1,
+    "promedio": 99.5,
+    "intereses": [
+      "Análisis de Datos",
+      "Matemáticas Aplicadas",
+      "Bases de Datos"
+    ],
+    "estatus": 1,
+    "fechaRegistro": "2026-08-13T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-077",
+    "nombre": "Héctor Isabel Silva López",
+    "correo": "hector.silva@tese.edu.mx",
+    "semestre": 6,
+    "promedio": 79.4,
+    "intereses": [
+      "Redes",
+      "Seguridad Informática",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-01-10T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-078",
+    "nombre": "Fernando Salazar Martínez",
+    "correo": "fernando.salazar.m78@tese.edu.mx",
+    "semestre": 6,
+    "promedio": 78.4,
+    "intereses": [
+      "Programación",
+      "Desarrollo Web",
+      "Desarrollo Móvil"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-01-09T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-079",
+    "nombre": "Jorge Antonio Ibarra Gómez",
+    "correo": "jorge.ibarra@tese.edu.mx",
+    "semestre": 7,
+    "promedio": 82.5,
+    "intereses": [
+      "Seguridad Informática",
+      "Redes",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-08-14T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-080",
+    "nombre": "Mariana Antonio Domínguez Contreras",
+    "correo": "mariana.dominguez@tese.edu.mx",
+    "semestre": 2,
+    "promedio": 86.7,
+    "intereses": [
+      "Seguridad Informática",
+      "Redes",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2026-01-15T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-081",
+    "nombre": "Ana González Salazar",
+    "correo": "ana.gonzalez@tese.edu.mx",
+    "semestre": 2,
+    "promedio": 69.4,
+    "intereses": [
+      "Programación",
+      "Desarrollo Web",
+      "Desarrollo Móvil"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2026-01-09T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-082",
+    "nombre": "Carlos Morales Sánchez",
+    "correo": "carlos.morales@tese.edu.mx",
+    "semestre": 7,
+    "promedio": 79.7,
+    "intereses": [
+      "Análisis de Datos",
+      "Matemáticas Aplicadas",
+      "Bases de Datos"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-08-16T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-083",
+    "nombre": "Carlos Rivera Vega",
+    "correo": "carlos.rivera@tese.edu.mx",
+    "semestre": 5,
+    "promedio": 88.2,
+    "intereses": [
+      "Análisis de Datos",
+      "Matemáticas Aplicadas",
+      "Bases de Datos"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-08-20T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-084",
+    "nombre": "Laura Javier Contreras Chávez",
+    "correo": "laura.contreras@tese.edu.mx",
+    "semestre": 5,
+    "promedio": 95.4,
+    "intereses": [
+      "Desarrollo Web",
+      "Matemáticas Aplicadas",
+      "Bases de Datos"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-08-13T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-085",
+    "nombre": "Renata Hernández Jiménez",
+    "correo": "renata.hernandez@tese.edu.mx",
+    "semestre": 3,
+    "promedio": 99.2,
+    "intereses": [
+      "Bases de Datos",
+      "Análisis de Datos",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-08-16T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-086",
+    "nombre": "Sergio Gutiérrez Ramos",
+    "correo": "sergio.gutierrez@tese.edu.mx",
+    "semestre": 5,
+    "promedio": 85.5,
+    "intereses": [
+      "Inteligencia Artificial",
+      "Programación",
+      "Matemáticas Aplicadas"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-08-18T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-087",
+    "nombre": "Renata Guadalupe Cruz Jiménez",
+    "correo": "renata.cruz@tese.edu.mx",
+    "semestre": 8,
+    "promedio": 80.6,
+    "intereses": [
+      "Redes",
+      "Seguridad Informática",
+      "Desarrollo Móvil"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-01-14T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-088",
+    "nombre": "Jimena Beatriz Chávez López",
+    "correo": "jimena.chavez@tese.edu.mx",
+    "semestre": 3,
+    "promedio": 82.6,
+    "intereses": [
+      "Análisis de Datos",
+      "Matemáticas Aplicadas",
+      "Bases de Datos"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-08-18T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-089",
+    "nombre": "José López Cortés",
+    "correo": "jose.lopez@tese.edu.mx",
+    "semestre": 5,
+    "promedio": 69.1,
+    "intereses": [
+      "Análisis de Datos",
+      "Matemáticas Aplicadas",
+      "Bases de Datos"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-08-20T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-090",
+    "nombre": "Alexa Javier Rojas Vargas",
+    "correo": "alexa.rojas@tese.edu.mx",
+    "semestre": 9,
+    "promedio": 87.7,
+    "intereses": [
+      "Hardware",
+      "IoT",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2022-08-17T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-091",
+    "nombre": "Andrés Jiménez Vargas",
+    "correo": "andres.jimenez@tese.edu.mx",
+    "semestre": 9,
+    "promedio": 77.5,
+    "intereses": [
+      "Hardware",
+      "IoT",
+      "Programación",
+      "Seguridad Informática"
+    ],
+    "estatus": 2,
+    "fechaRegistro": "2022-08-19T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-092",
+    "nombre": "Daniela Gómez Castillo",
+    "correo": "daniela.gomez@tese.edu.mx",
+    "semestre": 4,
+    "promedio": 87.3,
+    "intereses": [
+      "Programación",
+      "Seguridad Informática"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-01-09T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-093",
+    "nombre": "Emilio Pérez Hernández",
+    "correo": "emilio.perez@tese.edu.mx",
+    "semestre": 3,
+    "promedio": 84.7,
+    "intereses": [
+      "Seguridad Informática",
+      "Redes",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-08-13T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-094",
+    "nombre": "Arturo Mendoza Cortés",
+    "correo": "arturo.mendoza@tese.edu.mx",
+    "semestre": 8,
+    "promedio": 85.4,
+    "intereses": [
+      "Hardware",
+      "IoT",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-01-14T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-095",
+    "nombre": "Diego Luis Medina Hernández",
+    "correo": "diego.medina@tese.edu.mx",
+    "semestre": 9,
+    "promedio": 87.1,
+    "intereses": [
+      "Hardware",
+      "IoT"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2022-08-12T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-096",
+    "nombre": "Laura Beatriz Contreras Morales",
+    "correo": "laura.contreras.m96@tese.edu.mx",
+    "semestre": 3,
+    "promedio": 77.4,
+    "intereses": [
+      "Seguridad Informática",
+      "Redes",
+      "Análisis de Datos"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2025-08-18T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-097",
+    "nombre": "Paola Hernández Herrera",
+    "correo": "paola.hernandez@tese.edu.mx",
+    "semestre": 2,
+    "promedio": 87.4,
+    "intereses": [
+      "Hardware",
+      "IoT"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2026-01-14T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-098",
+    "nombre": "Fernando Cortés Contreras",
+    "correo": "fernando.cortes@tese.edu.mx",
+    "semestre": 6,
+    "promedio": 87.5,
+    "intereses": [
+      "Hardware",
+      "IoT",
+      "Análisis de Datos"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-01-12T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-099",
+    "nombre": "Fernando Vargas Contreras",
+    "correo": "fernando.vargas@tese.edu.mx",
+    "semestre": 7,
+    "promedio": 91.6,
+    "intereses": [
+      "Redes",
+      "Seguridad Informática",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2023-08-12T00:00:00",
+    "especialidadRecomendada": null
+  },
+  {
+    "id": "ALU-100",
+    "nombre": "Iván Sánchez Mendoza",
+    "correo": "ivan.sanchez@tese.edu.mx",
+    "semestre": 6,
+    "promedio": 77.0,
+    "intereses": [
+      "Redes",
+      "Seguridad Informática",
+      "Programación"
+    ],
+    "estatus": 0,
+    "fechaRegistro": "2024-01-14T00:00:00",
+    "especialidadRecomendada": null
+  }
+]

@@ -1,0 +1,53 @@
+@model SmartAcademicAdvisor.Web.Perfiles.PortalData
+@using SmartAcademicAdvisor.Web.Perfiles
+@{
+    Layout = "_LayoutAlumno";
+    ViewData["Title"] = "Mi plan de estudios";
+    var disponibles = Model.Materias.Count(m => m.Estado == "disponible");
+    var avance = Model.MateriasTotal == 0 ? 0 : Model.MateriasAprobadas * 100 / Model.MateriasTotal;
+}
+
+<div class="page-header">
+    <div class="header-content">
+        <div>
+            <h2 class="page-title-large">Mi plan de estudios</h2>
+            <p class="page-subtitle">Tu mapa curricular: qué aprobaste, qué puedes cursar ya y qué sigue bloqueado</p>
+        </div>
+    </div>
+</div>
+
+<div class="cards-grid">
+    <div class="metric-card-white"><div class="metric-header"><span class="metric-title">Avance del plan</span><div class="metric-icon-small" style="background:#D1FAE5;color:#059669"><i class="fas fa-route"></i></div></div>
+        <div class="metric-value-large">@avance%</div><div class="progress mt-3"><i style="width:@avance%"></i></div></div>
+    <div class="metric-card-white"><div class="metric-header"><span class="metric-title">Materias aprobadas</span><div class="metric-icon-small" style="background:#CFFAFE;color:#0891B2"><i class="fas fa-circle-check"></i></div></div>
+        <div class="metric-value-large">@Model.MateriasAprobadas<span style="font-size:18px;color:var(--gray-400)">/@Model.MateriasTotal</span></div></div>
+    <div class="metric-card-white"><div class="metric-header"><span class="metric-title">Puedes cursar ahora</span><div class="metric-icon-small" style="background:#EDE9FE;color:#8B5CF6"><i class="fas fa-unlock"></i></div></div>
+        <div class="metric-value-large">@disponibles</div></div>
+</div>
+
+<div class="legend">
+    <span><i style="background:#9BE5C5"></i> Aprobada</span>
+    <span><i style="background:#C4B5FD"></i> Disponible (cumples prerrequisitos)</span>
+    <span><i style="background:var(--gray-300)"></i> Bloqueada</span>
+    <span><i style="border:2px dashed var(--gray-400)"></i> Optativa</span>
+</div>
+
+<div class="plan">
+    @foreach (var g in Model.Materias.GroupBy(m => m.Semestre).OrderBy(x => x.Key))
+    {
+        <div class="plan-col">
+            <h6>Semestre @g.Key</h6>
+            @foreach (var m in g)
+            {
+                <div class="mat @m.Estado @(m.Optativa ? "opt" : "")" title="@(m.Estado == "bloqueada" ? "Requiere: " + string.Join(", ", m.PrerreqNombres) : m.Area)">
+                    <i class="fas @(m.Estado == "aprobada" ? "fa-circle-check" : m.Estado == "disponible" ? "fa-unlock" : "fa-lock")"></i>
+                    <span>
+                        @m.Nombre
+                        <small>@m.Creditos créditos · @m.Area@(m.Calificacion.HasValue ? " · " + m.Calificacion.Value.ToString("0.#", System.Globalization.CultureInfo.InvariantCulture) : "")</small>
+                        @if (m.Estado == "bloqueada") { <small>Requiere: @string.Join(", ", m.PrerreqNombres)</small> }
+                    </span>
+                </div>
+            }
+        </div>
+    }
+</div>

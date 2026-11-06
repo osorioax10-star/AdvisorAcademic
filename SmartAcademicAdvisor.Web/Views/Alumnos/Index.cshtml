@@ -1,0 +1,173 @@
+@model IEnumerable<SmartAcademicAdvisor.Core.Models.Alumno>
+@using SmartAcademicAdvisor.Core.Models
+@using System.Globalization
+@{
+    ViewData["Title"] = "Gestión de alumnos";
+    var lista = Model.ToList();
+    var inv = CultureInfo.InvariantCulture;
+
+    string Ini(string n) => string.Concat(n.Split(' ', StringSplitOptions.RemoveEmptyEntries).Take(2).Select(p => char.ToUpper(p[0])));
+    int Matiz(string n) { unchecked { uint h = 7; foreach (var c in n) h = h * 31 + c; return (int)(h % 360); } }
+    string Nivel(double p) => p >= 90 ? "top" : p >= 80 ? "ok" : p >= 70 ? "mid" : "risk";
+
+    var estatusLista = lista.Select(a => a.Estatus.ToString()).Distinct().OrderBy(x => x).ToList();
+    double prom = lista.Any() ? lista.Average(a => a.Promedio) : 0;
+    int aprob = lista.Count(a => a.Promedio >= 70);
+    int activos = lista.Count(a => a.Estatus == EstatusAlumno.Activo);
+    bool filtrosActivos = !string.IsNullOrEmpty((string?)ViewBag.Interes) || ViewBag.PromedioMin != null || ViewBag.PromedioMax != null;
+}
+
+<div class="page-header">
+    <div class="header-content">
+        <div>
+            <h2 class="page-title-large">Alumnos</h2>
+            <p class="page-subtitle">Explora, filtra y gestiona al estudiantado</p>
+        </div>
+        <a asp-action="Create" class="btn btn-primary"><i class="fas fa-user-plus"></i> Nuevo alumno</a>
+    </div>
+</div>
+
+<div class="cards-grid">
+    <div class="metric-card-white"><div class="metric-header"><span class="metric-title">En esta vista</span><div class="metric-icon-small" style="background:#EDE9FE;color:#8B5CF6"><i class="fas fa-users"></i></div></div><div class="metric-value-large">@lista.Count</div></div>
+    <div class="metric-card-white"><div class="metric-header"><span class="metric-title">Promedio</span><div class="metric-icon-small" style="background:#D1FAE5;color:#059669"><i class="fas fa-star"></i></div></div><div class="metric-value-large">@prom.ToString("0.0", inv)</div></div>
+    <div class="metric-card-white"><div class="metric-header"><span class="metric-title">Aprobados</span><div class="metric-icon-small" style="background:#CFFAFE;color:#0891B2"><i class="fas fa-check"></i></div></div><div class="metric-value-large">@(lista.Count == 0 ? 0 : aprob * 100 / lista.Count)%</div></div>
+    <div class="metric-card-white"><div class="metric-header"><span class="metric-title">Activos</span><div class="metric-icon-small" style="background:#FFEDD5;color:#EA580C"><i class="fas fa-user-check"></i></div></div><div class="metric-value-large">@activos</div></div>
+</div>
+
+<details class="adv chart-card" open="@filtrosActivos">
+    <summary><i class="fas fa-sliders-h"></i> Filtros avanzados (servidor)</summary>
+    <form asp-action="Index" method="get" class="row g-3 mt-1">
+        <div class="col-md-3"><label class="form-label">Nombre</label><input type="text" name="nombre" class="form-control" value="@ViewBag.Nombre" /></div>
+        <div class="col-md-3"><label class="form-label">Interés</label>
+            <select name="interes" class="form-select">
+                <option value="">Todos</option>
+                @foreach (var i in SmartAcademicAdvisor.Web.Models.AlumnoFormModel.InteresesDisponibles)
+                {
+                    <option value="@i" selected="@((string?)ViewBag.Interes == i)">@i</option>
+                }
+            </select></div>
+        <div class="col-md-2"><label class="form-label">Promedio mín.</label><input type="number" name="promedioMin" class="form-control" value="@ViewBag.PromedioMin" min="0" max="100" step="0.1" /></div>
+        <div class="col-md-2"><label class="form-label">Promedio máx.</label><input type="number" name="promedioMax" class="form-control" value="@ViewBag.PromedioMax" min="0" max="100" step="0.1" /></div>
+        <div class="col-md-2 d-flex align-items-end gap-2"><button class="btn btn-primary" type="submit"><i class="fas fa-filter"></i></button><a asp-action="Index" class="btn btn-secondary"><i class="fas fa-times"></i></a></div>
+    </form>
+</details>
+
+<div class="toolbar">
+    <div class="search"><i class="fas fa-search"></i><input id="q" class="form-control" placeholder="Buscar por nombre, correo o ID…" autocomplete="off" /></div>
+    <div class="chips" id="chips">
+        <button type="button" class="chip active" data-e="">Todos</button>
+        @foreach (var e in estatusLista) { <button type="button" class="chip" data-e="@e">@e</button> }
+        <button type="button" class="chip" data-e="__riesgo">En riesgo</button>
+    </div>
+    <select id="orden" class="form-select" style="width:auto">
+        <option value="nombre">Nombre (A-Z)</option>
+        <option value="prom-desc">Mayor promedio</option>
+        <option value="prom-asc">Menor promedio</option>
+        <option value="sem-asc">Semestre ↑</option>
+        <option value="sem-desc">Semestre ↓</option>
+    </select>
+    <select id="tam" class="form-select" style="width:auto"><option>12</option><option>24</option><option>48</option><option value="9999">Todos</option></select>
+    <div class="seg"><button type="button" id="vCards" class="active" title="Tarjetas"><i class="fas fa-th-large"></i></button><button type="button" id="vTabla" title="Tabla"><i class="fas fa-list"></i></button></div>
+</div>
+<p class="text-muted small mb-2"><span id="cuenta"></span></p>
+
+<div class="alumno-grid" id="grid">
+    @foreach (var a in lista)
+    {
+        var h = Matiz(a.Nombre);
+        <article class="alumno-card" style="--h:@h" data-nombre="@a.Nombre.ToLowerInvariant()" data-txt="@((a.Nombre + " " + a.Correo + " " + a.Id).ToLowerInvariant())"
+                 data-prom="@a.Promedio.ToString("0.##", inv)" data-sem="@a.Semestre" data-e="@a.Estatus">
+            <div class="banner"></div>
+            <div class="avatar">@Ini(a.Nombre)</div>
+            <div class="ring @Nivel(a.Promedio)" style="--p:@Math.Clamp(a.Promedio, 0, 100).ToString("0.#", inv)"><b>@a.Promedio.ToString("0")</b></div>
+            <div class="body">
+                <h5>@a.Nombre</h5>
+                <div class="meta"><span class="dot @(a.Estatus == EstatusAlumno.Activo ? "on" : "")"></span> @a.Estatus · <code>@a.Id</code></div>
+                <div class="text-muted small mb-2"><i class="fas fa-envelope"></i> @a.Correo</div>
+                <div class="d-flex flex-wrap gap-1">
+                    @foreach (var i in a.Intereses.Take(3)) { <span class="tag">@i</span> }
+                    @if (a.Intereses.Count > 3) { <span class="tag">+@(a.Intereses.Count - 3)</span> }
+                </div>
+            </div>
+            <div class="foot">
+                <span class="sem">SEM @a.Semestre</span>
+                <div class="btn-group">
+                    <a asp-action="Details" asp-route-id="@a.Id" class="btn btn-sm btn-info" title="Ver"><i class="fas fa-eye"></i></a>
+                    <a asp-controller="Recomendaciones" asp-action="PorAlumno" asp-route-matricula="@a.Id" class="btn btn-sm btn-primary" title="Recomendaciones"><i class="fas fa-lightbulb"></i></a>
+                    <a asp-action="Edit" asp-route-id="@a.Id" class="btn btn-sm btn-warning" title="Editar"><i class="fas fa-edit"></i></a>
+                    <a asp-action="Delete" asp-route-id="@a.Id" class="btn btn-sm btn-danger" title="Eliminar"><i class="fas fa-trash"></i></a>
+                </div>
+            </div>
+        </article>
+    }
+</div>
+
+<div class="table-card" id="tablaBox" style="display:none">
+    <table class="data-table">
+        <thead><tr><th>Alumno</th><th>Semestre</th><th>Promedio</th><th>Estatus</th><th>Intereses</th><th></th></tr></thead>
+        <tbody id="tbody">
+        @foreach (var a in lista)
+        {
+            <tr data-nombre="@a.Nombre.ToLowerInvariant()" data-txt="@((a.Nombre + " " + a.Correo + " " + a.Id).ToLowerInvariant())"
+                data-prom="@a.Promedio.ToString("0.##", inv)" data-sem="@a.Semestre" data-e="@a.Estatus">
+                <td><div class="d-flex align-items-center gap-2"><span class="avatar" style="position:static;width:34px;height:34px;border-radius:10px;font-size:13px;--h:@Matiz(a.Nombre)">@Ini(a.Nombre)</span>
+                    <div><strong>@a.Nombre</strong><br /><small class="text-muted">@a.Correo</small></div></div></td>
+                <td class="text-mono">@a.Semestre</td>
+                <td><div class="d-flex align-items-center gap-2"><div class="progress" style="width:70px"><i style="width:@Math.Clamp(a.Promedio, 0, 100).ToString("0.#", inv)%"></i></div><span class="text-mono">@a.Promedio.ToString("0.0", inv)</span></div></td>
+                <td><span class="status-badge @(a.Estatus == EstatusAlumno.Activo ? "success" : "")">@a.Estatus</span></td>
+                <td><small>@string.Join(", ", a.Intereses.Take(2))@(a.Intereses.Count > 2 ? " +" + (a.Intereses.Count - 2) : "")</small></td>
+                <td class="text-end"><div class="btn-group">
+                    <a asp-action="Details" asp-route-id="@a.Id" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                    <a asp-action="Edit" asp-route-id="@a.Id" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+                    <a asp-action="Delete" asp-route-id="@a.Id" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a></div></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+@if (!lista.Any())
+{
+    <div class="chart-card text-center py-5"><i class="fas fa-users fa-3x text-muted mb-3"></i><p class="text-muted">No se encontraron alumnos</p>
+        <a asp-action="Create" class="btn btn-primary"><i class="fas fa-plus"></i> Crear primer alumno</a></div>
+}
+<div class="pager" id="pager"></div>
+
+@section Scripts {
+<script>
+(function () {
+    const grid = document.getElementById('grid'), tbody = document.getElementById('tbody');
+    const cards = [...grid.children], rows = [...tbody.children];
+    const st = { q: '', e: '', orden: 'nombre', tam: 12, pag: 1, tabla: false };
+    const num = (el, k) => parseFloat(el.dataset[k]) || 0;
+    const comp = { 'nombre': (a, b) => a.dataset.nombre.localeCompare(b.dataset.nombre), 'prom-desc': (a, b) => num(b, 'prom') - num(a, 'prom'),
+                   'prom-asc': (a, b) => num(a, 'prom') - num(b, 'prom'), 'sem-asc': (a, b) => num(a, 'sem') - num(b, 'sem'), 'sem-desc': (a, b) => num(b, 'sem') - num(a, 'sem') };
+    function render() {
+        const idx = cards.map((_, i) => i).filter(i => {
+            const c = cards[i];
+            return c.dataset.txt.includes(st.q) && (st.e === '' || (st.e === '__riesgo' ? num(c, 'prom') < 70 : c.dataset.e === st.e));
+        }).sort((x, y) => comp[st.orden](cards[x], cards[y]));
+        const paginas = Math.max(1, Math.ceil(idx.length / st.tam)); st.pag = Math.min(st.pag, paginas);
+        const visibles = new Set(idx.slice((st.pag - 1) * st.tam, st.pag * st.tam));
+        idx.forEach(i => { grid.appendChild(cards[i]); tbody.appendChild(rows[i]); });
+        cards.forEach((c, i) => { const v = visibles.has(i); c.style.display = v ? '' : 'none'; rows[i].style.display = v ? '' : 'none'; });
+        document.getElementById('cuenta').textContent = idx.length + ' de ' + cards.length + ' alumnos';
+        const p = document.getElementById('pager'); let h = '';
+        if (paginas > 1) { h += '<button ' + (st.pag === 1 ? 'disabled' : '') + ' data-p="' + (st.pag - 1) + '">‹</button>';
+            for (let k = 1; k <= paginas; k++) h += '<button class="' + (k === st.pag ? 'active' : '') + '" data-p="' + k + '">' + k + '</button>';
+            h += '<button ' + (st.pag === paginas ? 'disabled' : '') + ' data-p="' + (st.pag + 1) + '">›</button>'; }
+        p.innerHTML = h;
+    }
+    document.getElementById('pager').addEventListener('click', e => { const b = e.target.closest('button[data-p]'); if (b) { st.pag = +b.dataset.p; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); } });
+    document.getElementById('q').addEventListener('input', e => { st.q = e.target.value.toLowerCase().trim(); st.pag = 1; render(); });
+    document.getElementById('orden').addEventListener('change', e => { st.orden = e.target.value; render(); });
+    document.getElementById('tam').addEventListener('change', e => { st.tam = +e.target.value; st.pag = 1; render(); });
+    document.getElementById('chips').addEventListener('click', e => { const b = e.target.closest('.chip'); if (!b) return;
+        document.querySelectorAll('#chips .chip').forEach(c => c.classList.toggle('active', c === b)); st.e = b.dataset.e; st.pag = 1; render(); });
+    function vista(t) { st.tabla = t; grid.style.display = t ? 'none' : ''; document.getElementById('tablaBox').style.display = t ? '' : 'none';
+        document.getElementById('vCards').classList.toggle('active', !t); document.getElementById('vTabla').classList.toggle('active', t); }
+    document.getElementById('vCards').onclick = () => vista(false); document.getElementById('vTabla').onclick = () => vista(true);
+    render();
+})();
+</script>
+}

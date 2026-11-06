@@ -1,0 +1,81 @@
+@{
+    var ctrl = ViewContext.RouteData.Values["controller"]?.ToString() ?? "Home";
+    string Act(string c) => string.Equals(ctrl, c, StringComparison.OrdinalIgnoreCase) ? "active" : "";
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] · Smart Academic Advisor</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/dashboard-modern.css" asp-append-version="true" />
+</head>
+<body>
+<div class="dashboard-wrapper">
+    <aside class="sidebar" id="sidebar">
+        <a class="brand" asp-controller="Home" asp-action="Index">
+            <div class="brand-tile">&lt;/&gt;</div>
+            <div><div class="brand-name">Academic Advisor</div><div class="brand-sub">PORTAL ADMIN</div></div>
+        </a>
+        <nav class="sidebar-nav">
+            <div class="nav-group">Resumen</div>
+            <a class="nav-item @Act("Home")" asp-controller="Home" asp-action="Index"><i class="fas fa-th-large"></i>Dashboard</a>
+            <div class="nav-group">Gestión</div>
+            <a class="nav-item @Act("Alumnos")" asp-controller="Alumnos" asp-action="Index"><i class="fas fa-users"></i>Alumnos</a>
+            <a class="nav-item @Act("Especialidades")" asp-controller="Especialidades" asp-action="Index"><i class="fas fa-graduation-cap"></i>Especialidades</a>
+            <a class="nav-item @Act("Materias")" asp-controller="Materias" asp-action="Index"><i class="fas fa-book"></i>Materias</a>
+            <a class="nav-item @Act("Cursos")" asp-controller="Cursos" asp-action="Index"><i class="fas fa-laptop-code"></i>Cursos</a>
+            <a class="nav-item @Act("Certificaciones")" asp-controller="Certificaciones" asp-action="Index"><i class="fas fa-certificate"></i>Certificaciones</a>
+            <a class="nav-item @Act("Historial")" asp-controller="Historial" asp-action="Index"><i class="fas fa-history"></i>Historial</a>
+            <div class="nav-group">Inteligencia</div>
+            <a class="nav-item @Act("Reglas")" asp-controller="Reglas" asp-action="Index"><i class="fas fa-cogs"></i>Motor de inferencia</a>
+            <a class="nav-item @Act("Recomendaciones")" asp-controller="Recomendaciones" asp-action="Index"><i class="fas fa-lightbulb"></i>Recomendaciones</a>
+            <a class="nav-item soon" href="#"><i class="fas fa-chart-bar"></i>Reportes<span class="soon-tag">pronto</span></a>
+        </nav>
+        <div class="mascot"><partial name="_Mascota" /></div>
+        <div class="side-user">
+            <div class="av"><i class="fas fa-user-shield"></i></div>
+            <div><b>Administrador</b><small>Acceso total</small></div>
+            <a asp-controller="Acceso" asp-action="Salir" title="Cambiar de perfil"><i class="fas fa-right-left"></i></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <div class="d-flex align-items-center gap-3">
+                <button class="btn-icon d-lg-none" id="menuToggle" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
+                <div class="page-title-section"><h1>@ViewData["Title"]</h1></div>
+            </div>
+            <div class="top-bar-actions">
+                <div class="date-range-picker"><i class="fas fa-calendar"></i>@DateTime.Now.ToString("dd MMM yyyy")</div>
+            </div>
+        </header>
+
+        <div class="content-area">
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success"><i class="fas fa-check-circle"></i><span>@TempData["Success"]</span></div>
+            }
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger"><i class="fas fa-times-circle"></i><span>@TempData["Error"]</span></div>
+            }
+            @RenderBody()
+        </div>
+
+        <footer class="status-bar">
+            <span class="ok">motor de inferencia activo</span>
+            <span class="push">Smart Academic Advisor v1.0</span>
+        </footer>
+    </main>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script>$('#menuToggle').on('click', function () { $('#sidebar').toggleClass('active'); });</script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

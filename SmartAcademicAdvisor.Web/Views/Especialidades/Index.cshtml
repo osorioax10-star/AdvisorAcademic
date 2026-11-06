@@ -1,0 +1,46 @@
+@model IEnumerable<SmartAcademicAdvisor.Core.Models.Especialidad>
+@{
+    ViewData["Title"] = "Especialidades";
+}
+
+<div class="page-header">
+    <div class="header-content">
+        <div>
+            <h2 class="page-title-large">Especialidades</h2>
+            <p class="page-subtitle">Especialidades de Ingeniería en Sistemas Computacionales</p>
+        </div>
+        <a asp-action="Create" class="btn btn-primary"><i class="fas fa-plus"></i> Nueva especialidad</a>
+    </div>
+</div>
+
+<div class="row">
+    @foreach (var e in Model)
+    {
+        <div class="col-md-6 col-xl-4 mb-4">
+            <div class="chart-card h-100 d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h5 class="mb-0">@e.Nombre</h5>
+                    <code>@e.Id</code>
+                </div>
+                <p class="text-muted small flex-grow-1">@e.Descripcion</p>
+                <div class="stat-item"><span class="stat-label"><i class="fas fa-chart-line"></i> Promedio mínimo</span><span class="stat-value">@e.PromedioMinimo.ToString("F0")</span></div>
+                <div class="stat-item"><span class="stat-label"><i class="fas fa-heart"></i> Intereses clave</span><span class="stat-value">@e.InteresesClave.Count</span></div>
+                <div class="stat-item"><span class="stat-label"><i class="fas fa-book"></i> Materias clave</span><span class="stat-value">@e.MateriasClave.Count</span></div>
+                <div class="d-flex flex-wrap gap-2 my-3">
+                    @foreach (var i in e.InteresesClave.Take(3)) { <span class="tag">@i</span> }
+                    @if (e.InteresesClave.Count > 3) { <span class="tag">+@(e.InteresesClave.Count - 3)</span> }
+                </div>
+                <div class="d-flex gap-2">
+                    <a asp-action="Details" asp-route-id="@e.Id" class="btn btn-sm btn-info"><i class="fas fa-eye"></i> Ver</a>
+                    <a asp-action="Edit" asp-route-id="@e.Id" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i> Editar</a>
+                    <a asp-action="Delete" asp-route-id="@e.Id" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@if (!Model.Any())
+{
+    <div class="chart-card text-center py-5"><i class="fas fa-graduation-cap fa-3x text-muted mb-3"></i><p class="text-muted mb-0">No hay especialidades registradas</p></div>
+}

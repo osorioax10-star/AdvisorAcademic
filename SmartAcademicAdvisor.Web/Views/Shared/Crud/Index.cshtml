@@ -1,0 +1,91 @@
+@model SmartAcademicAdvisor.Web.Crud.CrudIndexVm
+@using SmartAcademicAdvisor.Web.Crud
+@using System.Text.Json.Nodes
+@using System.Globalization
+@{
+    var s = Model.Schema;
+    ViewData["Title"] = s.Title;
+
+    string Val(JsonObject o, string key)
+    {
+        var n = o[key];
+        if (n == null) return "";
+        if (n is JsonArray a) return string.Join(", ", a.Select(x => x?.ToString() ?? ""));
+        return n.ToString();
+    }
+    string Lbl(string key, string v) =>
+        Model.Options.TryGetValue(key, out var l) ? (l.FirstOrDefault(x => x.Value == v)?.Label ?? v) : v;
+    bool Num(string v, out double d) => double.TryParse(v, NumberStyles.Float, CultureInfo.InvariantCulture, out d);
+}
+
+<div class="page-header">
+    <div class="header-content">
+        <div>
+            <h2 class="page-title-large">@s.Title</h2>
+            <p class="page-subtitle">@s.Subtitle</p>
+        </div>
+        <a asp-action="Create" class="btn btn-primary"><i class="fas fa-plus"></i> Nuevo @s.Singular</a>
+    </div>
+</div>
+
+<div class="table-card">
+    <div class="d-flex justify-content-between align-items-center mb-3 gap-3">
+        <input id="q" class="form-control" style="max-width:320px" placeholder="Buscar…" autocomplete="off" />
+        <span class="text-muted small"><span id="visibles">@Model.Rows.Count</span> de @Model.Rows.Count</span>
+    </div>
+
+    @if (!Model.Rows.Any())
+    {
+        <div class="text-center py-5"><i class="fas fa-inbox fa-3x text-muted mb-3"></i><p class="text-muted mb-0">Aún no hay registros.</p></div>
+    }
+    else
+    {
+        <table class="data-table" id="tabla">
+            <thead>
+                <tr>
+                    @foreach (var c in s.Cols) { <th>@c.Label</th> }
+                    <th style="width:120px"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var row in Model.Rows)
+                {
+                    var id = JsonFileStore.Str(row, "id");
+                    <tr>
+                        @foreach (var c in s.Cols)
+                        {
+                            var v = Val(row, c.Key);
+                            <td>
+                                @if (c.Kind == ColKind.Mono) { <span class="text-mono">@v</span> }
+                                else if (c.Kind == ColKind.Bool) { <span class="status-badge @(v.ToLowerInvariant() == "true" ? "success" : "")">@(v.ToLowerInvariant() == "true" ? "Activa" : "Inactiva")</span> }
+                                else if (c.Kind == ColKind.Label) { <span class="tag">@Lbl(c.Key, v)</span> }
+                                else if (c.Kind == ColKind.Count) { <span class="text-mono">@((row[c.Key] as JsonArray)?.Count ?? 0)</span> }
+                                else if (c.Kind == ColKind.Money) { <span class="text-mono">@(Num(v, out var m) ? (m == 0 ? "Gratis" : "$" + m.ToString("0.##", CultureInfo.InvariantCulture)) : "—")</span> }
+                                else if (c.Kind == ColKind.Percent) { <span class="text-mono">@(Num(v, out var p) ? (p * 100).ToString("0") + "%" : v)</span> }
+                                else if (c.Kind == ColKind.Pass) { <span class="status-badge @(Num(v, out var g) && g >= 70 ? "success" : "warning")">@(Num(v, out var g2) && g2 >= 70 ? "Aprobada" : "No aprobada")</span> }
+                                else { @v }
+                            </td>
+                        }
+                        <td class="text-end">
+                            <div class="btn-group">
+                                <a asp-action="Edit" asp-route-id="@id" class="btn btn-sm btn-warning" title="Editar"><i class="fas fa-edit"></i></a>
+                                <a asp-action="Delete" asp-route-id="@id" class="btn btn-sm btn-danger" title="Eliminar"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        const q = document.getElementById('q'), filas = document.querySelectorAll('#tabla tbody tr'), vis = document.getElementById('visibles');
+        q.addEventListener('input', () => {
+            const t = q.value.toLowerCase(); let n = 0;
+            filas.forEach(f => { const ok = f.textContent.toLowerCase().includes(t); f.style.display = ok ? '' : 'none'; if (ok) n++; });
+            vis.textContent = n;
+        });
+    </script>
+}

@@ -1,0 +1,128 @@
+@model IEnumerable<SmartAcademicAdvisor.Core.Models.Recomendacion>
+@using System.Collections
+@using System.Globalization
+@{
+    ViewData["Title"] = "Explicación de la recomendación";
+    var materias = ViewBag.Materias as Dictionary<string, string> ?? new();
+    var certs = ViewBag.Certificaciones as Dictionary<string, string> ?? new();
+    string Nom(Dictionary<string, string> d, string id) => d.TryGetValue(id, out var n) ? n : id;
+    string Texto(object? o) => o is IEnumerable e && o is not string
+        ? string.Join(", ", e.Cast<object>().Select(x => x?.ToString() ?? "")) : (o?.ToString() ?? "");
+    double Norm(double v) => v <= 10 ? v * 10 : v;          // el puntaje de promedio puede venir en escala 0-10
+    string W(double v) => Math.Clamp(v, 0, 100).ToString("0.#", CultureInfo.InvariantCulture);
+
+    var ultima = Model.OrderByDescending(r => r.FechaGeneracion).FirstOrDefault();
+    var nombre = (ViewBag.NombreAlumno as string) ?? (string)ViewBag.Matricula;
+}
+
+<div class="page-header">
+    <div class="header-content">
+        <div>
+            <h2 class="page-title-large">@nombre</h2>
+            <p class="page-subtitle">Por qué el motor recomienda lo que recomienda</p>
+        </div>
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Volver</a>
+    </div>
+</div>
+
+@if (ultima == null)
+{
+    <div class="chart-card text-center py-5">
+        <p class="text-muted mb-3">Este alumno todavía no tiene recomendaciones.</p>
+        <a asp-action="Index" class="btn btn-primary">Ir a generar recomendaciones</a>
+    </div>
+}
+else
+{
+    dynamic u = ultima;   // los datos extra (ruta, árbol) se leen sin depender del tipo exacto
+    <div class="row">
+        <div class="col-lg-7">
+            <div class="chart-card mb-4">
+                <small class="text-muted d-block">Especialidad recomendada · @ultima.FechaGeneracion.ToString("dd/MM/yyyy HH:mm")</small>
+                <h3 class="mb-4" style="color:var(--primary)"><i class="fas fa-graduation-cap"></i> @ultima.EspecialidadRecomendada</h3>
+
+                <h6 class="mb-3">Afinidad con cada especialidad</h6>
+                @try
+                {
+                    foreach (dynamic a in ultima.Afinidades.OrderByDescending(x => x.PorcentajeAfinidad))
+                    {
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-1">
+                                <strong>@((string)a.NombreEspecialidad)</strong>
+                                <strong class="text-mono">@(((double)a.PorcentajeAfinidad).ToString("0"))%</strong>
+                            </div>
+                            <div class="progress mb-3"><i style="width:@W((double)a.PorcentajeAfinidad)%"></i></div>
+                            @try
+                            {
+                                <div class="score-row"><span class="text-muted">Promedio</span><div class="progress"><i style="width:@W(Norm((double)a.Detalles.PuntajePromedio))%"></i></div><b>@Norm((double)a.Detalles.PuntajePromedio).ToString("0")</b></div>
+                                <div class="score-row"><span class="text-muted">Intereses</span><div class="progress"><i style="width:@W((double)a.Detalles.PuntajeIntereses)%"></i></div><b>@(((double)a.Detalles.PuntajeIntereses).ToString("0"))</b></div>
+                                <div class="score-row"><span class="text-muted">Materias clave</span><div class="progress"><i style="width:@W((double)a.Detalles.PuntajeMateriasClave)%"></i></div><b>@(((double)a.Detalles.PuntajeMateriasClave).ToString("0"))</b></div>
+                                <div class="score-row"><span class="text-muted">Reglas</span><div class="progress"><i style="width:@W((double)a.Detalles.PuntajeReglas)%"></i></div><b>@(((double)a.Detalles.PuntajeReglas).ToString("0"))</b></div>
+                                var coinc = Texto((object?)a.Detalles.InteresesCoincidentes);
+                                var reglas = Texto((object?)a.Detalles.ReglasSatisfechas);
+                                if (coinc != "") { <p class="small text-muted mb-1"><i class="fas fa-heart"></i> Intereses que coinciden: @coinc</p> }
+                                if (reglas != "") { <p class="small text-muted mb-0"><i class="fas fa-cogs"></i> Reglas satisfechas: @reglas</p> }
+                            }
+                            catch { }
+                        </div>
+                    }
+                }
+                catch { <p class="text-muted">No hay detalle de afinidad disponible.</p> }
+            </div>
+
+            <div class="chart-card">
+                <h6 class="mb-3"><i class="fas fa-project-diagram text-primary"></i> Árbol de inferencia</h6>
+                @{
+                    object? arbol = null;
+                    try { arbol = (object?)u.ArbolExplicacion; } catch { }
+                }
+                @if (arbol != null)
+                {
+                    <ul class="tree root">@await Html.PartialAsync("_ArbolNodo", arbol)</ul>
+                }
+                else
+                {
+                    <p class="text-muted mb-0">Esta recomendación no incluye árbol de explicación.</p>
+                }
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="chart-card mb-4">
+                <h6 class="mb-3"><i class="fas fa-book text-primary"></i> Materias sugeridas</h6>
+                <div class="d-flex flex-wrap gap-2">
+                    @foreach (var m in ultima.MateriasRecomendadas) { <span class="tag">@Nom(materias, m)</span> }
+                    @if (!ultima.MateriasRecomendadas.Any()) { <span class="text-muted">Sin materias sugeridas</span> }
+                </div>
+            </div>
+
+            <div class="chart-card mb-4">
+                <h6 class="mb-3"><i class="fas fa-certificate text-primary"></i> Certificaciones sugeridas</h6>
+                <div class="d-flex flex-wrap gap-2">
+                    @foreach (var c in ultima.CertificacionesRecomendadas) { <span class="status-badge warning">@Nom(certs, c)</span> }
+                    @if (!ultima.CertificacionesRecomendadas.Any()) { <span class="text-muted">Sin certificaciones sugeridas</span> }
+                </div>
+            </div>
+
+            @try
+            {
+                var ruta = (object?)u.RutaSugerida;
+                if (ruta != null)
+                {
+                    <div class="chart-card">
+                        <h6 class="mb-3"><i class="fas fa-route text-primary"></i> Ruta sugerida</h6>
+                        @foreach (dynamic s in u.RutaSugerida.Semestres)
+                        {
+                            <div class="stat-item">
+                                <span><strong>Semestre @s.Numero</strong><br /><small class="text-muted">@(string.Join(", ", ((IEnumerable)s.MateriasIds).Cast<object>().Select(x => Nom(materias, x.ToString() ?? ""))))</small></span>
+                                <span class="stat-value">@s.CreditosSemestre cr</span>
+                            </div>
+                        }
+                        <p class="small text-muted mt-3 mb-0">@u.RutaSugerida.CreditosTotales créditos · ≈ @u.RutaSugerida.TiempoEstimadoSemestres semestres</p>
+                    </div>
+                }
+            }
+            catch { }
+        </div>
+    </div>
+}

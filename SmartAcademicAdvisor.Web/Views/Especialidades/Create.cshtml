@@ -1,0 +1,23 @@
+@model SmartAcademicAdvisor.Web.Models.EspecialidadFormModel
+@{
+    ViewData["Title"] = "Nueva especialidad";
+}
+
+<section class="form-hero">
+    <div class="fh-ico"><i class="fas fa-graduation-cap"></i></div>
+    <div><h2>Nueva especialidad</h2><p>Define sus requisitos y cómo se calcula la afinidad</p></div>
+    <a asp-action="Index" class="btn-hero back"><i class="fas fa-arrow-left"></i> Volver</a>
+</section>
+
+<form asp-action="Create" method="post">
+    <partial name="_EspecialidadForm" model="Model" />
+    <div class="sticky-actions">
+        <span class="hint"><i class="fas fa-circle-info"></i> Los cambios se guardan en especialidades.json</span>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Guardar especialidad</button>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

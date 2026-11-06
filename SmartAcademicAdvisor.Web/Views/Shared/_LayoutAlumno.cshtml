@@ -1,0 +1,78 @@
+@{
+    var accion = ViewContext.RouteData.Values["action"]?.ToString() ?? "Index";
+    string Act(string c) => string.Equals(accion, c, StringComparison.OrdinalIgnoreCase) ? "active" : "";
+    var Alu = ViewBag.Alumno as SmartAcademicAdvisor.Web.Perfiles.PortalData;
+    var Primer = Alu == null ? "Alumno" : Alu.Nombre.Split(' ')[0];
+    var Ini = Alu == null ? "A" : string.Concat(Alu.Nombre.Split(' ', StringSplitOptions.RemoveEmptyEntries).Take(2).Select(p => char.ToUpper(p[0])));
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] · Smart Academic Advisor</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/dashboard-modern.css" asp-append-version="true" />
+</head>
+<body>
+<div class="dashboard-wrapper">
+    <aside class="sidebar" id="sidebar">
+        <a class="brand" asp-controller="Portal" asp-action="Index">
+            <div class="brand-tile">&lt;/&gt;</div>
+            <div><div class="brand-name">Academic Advisor</div><div class="brand-sub">PORTAL ALUMNO</div></div>
+        </a>
+        <nav class="sidebar-nav">
+            <div class="nav-group">Mi espacio</div>
+            <a class="nav-item @Act("Index")" asp-controller="Portal" asp-action="Index"><i class="fas fa-th-large"></i>Mi panel</a>
+            <a class="nav-item @Act("Asesor")" asp-controller="Portal" asp-action="Asesor"><i class="fas fa-lightbulb"></i>Mi asesor</a>
+            <a class="nav-item @Act("Plan")" asp-controller="Portal" asp-action="Plan"><i class="fas fa-route"></i>Mi plan de estudios</a>
+            <a class="nav-item @Act("Historial")" asp-controller="Portal" asp-action="Historial"><i class="fas fa-history"></i>Mi historial</a>
+            <div class="nav-group">Próximamente</div>
+            <a class="nav-item soon" href="#"><i class="fas fa-calendar-check"></i>Tutorías<span class="soon-tag">pronto</span></a>
+        </nav>
+        <div class="mascot"><partial name="_Mascota" /></div>
+        <div class="side-user">
+            <div class="av">@Ini</div>
+            <div><b>@Primer</b><small>Semestre @(Alu?.Semestre)</small></div>
+            <a asp-controller="Acceso" asp-action="Salir" title="Cambiar de perfil"><i class="fas fa-right-left"></i></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <div class="d-flex align-items-center gap-3">
+                <button class="btn-icon d-lg-none" id="menuToggle" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
+                <div class="page-title-section"><h1>@ViewData["Title"]</h1></div>
+            </div>
+            <div class="top-bar-actions">
+                <div class="date-range-picker"><i class="fas fa-calendar"></i>@DateTime.Now.ToString("dd MMM yyyy")</div>
+            </div>
+        </header>
+
+        <div class="content-area">
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success"><i class="fas fa-check-circle"></i><span>@TempData["Success"]</span></div>
+            }
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger"><i class="fas fa-times-circle"></i><span>@TempData["Error"]</span></div>
+            }
+            @RenderBody()
+        </div>
+
+        <footer class="status-bar">
+            <span class="ok">tu asesor académico está en línea</span>
+            <span class="push">Smart Academic Advisor v1.0</span>
+        </footer>
+    </main>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script>$('#menuToggle').on('click', function () { $('#sidebar').toggleClass('active'); });</script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

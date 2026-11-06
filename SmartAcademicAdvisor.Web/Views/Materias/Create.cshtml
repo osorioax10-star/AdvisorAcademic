@@ -1,0 +1,23 @@
+@model SmartAcademicAdvisor.Web.Models.MateriaFormModel
+@{
+    ViewData["Title"] = "Nueva materia";
+}
+
+<section class="form-hero">
+    <div class="fh-ico"><i class="fas fa-book-medical"></i></div>
+    <div><h2>Nueva materia</h2><p>Agrégala al plan de estudios con sus prerrequisitos</p></div>
+    <a asp-action="Index" class="btn-hero back"><i class="fas fa-arrow-left"></i> Volver</a>
+</section>
+
+<form asp-action="Create" method="post">
+    <partial name="_MateriaForm" model="Model" />
+    <div class="sticky-actions">
+        <span class="hint"><i class="fas fa-circle-info"></i> Los cambios se guardan en materias.json</span>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Guardar materia</button>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

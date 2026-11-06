@@ -1,0 +1,33 @@
+@model object
+@using System.Collections
+@{
+    dynamic n = Model;
+    string texto = "", justificacion = "";
+    bool esHecho = false;
+    var hijos = new List<object>();
+
+    try
+    {
+        texto = (string)n.Nodo.Predicado + "(" + string.Join(", ", ((IEnumerable)n.Nodo.Argumentos).Cast<object>()) + ")";
+        esHecho = (bool)n.Nodo.EsHecho;
+    }
+    catch
+    {
+        try { texto = (string)n.Predicado + "(" + string.Join(", ", ((IEnumerable)n.Argumentos).Cast<object>()) + ")"; } catch { }
+    }
+    try { justificacion = (string?)n.Justificacion ?? ""; } catch { }
+    try { foreach (object h in (IEnumerable)n.Hijos) hijos.Add(h); } catch { }
+}
+<li class="tree-node">
+    <div class="tree-label @(esHecho ? "fact" : "rule")">
+        <i class="fas @(esHecho ? "fa-check-circle" : "fa-project-diagram")"></i>
+        <code>@texto</code>
+        @if (justificacion != "") { <span class="text-muted small">@justificacion</span> }
+    </div>
+    @if (hijos.Count > 0)
+    {
+        <ul class="tree">
+            @foreach (var h in hijos) { @await Html.PartialAsync("_ArbolNodo", h) }
+        </ul>
+    }
+</li>

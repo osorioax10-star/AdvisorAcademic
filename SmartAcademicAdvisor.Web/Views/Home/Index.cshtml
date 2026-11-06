@@ -1,0 +1,259 @@
+@model SmartAcademicAdvisor.Web.Models.DashboardViewModel
+@using System.Globalization
+@{
+    Layout = "_LayoutDashboard";
+    ViewData["Title"] = "Dashboard";
+
+    var inv = CultureInfo.InvariantCulture;
+    var especialidades = Model.EspecialidadesPopulares ?? new();
+    var intereses = Model.TopIntereses ?? new();
+    var topEsp = especialidades.FirstOrDefault();
+    var topInt = intereses.FirstOrDefault();
+    var json = (ViewBag.DashJson as string) ?? "{}";
+}
+
+<section class="hero">
+    <div>
+        <span class="hero-eyebrow"><i class="fas fa-circle"></i> sistema experto en línea</span>
+        <h2>Panel de control académico</h2>
+        <p>@Model.TotalAlumnos alumnos · @Model.TotalEspecialidades especialidades · @Model.TotalMaterias materias en el plan de estudios</p>
+    </div>
+    <div class="hero-actions">
+        <a asp-controller="Recomendaciones" asp-action="Index" class="btn-hero primary"><i class="fas fa-brain"></i> Generar recomendaciones</a>
+        <a asp-controller="Alumnos" asp-action="Create" class="btn-hero"><i class="fas fa-user-plus"></i> Nuevo alumno</a>
+    </div>
+</section>
+
+<div class="kpi-row">
+    <button type="button" class="kpi" style="--c:#10B981" data-panel="promedio">
+        <div class="kpi-top"><span class="kpi-label">Promedio general</span><span class="kpi-ico"><i class="fas fa-star"></i></span></div>
+        <div class="kpi-value" data-to="@Model.PromedioGeneral.ToString("0.0", inv)" data-dec="1">0</div>
+        <div class="kpi-sub">escala de 0 a 100</div>
+        <div class="kpi-hint">Ver distribución <i class="fas fa-chevron-down"></i></div>
+    </button>
+    <button type="button" class="kpi" style="--c:#22D3EE" data-panel="aprobacion">
+        <div class="kpi-top"><span class="kpi-label">Aprobación</span><span class="kpi-ico"><i class="fas fa-check-circle"></i></span></div>
+        <div class="kpi-value" data-to="@Model.PorcentajeAprobacion.ToString("0.#", inv)" data-dec="1" data-suf="%">0</div>
+        <div class="kpi-sub">@Model.AlumnosAprobados aprobados · @Model.AlumnosReprobados en riesgo</div>
+        <div class="kpi-hint">Ver por semestre <i class="fas fa-chevron-down"></i></div>
+    </button>
+    <button type="button" class="kpi" style="--c:#8B5CF6" data-panel="alumnos">
+        <div class="kpi-top"><span class="kpi-label">Alumnos</span><span class="kpi-ico"><i class="fas fa-users"></i></span></div>
+        <div class="kpi-value" data-to="@Model.TotalAlumnos">0</div>
+        <div class="kpi-sub">@Model.AlumnosActivos activos</div>
+        <div class="kpi-hint">Ver perfil <i class="fas fa-chevron-down"></i></div>
+    </button>
+    <button type="button" class="kpi" style="--c:#F97316" data-panel="especialidades">
+        <div class="kpi-top"><span class="kpi-label">Especialidades</span><span class="kpi-ico"><i class="fas fa-graduation-cap"></i></span></div>
+        <div class="kpi-value" data-to="@Model.TotalEspecialidades">0</div>
+        <div class="kpi-sub">@(topEsp?.Nombre ?? "Sin asignaciones aún")</div>
+        <div class="kpi-hint">Ver comparativa <i class="fas fa-chevron-down"></i></div>
+    </button>
+    <button type="button" class="kpi" style="--c:#F43F5E" data-panel="materias">
+        <div class="kpi-top"><span class="kpi-label">Materias</span><span class="kpi-ico"><i class="fas fa-book"></i></span></div>
+        <div class="kpi-value" data-to="@Model.TotalMaterias">0</div>
+        <div class="kpi-sub">plan de estudios</div>
+        <div class="kpi-hint">Ver carga <i class="fas fa-chevron-down"></i></div>
+    </button>
+</div>
+
+<!-- ============ Paneles que se despliegan ============ -->
+<section class="kpi-panel" id="p-promedio" style="--c:#10B981">
+    <div class="panel-head"><h3>Rendimiento académico</h3><span>¿Cómo se distribuyen las calificaciones?</span></div>
+    <div class="panel-grid">
+        <div class="pc w4"><h4>Distribución de promedios</h4><div class="sub">Alumnos por rango de calificación</div><div class="cv"><canvas id="c-hist"></canvas></div></div>
+        <div class="pc w8"><h4>Evolución por semestre</h4><div class="sub">Promedio (línea) y número de alumnos (barras)</div><div class="cv"><canvas id="c-semprom"></canvas></div></div>
+        <div class="pc w12"><h4>Estadística descriptiva</h4><div class="mini-stats" id="stats"></div></div>
+    </div>
+</section>
+
+<section class="kpi-panel" id="p-aprobacion" style="--c:#22D3EE">
+    <div class="panel-head"><h3>Aprobación</h3><span>Aprobatoria: promedio de 70 o más</span></div>
+    <div class="panel-grid">
+        <div class="pc w4"><h4>Índice de aprobación</h4><div class="sub">Aprobados contra alumnos en riesgo</div><div class="cv"><canvas id="c-aprob"></canvas></div></div>
+        <div class="pc w8"><h4>Aprobados y reprobados por semestre</h4><div class="sub">Barras apiladas</div><div class="cv"><canvas id="c-aprobsem"></canvas></div></div>
+        <div class="pc w12"><h4>Alumnos con menor promedio</h4><div class="sub">Prioridad para tutorías</div><div id="riesgo"></div></div>
+    </div>
+</section>
+
+<section class="kpi-panel" id="p-alumnos" style="--c:#8B5CF6">
+    <div class="panel-head"><h3>Población estudiantil</h3><span>Estatus y relación entre semestre y promedio</span></div>
+    <div class="panel-grid">
+        <div class="pc w4"><h4>Estatus</h4><div class="sub">Activos, egresados, bajas</div><div class="cv"><canvas id="c-estatus"></canvas></div></div>
+        <div class="pc w8"><h4>Semestre contra promedio</h4><div class="sub">Cada punto es un alumno</div><div class="cv"><canvas id="c-disp"></canvas></div></div>
+        <div class="pc w12"><h4>Mejores promedios</h4><div id="mejores"></div></div>
+    </div>
+</section>
+
+<section class="kpi-panel" id="p-especialidades" style="--c:#F97316">
+    <div class="panel-head"><h3>Especialidades</h3><span>Cómo pondera el motor cada una</span></div>
+    <div class="panel-grid">
+        <div class="pc w8"><h4>Pesos de afinidad</h4><div class="sub">Promedio, intereses, materias clave y reglas (% )</div><div class="cv"><canvas id="c-pesos"></canvas></div></div>
+        <div class="pc w4"><h4>Alumnos por especialidad</h4><div class="sub">Según la última recomendación</div><div class="cv"><canvas id="c-espdist"></canvas></div></div>
+        <div class="pc w12"><h4>Exigencia y demanda</h4><div class="sub">Promedio mínimo requerido (barras) y alumnos asignados (línea)</div><div class="cv"><canvas id="c-espmin"></canvas></div></div>
+    </div>
+</section>
+
+<section class="kpi-panel" id="p-materias" style="--c:#F43F5E">
+    <div class="panel-head"><h3>Plan de estudios</h3><span>Materias, créditos y áreas de conocimiento</span></div>
+    <div class="panel-grid">
+        <div class="pc w4"><h4>Materias por área</h4><div class="sub">Distribución del catálogo</div><div class="cv"><canvas id="c-matarea"></canvas></div></div>
+        <div class="pc w8"><h4>Carga por semestre</h4><div class="sub">Créditos (barras) y materias optativas (línea)</div><div class="cv"><canvas id="c-matsem"></canvas></div></div>
+    </div>
+</section>
+
+<!-- ============ Siempre visible ============ -->
+<div class="panel-grid" style="margin-bottom:18px">
+    <div class="pc w8">
+        <h4>Mapa de calor: intereses por semestre</h4>
+        <div class="sub">Cuántos alumnos de cada semestre declaran cada interés</div>
+        <div class="scroll-x"><div id="heat" class="heat"></div></div>
+    </div>
+    <aside class="terminal w4" style="grid-column: span 4">
+        <div class="terminal-bar"><b></b><b></b><b></b><em>asesor@dashboard</em></div>
+        <div class="terminal-body">
+            <p><span class="t-prompt">$</span> analizar --dashboard</p>
+            <p class="t-ok">✔ @Model.AlumnosActivos de @Model.TotalAlumnos alumnos activos</p>
+            @if (topEsp != null) { <p class="t-ok">✔ Más alumnos: @topEsp.Nombre (@topEsp.CantidadAlumnos)</p> }
+            @if (topInt != null) { <p class="t-ok">✔ Interés líder: @topInt.Interes (@topInt.Porcentaje.ToString("0")%)</p> }
+            @if (Model.AlumnosReprobados > 0) { <p class="t-warn">⚠ @Model.AlumnosReprobados alumnos con promedio menor a 70</p> }
+            else { <p class="t-ok">✔ Ningún alumno bajo 70</p> }
+            <p class="t-dim">&nbsp;</p>
+            <p><span class="t-prompt">$</span> sugerir --accion</p>
+            <p>Ejecuta el motor en <a class="t-prompt" asp-controller="Recomendaciones" asp-action="Index">Recomendaciones</a>.</p>
+            <p><span class="t-prompt">$</span> <span class="t-cursor"></span></p>
+        </div>
+    </aside>
+    <div class="pc w12"><h4>Perfil de intereses</h4><div class="sub">Frecuencia de cada interés entre los alumnos</div><div class="cv" style="height:300px"><canvas id="c-radar"></canvas></div></div>
+</div>
+
+@section Scripts {
+<script>
+(function () {
+    const D = @Html.Raw(json);
+    const C = { verde: '#10B981', cian: '#22D3EE', morado: '#8B5CF6', naranja: '#F97316', rosa: '#F43F5E', ambar: '#F59E0B', indigo: '#6366F1' };
+    const PAL = [C.verde, C.morado, C.naranja, C.cian, C.rosa, C.ambar, C.indigo];
+    const css = getComputedStyle(document.documentElement);
+    const GRID = 'rgba(120,134,170,.18)';
+    Chart.defaults.font.family = css.getPropertyValue('--font-ui').trim() || 'sans-serif';
+    Chart.defaults.color = css.getPropertyValue('--gray-500').trim() || '#5C6784';
+    Chart.defaults.plugins.legend.labels.usePointStyle = true;
+    Chart.defaults.plugins.tooltip.padding = 10;
+    const $ = id => document.getElementById(id);
+    const base = { responsive: true, maintainAspectRatio: false };
+    const sem = D.porSemestre || [];
+    const vacio = (id, msg) => { $(id).parentElement.innerHTML = '<p class="text-muted mb-0">' + msg + '</p>'; };
+    const grad = (cv, color) => { const g = cv.getContext('2d').createLinearGradient(0, 0, 0, 260); g.addColorStop(0, color + '66'); g.addColorStop(1, color + '05'); return g; };
+    const lista = (id, filas) => {
+        $(id).innerHTML = filas.map((f, i) =>
+            '<div class="rank"><span class="n">' + String(i + 1).padStart(2, '0') + '</span><span class="who"><b>' + f.nombre + '</b><small>' + f.id + ' · semestre ' + f.semestre + '</small></span><span class="val">' + f.promedio.toFixed(1) + '</span></div>').join('');
+    };
+
+    const builders = {
+        promedio() {
+            new Chart($('c-hist'), { type: 'bar',
+                data: { labels: D.histograma.map(h => h.etiqueta), datasets: [{ data: D.histograma.map(h => h.cantidad), backgroundColor: [C.rosa, C.naranja, C.ambar, C.cian, C.verde], borderRadius: 8 }] },
+                options: { ...base, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false } }, y: { beginAtZero: true, ticks: { precision: 0 }, grid: { color: GRID } } } } });
+            const cv = $('c-semprom');
+            new Chart(cv, { type: 'bar',
+                data: { labels: sem.map(s => 'Sem ' + s.semestre), datasets: [
+                    { type: 'bar', label: 'Alumnos', data: sem.map(s => s.alumnos), backgroundColor: C.morado + '55', borderRadius: 6, yAxisID: 'y1', order: 2 },
+                    { type: 'line', label: 'Promedio', data: sem.map(s => s.promedio), borderColor: C.verde, backgroundColor: grad(cv, C.verde), fill: true, tension: .35, pointRadius: 4, pointBackgroundColor: C.verde, yAxisID: 'y', order: 1 }] },
+                options: { ...base, interaction: { mode: 'index', intersect: false }, scales: {
+                    x: { grid: { display: false } },
+                    y: { min: 60, max: 100, grid: { color: GRID }, title: { display: true, text: 'Promedio' } },
+                    y1: { position: 'right', beginAtZero: true, grid: { display: false }, ticks: { precision: 0 }, title: { display: true, text: 'Alumnos' } } } } });
+            const v = D.dispersion.map(d => d.y).sort((a, b) => a - b), n = v.length || 1;
+            const mean = v.reduce((a, b) => a + b, 0) / n;
+            const med = n % 2 ? v[(n - 1) / 2] : (v[n / 2 - 1] + v[n / 2]) / 2;
+            const sd = Math.sqrt(v.reduce((a, b) => a + (b - mean) ** 2, 0) / n);
+            $('stats').innerHTML = [['Mínimo', v[0]], ['Mediana', med], ['Máximo', v[n - 1]], ['Desv. estándar', sd]]
+                .map(([k, x]) => '<div class="mini"><small>' + k + '</small><b>' + (x || 0).toFixed(1) + '</b></div>').join('');
+        },
+        aprobacion() {
+            new Chart($('c-aprob'), { type: 'doughnut',
+                data: { labels: ['Aprobados', 'En riesgo'], datasets: [{ data: [D.kpi.aprobados, D.kpi.reprobados], backgroundColor: [C.verde, C.rosa], borderWidth: 0, hoverOffset: 8 }] },
+                options: { ...base, cutout: '70%', plugins: { legend: { position: 'bottom' } } } });
+            new Chart($('c-aprobsem'), { type: 'bar',
+                data: { labels: sem.map(s => 'Sem ' + s.semestre), datasets: [
+                    { label: 'Aprobados', data: sem.map(s => s.aprobados), backgroundColor: C.verde, borderRadius: 6 },
+                    { label: 'Reprobados', data: sem.map(s => s.reprobados), backgroundColor: C.rosa, borderRadius: 6 }] },
+                options: { ...base, scales: { x: { stacked: true, grid: { display: false } }, y: { stacked: true, beginAtZero: true, ticks: { precision: 0 }, grid: { color: GRID } } } } });
+            lista('riesgo', D.enRiesgo);
+        },
+        alumnos() {
+            new Chart($('c-estatus'), { type: 'doughnut',
+                data: { labels: D.porEstatus.map(e => e.etiqueta), datasets: [{ data: D.porEstatus.map(e => e.cantidad), backgroundColor: PAL, borderWidth: 0, hoverOffset: 8 }] },
+                options: { ...base, cutout: '62%', plugins: { legend: { position: 'bottom' } } } });
+            const grupos = {};
+            D.dispersion.forEach((d, i) => { (grupos[d.estatus] = grupos[d.estatus] || []).push({ x: d.x + ((i * 37) % 100 / 100 - .5) * .6, y: d.y, n: d.nombre }); });
+            new Chart($('c-disp'), { type: 'scatter',
+                data: { datasets: Object.keys(grupos).map((k, i) => ({ label: k, data: grupos[k], backgroundColor: PAL[i % PAL.length] + 'CC', pointRadius: 5, pointHoverRadius: 8 })) },
+                options: { ...base, plugins: { tooltip: { callbacks: { label: c => c.raw.n + ' · ' + c.raw.y.toFixed(1) } } },
+                    scales: { x: { min: .5, max: 10.5, ticks: { stepSize: 1 }, title: { display: true, text: 'Semestre' }, grid: { color: GRID } }, y: { min: 50, max: 100, title: { display: true, text: 'Promedio' }, grid: { color: GRID } } } } });
+            lista('mejores', D.mejores);
+        },
+        especialidades() {
+            const es = D.especialidades || [];
+            const nombres = es.map(e => e.nombre), nombresPesos = ['Promedio', 'Intereses', 'Materias clave', 'Reglas'];
+            new Chart($('c-pesos'), { type: 'bar',
+                data: { labels: nombres, datasets: nombresPesos.map((n, k) => ({ label: n, data: es.map(e => Math.round(e.pesos[k] * 100)), backgroundColor: [C.verde, C.morado, C.naranja, C.cian][k], borderRadius: 4 })) },
+                options: { ...base, indexAxis: 'y', scales: { x: { stacked: true, max: 100, grid: { color: GRID } }, y: { stacked: true, grid: { display: false } } } } });
+            if (!D.distribucion.length) vacio('c-espdist', 'Genera recomendaciones para ver esta distribución.');
+            else new Chart($('c-espdist'), { type: 'doughnut',
+                data: { labels: D.distribucion.map(d => d.nombre), datasets: [{ data: D.distribucion.map(d => d.cantidad), backgroundColor: PAL, borderWidth: 0, hoverOffset: 8 }] },
+                options: { ...base, cutout: '58%', plugins: { legend: { position: 'bottom', labels: { boxWidth: 8 } } } } });
+            new Chart($('c-espmin'), { type: 'bar',
+                data: { labels: nombres, datasets: [
+                    { type: 'bar', label: 'Promedio mínimo', data: es.map(e => e.promedioMinimo), backgroundColor: C.naranja + 'CC', borderRadius: 6, yAxisID: 'y' },
+                    { type: 'line', label: 'Alumnos asignados', data: es.map(e => e.alumnos), borderColor: C.morado, backgroundColor: C.morado, tension: .3, pointRadius: 5, yAxisID: 'y1' }] },
+                options: { ...base, scales: { x: { grid: { display: false } }, y: { min: 60, max: 100, grid: { color: GRID } }, y1: { position: 'right', beginAtZero: true, ticks: { precision: 0 }, grid: { display: false } } } } });
+        },
+        materias() {
+            new Chart($('c-matarea'), { type: 'doughnut',
+                data: { labels: D.materiasArea.map(m => m.area), datasets: [{ data: D.materiasArea.map(m => m.cantidad), backgroundColor: PAL, borderWidth: 0, hoverOffset: 8 }] },
+                options: { ...base, cutout: '58%', plugins: { legend: { position: 'bottom', labels: { boxWidth: 8 } } } } });
+            const ms = D.materiasSemestre;
+            new Chart($('c-matsem'), { type: 'bar',
+                data: { labels: ms.map(m => 'Sem ' + m.semestre), datasets: [
+                    { type: 'bar', label: 'Créditos', data: ms.map(m => m.creditos), backgroundColor: C.rosa + 'CC', borderRadius: 6, yAxisID: 'y' },
+                    { type: 'line', label: 'Optativas', data: ms.map(m => m.optativas), borderColor: C.cian, backgroundColor: C.cian, tension: .3, pointRadius: 5, yAxisID: 'y1' }] },
+                options: { ...base, scales: { x: { grid: { display: false } }, y: { beginAtZero: true, grid: { color: GRID } }, y1: { position: 'right', beginAtZero: true, ticks: { precision: 0 }, grid: { display: false } } } } });
+        }
+    };
+
+    // ----- Siempre visibles: mapa de calor y radar -----
+    (function heat() {
+        const h = D.calor, max = Math.max(1, ...h.valores.flat());
+        const box = $('heat'); box.style.gridTemplateColumns = '60px repeat(' + h.intereses.length + ', 1fr)';
+        let html = '<span></span>' + h.intereses.map(i => '<span class="h">' + i + '</span>').join('');
+        h.semestres.forEach((s, r) => {
+            html += '<span class="h">Sem ' + s + '</span>' + h.valores[r].map((v, c) =>
+                '<span class="c" title="' + h.intereses[c] + ' · semestre ' + s + ': ' + v + '" style="background:rgba(16,185,129,' + (v ? 0.12 + 0.78 * v / max : 0.04) + ')">' + (v || '') + '</span>').join('');
+        });
+        box.innerHTML = html;
+    })();
+    new Chart($('c-radar'), { type: 'radar',
+        data: { labels: D.intereses.map(i => i.etiqueta), datasets: [{ label: 'Alumnos', data: D.intereses.map(i => i.cantidad), borderColor: C.morado, backgroundColor: C.morado + '33', pointBackgroundColor: C.verde, borderWidth: 2 }] },
+        options: { ...base, plugins: { legend: { display: false } }, scales: { r: { beginAtZero: true, grid: { color: GRID }, angleLines: { color: GRID }, ticks: { precision: 0, backdropColor: 'transparent' } } } } });
+
+    // ----- KPI desplegables -----
+    const tiles = document.querySelectorAll('.kpi'), panels = document.querySelectorAll('.kpi-panel'), built = {};
+    function show(key) {
+        tiles.forEach(t => t.classList.toggle('active', t.dataset.panel === key));
+        panels.forEach(p => p.classList.toggle('active', p.id === 'p-' + key));
+        if (!built[key] && builders[key]) { builders[key](); built[key] = true; }
+        history.replaceState(null, '', '#' + key);
+    }
+    tiles.forEach(t => t.addEventListener('click', () => show(t.dataset.panel)));
+    const inicial = (location.hash || '').slice(1);
+    show(inicial in builders ? inicial : 'promedio');
+
+    // ----- Contadores animados -----
+    document.querySelectorAll('[data-to]').forEach(n => {
+        const to = parseFloat(n.dataset.to), dec = parseInt(n.dataset.dec || '0'), suf = n.dataset.suf || '', t0 = performance.now();
+        (function paso(t) { const k = Math.min(1, (t - t0) / 900); n.textContent = (to * (1 - Math.pow(1 - k, 3))).toFixed(dec) + suf; if (k < 1) requestAnimationFrame(paso); })(t0);
+    });
+})();
+</script>
+}

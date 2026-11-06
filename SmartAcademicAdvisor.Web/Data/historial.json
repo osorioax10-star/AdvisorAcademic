@@ -1,0 +1,5411 @@
+[
+  {
+    "id": "HIST-001",
+    "alumnoId": "ALU-001",
+    "materiaId": "MAT-001",
+    "calificacion": 95.0,
+    "estatus": 0,
+    "periodo": "2022-2",
+    "fechaRegistro": "2023-01-15T00:00:00"
+  },
+  {
+    "id": "HIST-002",
+    "alumnoId": "ALU-001",
+    "materiaId": "MAT-002",
+    "calificacion": 93.0,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-20T00:00:00"
+  },
+  {
+    "id": "HIST-003",
+    "alumnoId": "ALU-001",
+    "materiaId": "MAT-003",
+    "calificacion": 91.0,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2024-01-10T00:00:00"
+  },
+  {
+    "id": "HIST-004",
+    "alumnoId": "ALU-001",
+    "materiaId": "MAT-008",
+    "calificacion": 94.5,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2025-01-15T00:00:00"
+  },
+  {
+    "id": "HIST-005",
+    "alumnoId": "ALU-001",
+    "materiaId": "MAT-012",
+    "calificacion": 92.0,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-006",
+    "alumnoId": "ALU-002",
+    "materiaId": "MAT-001",
+    "calificacion": 82.0,
+    "estatus": 0,
+    "periodo": "2022-2",
+    "fechaRegistro": "2023-01-15T00:00:00"
+  },
+  {
+    "id": "HIST-007",
+    "alumnoId": "ALU-002",
+    "materiaId": "MAT-004",
+    "calificacion": 88.0,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2024-01-10T00:00:00"
+  },
+  {
+    "id": "HIST-008",
+    "alumnoId": "ALU-002",
+    "materiaId": "MAT-007",
+    "calificacion": 90.0,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-009",
+    "alumnoId": "ALU-002",
+    "materiaId": "MAT-011",
+    "calificacion": 85.0,
+    "estatus": 2,
+    "periodo": "2024-2",
+    "fechaRegistro": "2025-01-15T00:00:00"
+  },
+  {
+    "id": "HIST-010",
+    "alumnoId": "ALU-003",
+    "materiaId": "MAT-005",
+    "calificacion": 91.0,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-20T00:00:00"
+  },
+  {
+    "id": "HIST-011",
+    "alumnoId": "ALU-003",
+    "materiaId": "MAT-009",
+    "calificacion": 89.5,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2025-01-15T00:00:00"
+  },
+  {
+    "id": "HIST-012",
+    "alumnoId": "ALU-003",
+    "materiaId": "MAT-013",
+    "calificacion": 87.0,
+    "estatus": 2,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-013",
+    "alumnoId": "ALU-004",
+    "materiaId": "MAT-001",
+    "calificacion": 81.5,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-014",
+    "alumnoId": "ALU-004",
+    "materiaId": "MAT-002",
+    "calificacion": 79.4,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-015",
+    "alumnoId": "ALU-004",
+    "materiaId": "MAT-003",
+    "calificacion": 74.8,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-016",
+    "alumnoId": "ALU-004",
+    "materiaId": "MAT-004",
+    "calificacion": 77.4,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-017",
+    "alumnoId": "ALU-005",
+    "materiaId": "MAT-001",
+    "calificacion": 95.3,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-018",
+    "alumnoId": "ALU-005",
+    "materiaId": "MAT-002",
+    "calificacion": 95.5,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-019",
+    "alumnoId": "ALU-005",
+    "materiaId": "MAT-003",
+    "calificacion": 92.1,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-020",
+    "alumnoId": "ALU-005",
+    "materiaId": "MAT-004",
+    "calificacion": 91.2,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-021",
+    "alumnoId": "ALU-005",
+    "materiaId": "MAT-005",
+    "calificacion": 84.7,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-022",
+    "alumnoId": "ALU-005",
+    "materiaId": "MAT-006",
+    "calificacion": 91.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-023",
+    "alumnoId": "ALU-005",
+    "materiaId": "MAT-012",
+    "calificacion": 91.2,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-024",
+    "alumnoId": "ALU-005",
+    "materiaId": "MAT-007",
+    "calificacion": 90.8,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-025",
+    "alumnoId": "ALU-005",
+    "materiaId": "MAT-011",
+    "calificacion": 92.4,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-026",
+    "alumnoId": "ALU-006",
+    "materiaId": "MAT-001",
+    "calificacion": 89.6,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-027",
+    "alumnoId": "ALU-006",
+    "materiaId": "MAT-002",
+    "calificacion": 84.3,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-028",
+    "alumnoId": "ALU-006",
+    "materiaId": "MAT-003",
+    "calificacion": 78.5,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-029",
+    "alumnoId": "ALU-006",
+    "materiaId": "MAT-004",
+    "calificacion": 82.1,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-030",
+    "alumnoId": "ALU-006",
+    "materiaId": "MAT-005",
+    "calificacion": 89.9,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-031",
+    "alumnoId": "ALU-006",
+    "materiaId": "MAT-006",
+    "calificacion": 85.7,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-032",
+    "alumnoId": "ALU-006",
+    "materiaId": "MAT-012",
+    "calificacion": 79.8,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-033",
+    "alumnoId": "ALU-007",
+    "materiaId": "MAT-001",
+    "calificacion": 88.7,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-034",
+    "alumnoId": "ALU-007",
+    "materiaId": "MAT-002",
+    "calificacion": 95.6,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-035",
+    "alumnoId": "ALU-008",
+    "materiaId": "MAT-001",
+    "calificacion": 87.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-036",
+    "alumnoId": "ALU-008",
+    "materiaId": "MAT-002",
+    "calificacion": 92.7,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-037",
+    "alumnoId": "ALU-008",
+    "materiaId": "MAT-003",
+    "calificacion": 95.5,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-038",
+    "alumnoId": "ALU-008",
+    "materiaId": "MAT-004",
+    "calificacion": 95.5,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-039",
+    "alumnoId": "ALU-009",
+    "materiaId": "MAT-001",
+    "calificacion": 78.2,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-040",
+    "alumnoId": "ALU-009",
+    "materiaId": "MAT-002",
+    "calificacion": 80.8,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-041",
+    "alumnoId": "ALU-009",
+    "materiaId": "MAT-003",
+    "calificacion": 78.4,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-042",
+    "alumnoId": "ALU-009",
+    "materiaId": "MAT-004",
+    "calificacion": 81.0,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-043",
+    "alumnoId": "ALU-009",
+    "materiaId": "MAT-005",
+    "calificacion": 73.1,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-044",
+    "alumnoId": "ALU-009",
+    "materiaId": "MAT-006",
+    "calificacion": 71.4,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-045",
+    "alumnoId": "ALU-009",
+    "materiaId": "MAT-012",
+    "calificacion": 78.8,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-046",
+    "alumnoId": "ALU-009",
+    "materiaId": "MAT-007",
+    "calificacion": 71.7,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-047",
+    "alumnoId": "ALU-009",
+    "materiaId": "MAT-011",
+    "calificacion": 75.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-048",
+    "alumnoId": "ALU-009",
+    "materiaId": "MAT-008",
+    "calificacion": 79.2,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-049",
+    "alumnoId": "ALU-010",
+    "materiaId": "MAT-001",
+    "calificacion": 84.1,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-050",
+    "alumnoId": "ALU-010",
+    "materiaId": "MAT-002",
+    "calificacion": 85.4,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-051",
+    "alumnoId": "ALU-011",
+    "materiaId": "MAT-001",
+    "calificacion": 78.5,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-052",
+    "alumnoId": "ALU-011",
+    "materiaId": "MAT-002",
+    "calificacion": 80.1,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-053",
+    "alumnoId": "ALU-011",
+    "materiaId": "MAT-003",
+    "calificacion": 79.2,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-054",
+    "alumnoId": "ALU-011",
+    "materiaId": "MAT-004",
+    "calificacion": 86.2,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-055",
+    "alumnoId": "ALU-011",
+    "materiaId": "MAT-005",
+    "calificacion": 84.9,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-056",
+    "alumnoId": "ALU-011",
+    "materiaId": "MAT-006",
+    "calificacion": 88.7,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-057",
+    "alumnoId": "ALU-011",
+    "materiaId": "MAT-012",
+    "calificacion": 80.5,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-058",
+    "alumnoId": "ALU-011",
+    "materiaId": "MAT-007",
+    "calificacion": 80.4,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-059",
+    "alumnoId": "ALU-011",
+    "materiaId": "MAT-011",
+    "calificacion": 79.5,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-060",
+    "alumnoId": "ALU-011",
+    "materiaId": "MAT-008",
+    "calificacion": 73.5,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-061",
+    "alumnoId": "ALU-012",
+    "materiaId": "MAT-001",
+    "calificacion": 73.8,
+    "estatus": 0,
+    "periodo": "2022-2",
+    "fechaRegistro": "2022-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-062",
+    "alumnoId": "ALU-012",
+    "materiaId": "MAT-002",
+    "calificacion": 73.7,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-063",
+    "alumnoId": "ALU-013",
+    "materiaId": "MAT-001",
+    "calificacion": 79.7,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-064",
+    "alumnoId": "ALU-014",
+    "materiaId": "MAT-001",
+    "calificacion": 82.8,
+    "estatus": 0,
+    "periodo": "2022-2",
+    "fechaRegistro": "2022-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-065",
+    "alumnoId": "ALU-014",
+    "materiaId": "MAT-002",
+    "calificacion": 91.3,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-066",
+    "alumnoId": "ALU-014",
+    "materiaId": "MAT-003",
+    "calificacion": 87.6,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-067",
+    "alumnoId": "ALU-014",
+    "materiaId": "MAT-004",
+    "calificacion": 84.4,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-068",
+    "alumnoId": "ALU-014",
+    "materiaId": "MAT-005",
+    "calificacion": 90.2,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-069",
+    "alumnoId": "ALU-014",
+    "materiaId": "MAT-006",
+    "calificacion": 88.0,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-070",
+    "alumnoId": "ALU-014",
+    "materiaId": "MAT-012",
+    "calificacion": 85.9,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-071",
+    "alumnoId": "ALU-014",
+    "materiaId": "MAT-007",
+    "calificacion": 96.1,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-072",
+    "alumnoId": "ALU-014",
+    "materiaId": "MAT-011",
+    "calificacion": 81.6,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-073",
+    "alumnoId": "ALU-014",
+    "materiaId": "MAT-008",
+    "calificacion": 85.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-074",
+    "alumnoId": "ALU-016",
+    "materiaId": "MAT-001",
+    "calificacion": 83.3,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-075",
+    "alumnoId": "ALU-016",
+    "materiaId": "MAT-002",
+    "calificacion": 89.6,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-076",
+    "alumnoId": "ALU-016",
+    "materiaId": "MAT-003",
+    "calificacion": 85.7,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-077",
+    "alumnoId": "ALU-016",
+    "materiaId": "MAT-004",
+    "calificacion": 85.5,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-078",
+    "alumnoId": "ALU-016",
+    "materiaId": "MAT-005",
+    "calificacion": 94.1,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-079",
+    "alumnoId": "ALU-016",
+    "materiaId": "MAT-006",
+    "calificacion": 87.2,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-080",
+    "alumnoId": "ALU-016",
+    "materiaId": "MAT-012",
+    "calificacion": 88.9,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-081",
+    "alumnoId": "ALU-017",
+    "materiaId": "MAT-001",
+    "calificacion": 83.4,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-082",
+    "alumnoId": "ALU-017",
+    "materiaId": "MAT-002",
+    "calificacion": 85.9,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-083",
+    "alumnoId": "ALU-017",
+    "materiaId": "MAT-003",
+    "calificacion": 91.8,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-084",
+    "alumnoId": "ALU-017",
+    "materiaId": "MAT-004",
+    "calificacion": 76.8,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-085",
+    "alumnoId": "ALU-017",
+    "materiaId": "MAT-005",
+    "calificacion": 83.5,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-086",
+    "alumnoId": "ALU-017",
+    "materiaId": "MAT-006",
+    "calificacion": 82.8,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-087",
+    "alumnoId": "ALU-017",
+    "materiaId": "MAT-012",
+    "calificacion": 84.5,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-088",
+    "alumnoId": "ALU-017",
+    "materiaId": "MAT-007",
+    "calificacion": 83.3,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-089",
+    "alumnoId": "ALU-017",
+    "materiaId": "MAT-011",
+    "calificacion": 79.0,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-090",
+    "alumnoId": "ALU-017",
+    "materiaId": "MAT-008",
+    "calificacion": 84.2,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-091",
+    "alumnoId": "ALU-017",
+    "materiaId": "MAT-014",
+    "calificacion": 80.5,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-092",
+    "alumnoId": "ALU-017",
+    "materiaId": "MAT-015",
+    "calificacion": 89.9,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-093",
+    "alumnoId": "ALU-020",
+    "materiaId": "MAT-001",
+    "calificacion": 74.4,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-094",
+    "alumnoId": "ALU-021",
+    "materiaId": "MAT-001",
+    "calificacion": 88.8,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-095",
+    "alumnoId": "ALU-021",
+    "materiaId": "MAT-002",
+    "calificacion": 83.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-096",
+    "alumnoId": "ALU-021",
+    "materiaId": "MAT-003",
+    "calificacion": 87.8,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-097",
+    "alumnoId": "ALU-021",
+    "materiaId": "MAT-004",
+    "calificacion": 86.4,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-098",
+    "alumnoId": "ALU-022",
+    "materiaId": "MAT-001",
+    "calificacion": 80.5,
+    "estatus": 0,
+    "periodo": "2022-2",
+    "fechaRegistro": "2022-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-099",
+    "alumnoId": "ALU-022",
+    "materiaId": "MAT-002",
+    "calificacion": 82.3,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-100",
+    "alumnoId": "ALU-022",
+    "materiaId": "MAT-003",
+    "calificacion": 77.7,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-101",
+    "alumnoId": "ALU-022",
+    "materiaId": "MAT-004",
+    "calificacion": 84.3,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-102",
+    "alumnoId": "ALU-022",
+    "materiaId": "MAT-005",
+    "calificacion": 80.1,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-103",
+    "alumnoId": "ALU-022",
+    "materiaId": "MAT-006",
+    "calificacion": 78.0,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-104",
+    "alumnoId": "ALU-022",
+    "materiaId": "MAT-012",
+    "calificacion": 80.2,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-105",
+    "alumnoId": "ALU-022",
+    "materiaId": "MAT-007",
+    "calificacion": 84.5,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-106",
+    "alumnoId": "ALU-022",
+    "materiaId": "MAT-011",
+    "calificacion": 81.2,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-107",
+    "alumnoId": "ALU-022",
+    "materiaId": "MAT-008",
+    "calificacion": 71.5,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-108",
+    "alumnoId": "ALU-022",
+    "materiaId": "MAT-014",
+    "calificacion": 80.4,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-109",
+    "alumnoId": "ALU-022",
+    "materiaId": "MAT-015",
+    "calificacion": 82.3,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-110",
+    "alumnoId": "ALU-024",
+    "materiaId": "MAT-001",
+    "calificacion": 92.2,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-111",
+    "alumnoId": "ALU-024",
+    "materiaId": "MAT-002",
+    "calificacion": 98.0,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-112",
+    "alumnoId": "ALU-024",
+    "materiaId": "MAT-003",
+    "calificacion": 90.5,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-113",
+    "alumnoId": "ALU-024",
+    "materiaId": "MAT-004",
+    "calificacion": 94.2,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-114",
+    "alumnoId": "ALU-024",
+    "materiaId": "MAT-005",
+    "calificacion": 93.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-115",
+    "alumnoId": "ALU-024",
+    "materiaId": "MAT-006",
+    "calificacion": 95.6,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-116",
+    "alumnoId": "ALU-024",
+    "materiaId": "MAT-012",
+    "calificacion": 97.5,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-117",
+    "alumnoId": "ALU-024",
+    "materiaId": "MAT-007",
+    "calificacion": 94.5,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-118",
+    "alumnoId": "ALU-024",
+    "materiaId": "MAT-011",
+    "calificacion": 100,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-119",
+    "alumnoId": "ALU-025",
+    "materiaId": "MAT-001",
+    "calificacion": 100,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-120",
+    "alumnoId": "ALU-025",
+    "materiaId": "MAT-002",
+    "calificacion": 99.1,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-121",
+    "alumnoId": "ALU-025",
+    "materiaId": "MAT-003",
+    "calificacion": 90.2,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-122",
+    "alumnoId": "ALU-025",
+    "materiaId": "MAT-004",
+    "calificacion": 100,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-123",
+    "alumnoId": "ALU-026",
+    "materiaId": "MAT-001",
+    "calificacion": 73.8,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-124",
+    "alumnoId": "ALU-027",
+    "materiaId": "MAT-001",
+    "calificacion": 93.2,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-125",
+    "alumnoId": "ALU-027",
+    "materiaId": "MAT-002",
+    "calificacion": 89.3,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-126",
+    "alumnoId": "ALU-027",
+    "materiaId": "MAT-003",
+    "calificacion": 90.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-127",
+    "alumnoId": "ALU-027",
+    "materiaId": "MAT-004",
+    "calificacion": 97.2,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-128",
+    "alumnoId": "ALU-027",
+    "materiaId": "MAT-005",
+    "calificacion": 94.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-129",
+    "alumnoId": "ALU-027",
+    "materiaId": "MAT-006",
+    "calificacion": 92.3,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-130",
+    "alumnoId": "ALU-027",
+    "materiaId": "MAT-012",
+    "calificacion": 91.1,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-131",
+    "alumnoId": "ALU-027",
+    "materiaId": "MAT-007",
+    "calificacion": 95.6,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-132",
+    "alumnoId": "ALU-027",
+    "materiaId": "MAT-011",
+    "calificacion": 94.3,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-133",
+    "alumnoId": "ALU-028",
+    "materiaId": "MAT-001",
+    "calificacion": 79.5,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-134",
+    "alumnoId": "ALU-028",
+    "materiaId": "MAT-002",
+    "calificacion": 92.5,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-135",
+    "alumnoId": "ALU-029",
+    "materiaId": "MAT-001",
+    "calificacion": 96.8,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-136",
+    "alumnoId": "ALU-029",
+    "materiaId": "MAT-002",
+    "calificacion": 94.4,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-137",
+    "alumnoId": "ALU-030",
+    "materiaId": "MAT-001",
+    "calificacion": 98.5,
+    "estatus": 0,
+    "periodo": "2022-1",
+    "fechaRegistro": "2022-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-138",
+    "alumnoId": "ALU-030",
+    "materiaId": "MAT-002",
+    "calificacion": 88.6,
+    "estatus": 0,
+    "periodo": "2022-2",
+    "fechaRegistro": "2022-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-139",
+    "alumnoId": "ALU-030",
+    "materiaId": "MAT-003",
+    "calificacion": 94.8,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-140",
+    "alumnoId": "ALU-030",
+    "materiaId": "MAT-004",
+    "calificacion": 92.1,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-141",
+    "alumnoId": "ALU-030",
+    "materiaId": "MAT-005",
+    "calificacion": 94.6,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-142",
+    "alumnoId": "ALU-030",
+    "materiaId": "MAT-006",
+    "calificacion": 100,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-143",
+    "alumnoId": "ALU-030",
+    "materiaId": "MAT-012",
+    "calificacion": 89.4,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-144",
+    "alumnoId": "ALU-030",
+    "materiaId": "MAT-007",
+    "calificacion": 93.9,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-145",
+    "alumnoId": "ALU-030",
+    "materiaId": "MAT-011",
+    "calificacion": 92.9,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-146",
+    "alumnoId": "ALU-030",
+    "materiaId": "MAT-008",
+    "calificacion": 92.6,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-147",
+    "alumnoId": "ALU-030",
+    "materiaId": "MAT-014",
+    "calificacion": 90.8,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-148",
+    "alumnoId": "ALU-030",
+    "materiaId": "MAT-015",
+    "calificacion": 91.5,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-149",
+    "alumnoId": "ALU-031",
+    "materiaId": "MAT-001",
+    "calificacion": 89.5,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-150",
+    "alumnoId": "ALU-031",
+    "materiaId": "MAT-002",
+    "calificacion": 89.3,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-151",
+    "alumnoId": "ALU-031",
+    "materiaId": "MAT-003",
+    "calificacion": 90.6,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-152",
+    "alumnoId": "ALU-031",
+    "materiaId": "MAT-004",
+    "calificacion": 90.7,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-153",
+    "alumnoId": "ALU-032",
+    "materiaId": "MAT-001",
+    "calificacion": 80.3,
+    "estatus": 0,
+    "periodo": "2022-2",
+    "fechaRegistro": "2022-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-154",
+    "alumnoId": "ALU-032",
+    "materiaId": "MAT-002",
+    "calificacion": 76.9,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-155",
+    "alumnoId": "ALU-032",
+    "materiaId": "MAT-003",
+    "calificacion": 81.8,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-156",
+    "alumnoId": "ALU-032",
+    "materiaId": "MAT-004",
+    "calificacion": 78.7,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-157",
+    "alumnoId": "ALU-032",
+    "materiaId": "MAT-005",
+    "calificacion": 83.7,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-158",
+    "alumnoId": "ALU-032",
+    "materiaId": "MAT-006",
+    "calificacion": 81.7,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-159",
+    "alumnoId": "ALU-032",
+    "materiaId": "MAT-012",
+    "calificacion": 79.0,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-160",
+    "alumnoId": "ALU-032",
+    "materiaId": "MAT-007",
+    "calificacion": 78.0,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-161",
+    "alumnoId": "ALU-032",
+    "materiaId": "MAT-011",
+    "calificacion": 86.5,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-162",
+    "alumnoId": "ALU-032",
+    "materiaId": "MAT-008",
+    "calificacion": 79.9,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-163",
+    "alumnoId": "ALU-032",
+    "materiaId": "MAT-016",
+    "calificacion": 72.6,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-164",
+    "alumnoId": "ALU-033",
+    "materiaId": "MAT-001",
+    "calificacion": 72.7,
+    "estatus": 0,
+    "periodo": "2022-2",
+    "fechaRegistro": "2022-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-165",
+    "alumnoId": "ALU-033",
+    "materiaId": "MAT-002",
+    "calificacion": 80.2,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-166",
+    "alumnoId": "ALU-033",
+    "materiaId": "MAT-003",
+    "calificacion": 75.7,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-167",
+    "alumnoId": "ALU-033",
+    "materiaId": "MAT-004",
+    "calificacion": 81.0,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-168",
+    "alumnoId": "ALU-033",
+    "materiaId": "MAT-005",
+    "calificacion": 74.8,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-169",
+    "alumnoId": "ALU-033",
+    "materiaId": "MAT-006",
+    "calificacion": 77.0,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-170",
+    "alumnoId": "ALU-033",
+    "materiaId": "MAT-012",
+    "calificacion": 75.4,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-171",
+    "alumnoId": "ALU-033",
+    "materiaId": "MAT-007",
+    "calificacion": 75.1,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-172",
+    "alumnoId": "ALU-033",
+    "materiaId": "MAT-010",
+    "calificacion": 78.8,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-173",
+    "alumnoId": "ALU-033",
+    "materiaId": "MAT-011",
+    "calificacion": 76.5,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-174",
+    "alumnoId": "ALU-033",
+    "materiaId": "MAT-008",
+    "calificacion": 73.8,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-175",
+    "alumnoId": "ALU-034",
+    "materiaId": "MAT-001",
+    "calificacion": 71.9,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-176",
+    "alumnoId": "ALU-034",
+    "materiaId": "MAT-002",
+    "calificacion": 81.7,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-177",
+    "alumnoId": "ALU-034",
+    "materiaId": "MAT-003",
+    "calificacion": 77.9,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-178",
+    "alumnoId": "ALU-034",
+    "materiaId": "MAT-004",
+    "calificacion": 74.9,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-179",
+    "alumnoId": "ALU-034",
+    "materiaId": "MAT-005",
+    "calificacion": 72.1,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-180",
+    "alumnoId": "ALU-034",
+    "materiaId": "MAT-006",
+    "calificacion": 79.5,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-181",
+    "alumnoId": "ALU-034",
+    "materiaId": "MAT-012",
+    "calificacion": 77.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-182",
+    "alumnoId": "ALU-034",
+    "materiaId": "MAT-007",
+    "calificacion": 75.1,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-183",
+    "alumnoId": "ALU-034",
+    "materiaId": "MAT-011",
+    "calificacion": 73.9,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-184",
+    "alumnoId": "ALU-035",
+    "materiaId": "MAT-001",
+    "calificacion": 85.7,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-185",
+    "alumnoId": "ALU-035",
+    "materiaId": "MAT-002",
+    "calificacion": 85.0,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-186",
+    "alumnoId": "ALU-035",
+    "materiaId": "MAT-003",
+    "calificacion": 89.4,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-187",
+    "alumnoId": "ALU-035",
+    "materiaId": "MAT-004",
+    "calificacion": 89.4,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-188",
+    "alumnoId": "ALU-035",
+    "materiaId": "MAT-005",
+    "calificacion": 82.9,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-189",
+    "alumnoId": "ALU-035",
+    "materiaId": "MAT-006",
+    "calificacion": 90.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-190",
+    "alumnoId": "ALU-035",
+    "materiaId": "MAT-012",
+    "calificacion": 87.5,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-191",
+    "alumnoId": "ALU-035",
+    "materiaId": "MAT-007",
+    "calificacion": 90.7,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-192",
+    "alumnoId": "ALU-035",
+    "materiaId": "MAT-011",
+    "calificacion": 88.5,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-193",
+    "alumnoId": "ALU-035",
+    "materiaId": "MAT-008",
+    "calificacion": 87.9,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-194",
+    "alumnoId": "ALU-035",
+    "materiaId": "MAT-009",
+    "calificacion": 92.5,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-195",
+    "alumnoId": "ALU-036",
+    "materiaId": "MAT-001",
+    "calificacion": 71.2,
+    "estatus": 0,
+    "periodo": "2022-2",
+    "fechaRegistro": "2022-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-196",
+    "alumnoId": "ALU-036",
+    "materiaId": "MAT-002",
+    "calificacion": 76.0,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-197",
+    "alumnoId": "ALU-036",
+    "materiaId": "MAT-003",
+    "calificacion": 79.6,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-198",
+    "alumnoId": "ALU-036",
+    "materiaId": "MAT-004",
+    "calificacion": 74.0,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-199",
+    "alumnoId": "ALU-036",
+    "materiaId": "MAT-005",
+    "calificacion": 71.3,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-200",
+    "alumnoId": "ALU-036",
+    "materiaId": "MAT-006",
+    "calificacion": 73.7,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-201",
+    "alumnoId": "ALU-036",
+    "materiaId": "MAT-012",
+    "calificacion": 77.2,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-202",
+    "alumnoId": "ALU-036",
+    "materiaId": "MAT-007",
+    "calificacion": 74.9,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-203",
+    "alumnoId": "ALU-036",
+    "materiaId": "MAT-011",
+    "calificacion": 78.0,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-204",
+    "alumnoId": "ALU-036",
+    "materiaId": "MAT-008",
+    "calificacion": 70.3,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-205",
+    "alumnoId": "ALU-036",
+    "materiaId": "MAT-015",
+    "calificacion": 79.2,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-206",
+    "alumnoId": "ALU-037",
+    "materiaId": "MAT-001",
+    "calificacion": 72.2,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-207",
+    "alumnoId": "ALU-037",
+    "materiaId": "MAT-002",
+    "calificacion": 74.8,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-208",
+    "alumnoId": "ALU-038",
+    "materiaId": "MAT-001",
+    "calificacion": 93.8,
+    "estatus": 0,
+    "periodo": "2022-1",
+    "fechaRegistro": "2022-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-209",
+    "alumnoId": "ALU-038",
+    "materiaId": "MAT-002",
+    "calificacion": 82.4,
+    "estatus": 0,
+    "periodo": "2022-2",
+    "fechaRegistro": "2022-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-210",
+    "alumnoId": "ALU-038",
+    "materiaId": "MAT-003",
+    "calificacion": 83.9,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-211",
+    "alumnoId": "ALU-038",
+    "materiaId": "MAT-004",
+    "calificacion": 84.9,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-212",
+    "alumnoId": "ALU-038",
+    "materiaId": "MAT-005",
+    "calificacion": 83.4,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-213",
+    "alumnoId": "ALU-038",
+    "materiaId": "MAT-006",
+    "calificacion": 86.2,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-214",
+    "alumnoId": "ALU-038",
+    "materiaId": "MAT-012",
+    "calificacion": 82.1,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-215",
+    "alumnoId": "ALU-038",
+    "materiaId": "MAT-007",
+    "calificacion": 89.4,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-216",
+    "alumnoId": "ALU-038",
+    "materiaId": "MAT-011",
+    "calificacion": 91.9,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-217",
+    "alumnoId": "ALU-038",
+    "materiaId": "MAT-008",
+    "calificacion": 88.6,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-218",
+    "alumnoId": "ALU-039",
+    "materiaId": "MAT-001",
+    "calificacion": 70.6,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-219",
+    "alumnoId": "ALU-040",
+    "materiaId": "MAT-001",
+    "calificacion": 70,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-220",
+    "alumnoId": "ALU-040",
+    "materiaId": "MAT-002",
+    "calificacion": 70.8,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-221",
+    "alumnoId": "ALU-041",
+    "materiaId": "MAT-001",
+    "calificacion": 78.2,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-222",
+    "alumnoId": "ALU-041",
+    "materiaId": "MAT-002",
+    "calificacion": 78.1,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-223",
+    "alumnoId": "ALU-041",
+    "materiaId": "MAT-003",
+    "calificacion": 81.5,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-224",
+    "alumnoId": "ALU-041",
+    "materiaId": "MAT-004",
+    "calificacion": 82.2,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-225",
+    "alumnoId": "ALU-041",
+    "materiaId": "MAT-005",
+    "calificacion": 71.7,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-226",
+    "alumnoId": "ALU-041",
+    "materiaId": "MAT-006",
+    "calificacion": 77.6,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-227",
+    "alumnoId": "ALU-041",
+    "materiaId": "MAT-012",
+    "calificacion": 77.7,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-228",
+    "alumnoId": "ALU-041",
+    "materiaId": "MAT-007",
+    "calificacion": 71.5,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-229",
+    "alumnoId": "ALU-041",
+    "materiaId": "MAT-011",
+    "calificacion": 83.5,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-230",
+    "alumnoId": "ALU-042",
+    "materiaId": "MAT-001",
+    "calificacion": 93.0,
+    "estatus": 0,
+    "periodo": "2022-2",
+    "fechaRegistro": "2022-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-231",
+    "alumnoId": "ALU-042",
+    "materiaId": "MAT-002",
+    "calificacion": 84.0,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-232",
+    "alumnoId": "ALU-042",
+    "materiaId": "MAT-003",
+    "calificacion": 91.8,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-233",
+    "alumnoId": "ALU-042",
+    "materiaId": "MAT-004",
+    "calificacion": 83.6,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-234",
+    "alumnoId": "ALU-042",
+    "materiaId": "MAT-005",
+    "calificacion": 86.9,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-235",
+    "alumnoId": "ALU-042",
+    "materiaId": "MAT-006",
+    "calificacion": 86.7,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-236",
+    "alumnoId": "ALU-042",
+    "materiaId": "MAT-012",
+    "calificacion": 92.5,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-237",
+    "alumnoId": "ALU-042",
+    "materiaId": "MAT-007",
+    "calificacion": 86.2,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-238",
+    "alumnoId": "ALU-042",
+    "materiaId": "MAT-011",
+    "calificacion": 88.6,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-239",
+    "alumnoId": "ALU-042",
+    "materiaId": "MAT-008",
+    "calificacion": 87.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-240",
+    "alumnoId": "ALU-042",
+    "materiaId": "MAT-015",
+    "calificacion": 84.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-241",
+    "alumnoId": "ALU-043",
+    "materiaId": "MAT-001",
+    "calificacion": 82.4,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-242",
+    "alumnoId": "ALU-043",
+    "materiaId": "MAT-002",
+    "calificacion": 82.4,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-243",
+    "alumnoId": "ALU-043",
+    "materiaId": "MAT-003",
+    "calificacion": 84.7,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-244",
+    "alumnoId": "ALU-043",
+    "materiaId": "MAT-004",
+    "calificacion": 82.1,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-245",
+    "alumnoId": "ALU-043",
+    "materiaId": "MAT-005",
+    "calificacion": 80.0,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-246",
+    "alumnoId": "ALU-043",
+    "materiaId": "MAT-006",
+    "calificacion": 81.8,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-247",
+    "alumnoId": "ALU-043",
+    "materiaId": "MAT-012",
+    "calificacion": 78.4,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-248",
+    "alumnoId": "ALU-043",
+    "materiaId": "MAT-007",
+    "calificacion": 89.8,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-249",
+    "alumnoId": "ALU-043",
+    "materiaId": "MAT-011",
+    "calificacion": 90.2,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-250",
+    "alumnoId": "ALU-043",
+    "materiaId": "MAT-008",
+    "calificacion": 86.4,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-251",
+    "alumnoId": "ALU-044",
+    "materiaId": "MAT-001",
+    "calificacion": 70.9,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-252",
+    "alumnoId": "ALU-044",
+    "materiaId": "MAT-002",
+    "calificacion": 78.5,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-253",
+    "alumnoId": "ALU-044",
+    "materiaId": "MAT-003",
+    "calificacion": 85.1,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-254",
+    "alumnoId": "ALU-044",
+    "materiaId": "MAT-004",
+    "calificacion": 82.4,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-255",
+    "alumnoId": "ALU-045",
+    "materiaId": "MAT-001",
+    "calificacion": 80.8,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-256",
+    "alumnoId": "ALU-045",
+    "materiaId": "MAT-002",
+    "calificacion": 84.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-257",
+    "alumnoId": "ALU-045",
+    "materiaId": "MAT-003",
+    "calificacion": 88.6,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-258",
+    "alumnoId": "ALU-045",
+    "materiaId": "MAT-004",
+    "calificacion": 81.0,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-259",
+    "alumnoId": "ALU-047",
+    "materiaId": "MAT-001",
+    "calificacion": 75.1,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-260",
+    "alumnoId": "ALU-047",
+    "materiaId": "MAT-002",
+    "calificacion": 84.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-261",
+    "alumnoId": "ALU-047",
+    "materiaId": "MAT-003",
+    "calificacion": 77.6,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-262",
+    "alumnoId": "ALU-047",
+    "materiaId": "MAT-004",
+    "calificacion": 79.9,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-263",
+    "alumnoId": "ALU-048",
+    "materiaId": "MAT-001",
+    "calificacion": 82.2,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-264",
+    "alumnoId": "ALU-048",
+    "materiaId": "MAT-002",
+    "calificacion": 79.3,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-265",
+    "alumnoId": "ALU-048",
+    "materiaId": "MAT-003",
+    "calificacion": 81.3,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-266",
+    "alumnoId": "ALU-048",
+    "materiaId": "MAT-004",
+    "calificacion": 82.2,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-267",
+    "alumnoId": "ALU-048",
+    "materiaId": "MAT-005",
+    "calificacion": 82.8,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-268",
+    "alumnoId": "ALU-048",
+    "materiaId": "MAT-006",
+    "calificacion": 80.9,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-269",
+    "alumnoId": "ALU-048",
+    "materiaId": "MAT-012",
+    "calificacion": 83.4,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-270",
+    "alumnoId": "ALU-049",
+    "materiaId": "MAT-001",
+    "calificacion": 94.5,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-271",
+    "alumnoId": "ALU-049",
+    "materiaId": "MAT-002",
+    "calificacion": 100,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-272",
+    "alumnoId": "ALU-049",
+    "materiaId": "MAT-003",
+    "calificacion": 96.7,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-273",
+    "alumnoId": "ALU-049",
+    "materiaId": "MAT-004",
+    "calificacion": 93.0,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-274",
+    "alumnoId": "ALU-050",
+    "materiaId": "MAT-001",
+    "calificacion": 76.9,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-275",
+    "alumnoId": "ALU-050",
+    "materiaId": "MAT-002",
+    "calificacion": 75.6,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-276",
+    "alumnoId": "ALU-050",
+    "materiaId": "MAT-003",
+    "calificacion": 81.9,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-277",
+    "alumnoId": "ALU-050",
+    "materiaId": "MAT-004",
+    "calificacion": 76.2,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-278",
+    "alumnoId": "ALU-051",
+    "materiaId": "MAT-001",
+    "calificacion": 79.1,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-279",
+    "alumnoId": "ALU-051",
+    "materiaId": "MAT-002",
+    "calificacion": 79.1,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-280",
+    "alumnoId": "ALU-051",
+    "materiaId": "MAT-003",
+    "calificacion": 87.7,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-281",
+    "alumnoId": "ALU-051",
+    "materiaId": "MAT-004",
+    "calificacion": 83.6,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-282",
+    "alumnoId": "ALU-051",
+    "materiaId": "MAT-005",
+    "calificacion": 83.8,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-283",
+    "alumnoId": "ALU-051",
+    "materiaId": "MAT-006",
+    "calificacion": 77.8,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-284",
+    "alumnoId": "ALU-051",
+    "materiaId": "MAT-012",
+    "calificacion": 88.4,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-285",
+    "alumnoId": "ALU-051",
+    "materiaId": "MAT-007",
+    "calificacion": 87.4,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-286",
+    "alumnoId": "ALU-051",
+    "materiaId": "MAT-010",
+    "calificacion": 83.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-287",
+    "alumnoId": "ALU-051",
+    "materiaId": "MAT-011",
+    "calificacion": 80.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-288",
+    "alumnoId": "ALU-051",
+    "materiaId": "MAT-008",
+    "calificacion": 84.0,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-289",
+    "alumnoId": "ALU-052",
+    "materiaId": "MAT-001",
+    "calificacion": 92.1,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-290",
+    "alumnoId": "ALU-052",
+    "materiaId": "MAT-002",
+    "calificacion": 88.7,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-291",
+    "alumnoId": "ALU-052",
+    "materiaId": "MAT-003",
+    "calificacion": 90.1,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-292",
+    "alumnoId": "ALU-052",
+    "materiaId": "MAT-004",
+    "calificacion": 94.2,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-293",
+    "alumnoId": "ALU-052",
+    "materiaId": "MAT-005",
+    "calificacion": 90.5,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-294",
+    "alumnoId": "ALU-052",
+    "materiaId": "MAT-006",
+    "calificacion": 85.0,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-295",
+    "alumnoId": "ALU-052",
+    "materiaId": "MAT-012",
+    "calificacion": 89.3,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-296",
+    "alumnoId": "ALU-052",
+    "materiaId": "MAT-007",
+    "calificacion": 82.7,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-297",
+    "alumnoId": "ALU-052",
+    "materiaId": "MAT-011",
+    "calificacion": 88.2,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-298",
+    "alumnoId": "ALU-052",
+    "materiaId": "MAT-008",
+    "calificacion": 97.7,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-299",
+    "alumnoId": "ALU-052",
+    "materiaId": "MAT-009",
+    "calificacion": 83.1,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-300",
+    "alumnoId": "ALU-053",
+    "materiaId": "MAT-001",
+    "calificacion": 86.3,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-301",
+    "alumnoId": "ALU-053",
+    "materiaId": "MAT-002",
+    "calificacion": 85.5,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-302",
+    "alumnoId": "ALU-053",
+    "materiaId": "MAT-003",
+    "calificacion": 81.6,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-303",
+    "alumnoId": "ALU-053",
+    "materiaId": "MAT-004",
+    "calificacion": 86.8,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-304",
+    "alumnoId": "ALU-053",
+    "materiaId": "MAT-005",
+    "calificacion": 86.8,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-305",
+    "alumnoId": "ALU-053",
+    "materiaId": "MAT-006",
+    "calificacion": 85.8,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-306",
+    "alumnoId": "ALU-053",
+    "materiaId": "MAT-012",
+    "calificacion": 84.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-307",
+    "alumnoId": "ALU-053",
+    "materiaId": "MAT-007",
+    "calificacion": 87.6,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-308",
+    "alumnoId": "ALU-053",
+    "materiaId": "MAT-010",
+    "calificacion": 84.8,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-309",
+    "alumnoId": "ALU-053",
+    "materiaId": "MAT-011",
+    "calificacion": 84.3,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-310",
+    "alumnoId": "ALU-053",
+    "materiaId": "MAT-008",
+    "calificacion": 87.3,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-311",
+    "alumnoId": "ALU-054",
+    "materiaId": "MAT-001",
+    "calificacion": 98.6,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-312",
+    "alumnoId": "ALU-054",
+    "materiaId": "MAT-002",
+    "calificacion": 87.8,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-313",
+    "alumnoId": "ALU-054",
+    "materiaId": "MAT-003",
+    "calificacion": 92.9,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-314",
+    "alumnoId": "ALU-054",
+    "materiaId": "MAT-004",
+    "calificacion": 89.5,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-315",
+    "alumnoId": "ALU-054",
+    "materiaId": "MAT-005",
+    "calificacion": 78.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-316",
+    "alumnoId": "ALU-054",
+    "materiaId": "MAT-006",
+    "calificacion": 92.5,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-317",
+    "alumnoId": "ALU-054",
+    "materiaId": "MAT-012",
+    "calificacion": 85.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-318",
+    "alumnoId": "ALU-054",
+    "materiaId": "MAT-007",
+    "calificacion": 87.3,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-319",
+    "alumnoId": "ALU-054",
+    "materiaId": "MAT-011",
+    "calificacion": 92.4,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-320",
+    "alumnoId": "ALU-055",
+    "materiaId": "MAT-001",
+    "calificacion": 97.2,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-321",
+    "alumnoId": "ALU-055",
+    "materiaId": "MAT-002",
+    "calificacion": 93.2,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-322",
+    "alumnoId": "ALU-055",
+    "materiaId": "MAT-003",
+    "calificacion": 100,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-323",
+    "alumnoId": "ALU-055",
+    "materiaId": "MAT-004",
+    "calificacion": 98.3,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-324",
+    "alumnoId": "ALU-056",
+    "materiaId": "MAT-001",
+    "calificacion": 83.3,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-325",
+    "alumnoId": "ALU-056",
+    "materiaId": "MAT-002",
+    "calificacion": 83.8,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-326",
+    "alumnoId": "ALU-056",
+    "materiaId": "MAT-003",
+    "calificacion": 78.7,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-327",
+    "alumnoId": "ALU-056",
+    "materiaId": "MAT-004",
+    "calificacion": 80.4,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-328",
+    "alumnoId": "ALU-056",
+    "materiaId": "MAT-005",
+    "calificacion": 83.7,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-329",
+    "alumnoId": "ALU-056",
+    "materiaId": "MAT-006",
+    "calificacion": 84.9,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-330",
+    "alumnoId": "ALU-056",
+    "materiaId": "MAT-012",
+    "calificacion": 82.2,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-331",
+    "alumnoId": "ALU-056",
+    "materiaId": "MAT-007",
+    "calificacion": 76.3,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-332",
+    "alumnoId": "ALU-056",
+    "materiaId": "MAT-011",
+    "calificacion": 85.2,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-333",
+    "alumnoId": "ALU-056",
+    "materiaId": "MAT-008",
+    "calificacion": 75.2,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-334",
+    "alumnoId": "ALU-057",
+    "materiaId": "MAT-001",
+    "calificacion": 96.9,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-335",
+    "alumnoId": "ALU-057",
+    "materiaId": "MAT-002",
+    "calificacion": 99.6,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-336",
+    "alumnoId": "ALU-057",
+    "materiaId": "MAT-003",
+    "calificacion": 96.6,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-337",
+    "alumnoId": "ALU-057",
+    "materiaId": "MAT-004",
+    "calificacion": 98.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-338",
+    "alumnoId": "ALU-057",
+    "materiaId": "MAT-005",
+    "calificacion": 87.5,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-339",
+    "alumnoId": "ALU-057",
+    "materiaId": "MAT-006",
+    "calificacion": 93.7,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-340",
+    "alumnoId": "ALU-057",
+    "materiaId": "MAT-012",
+    "calificacion": 96.1,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-341",
+    "alumnoId": "ALU-057",
+    "materiaId": "MAT-007",
+    "calificacion": 92.4,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-342",
+    "alumnoId": "ALU-057",
+    "materiaId": "MAT-011",
+    "calificacion": 95.9,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-343",
+    "alumnoId": "ALU-058",
+    "materiaId": "MAT-001",
+    "calificacion": 100,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-344",
+    "alumnoId": "ALU-058",
+    "materiaId": "MAT-002",
+    "calificacion": 91.6,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-345",
+    "alumnoId": "ALU-059",
+    "materiaId": "MAT-001",
+    "calificacion": 74.6,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-346",
+    "alumnoId": "ALU-059",
+    "materiaId": "MAT-002",
+    "calificacion": 71.9,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-347",
+    "alumnoId": "ALU-059",
+    "materiaId": "MAT-003",
+    "calificacion": 73.7,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-348",
+    "alumnoId": "ALU-059",
+    "materiaId": "MAT-004",
+    "calificacion": 72.0,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-349",
+    "alumnoId": "ALU-059",
+    "materiaId": "MAT-005",
+    "calificacion": 73.2,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-350",
+    "alumnoId": "ALU-059",
+    "materiaId": "MAT-006",
+    "calificacion": 76.9,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-351",
+    "alumnoId": "ALU-059",
+    "materiaId": "MAT-012",
+    "calificacion": 70,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-352",
+    "alumnoId": "ALU-059",
+    "materiaId": "MAT-007",
+    "calificacion": 72.3,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-353",
+    "alumnoId": "ALU-059",
+    "materiaId": "MAT-011",
+    "calificacion": 72.8,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-354",
+    "alumnoId": "ALU-059",
+    "materiaId": "MAT-008",
+    "calificacion": 72.7,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-355",
+    "alumnoId": "ALU-060",
+    "materiaId": "MAT-001",
+    "calificacion": 93.2,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-356",
+    "alumnoId": "ALU-062",
+    "materiaId": "MAT-001",
+    "calificacion": 89.0,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-357",
+    "alumnoId": "ALU-062",
+    "materiaId": "MAT-002",
+    "calificacion": 85.6,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-358",
+    "alumnoId": "ALU-062",
+    "materiaId": "MAT-003",
+    "calificacion": 86.6,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-359",
+    "alumnoId": "ALU-062",
+    "materiaId": "MAT-004",
+    "calificacion": 81.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-360",
+    "alumnoId": "ALU-062",
+    "materiaId": "MAT-005",
+    "calificacion": 81.7,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-361",
+    "alumnoId": "ALU-062",
+    "materiaId": "MAT-006",
+    "calificacion": 84.0,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-362",
+    "alumnoId": "ALU-062",
+    "materiaId": "MAT-012",
+    "calificacion": 75.7,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-363",
+    "alumnoId": "ALU-063",
+    "materiaId": "MAT-001",
+    "calificacion": 89.1,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-364",
+    "alumnoId": "ALU-063",
+    "materiaId": "MAT-002",
+    "calificacion": 84.7,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-365",
+    "alumnoId": "ALU-063",
+    "materiaId": "MAT-003",
+    "calificacion": 87.7,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-366",
+    "alumnoId": "ALU-063",
+    "materiaId": "MAT-004",
+    "calificacion": 80.9,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-367",
+    "alumnoId": "ALU-063",
+    "materiaId": "MAT-005",
+    "calificacion": 86.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-368",
+    "alumnoId": "ALU-063",
+    "materiaId": "MAT-006",
+    "calificacion": 85.4,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-369",
+    "alumnoId": "ALU-063",
+    "materiaId": "MAT-012",
+    "calificacion": 82.3,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-370",
+    "alumnoId": "ALU-063",
+    "materiaId": "MAT-007",
+    "calificacion": 87.1,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-371",
+    "alumnoId": "ALU-063",
+    "materiaId": "MAT-011",
+    "calificacion": 82.2,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-372",
+    "alumnoId": "ALU-063",
+    "materiaId": "MAT-008",
+    "calificacion": 81.2,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-373",
+    "alumnoId": "ALU-064",
+    "materiaId": "MAT-001",
+    "calificacion": 94.1,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-374",
+    "alumnoId": "ALU-064",
+    "materiaId": "MAT-002",
+    "calificacion": 94.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-375",
+    "alumnoId": "ALU-064",
+    "materiaId": "MAT-003",
+    "calificacion": 94.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-376",
+    "alumnoId": "ALU-064",
+    "materiaId": "MAT-004",
+    "calificacion": 100,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-377",
+    "alumnoId": "ALU-064",
+    "materiaId": "MAT-005",
+    "calificacion": 88.2,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-378",
+    "alumnoId": "ALU-064",
+    "materiaId": "MAT-006",
+    "calificacion": 99.6,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-379",
+    "alumnoId": "ALU-064",
+    "materiaId": "MAT-012",
+    "calificacion": 93.0,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-380",
+    "alumnoId": "ALU-065",
+    "materiaId": "MAT-001",
+    "calificacion": 77.9,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-381",
+    "alumnoId": "ALU-065",
+    "materiaId": "MAT-002",
+    "calificacion": 81.9,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-382",
+    "alumnoId": "ALU-065",
+    "materiaId": "MAT-003",
+    "calificacion": 93.4,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-383",
+    "alumnoId": "ALU-065",
+    "materiaId": "MAT-004",
+    "calificacion": 78.7,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-384",
+    "alumnoId": "ALU-065",
+    "materiaId": "MAT-005",
+    "calificacion": 78.1,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-385",
+    "alumnoId": "ALU-065",
+    "materiaId": "MAT-006",
+    "calificacion": 81.3,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-386",
+    "alumnoId": "ALU-065",
+    "materiaId": "MAT-012",
+    "calificacion": 81.9,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-387",
+    "alumnoId": "ALU-065",
+    "materiaId": "MAT-007",
+    "calificacion": 75.1,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-388",
+    "alumnoId": "ALU-065",
+    "materiaId": "MAT-011",
+    "calificacion": 87.8,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-389",
+    "alumnoId": "ALU-065",
+    "materiaId": "MAT-008",
+    "calificacion": 79.6,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-390",
+    "alumnoId": "ALU-066",
+    "materiaId": "MAT-001",
+    "calificacion": 84.1,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-391",
+    "alumnoId": "ALU-066",
+    "materiaId": "MAT-002",
+    "calificacion": 81.0,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-392",
+    "alumnoId": "ALU-066",
+    "materiaId": "MAT-003",
+    "calificacion": 75.1,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-393",
+    "alumnoId": "ALU-066",
+    "materiaId": "MAT-004",
+    "calificacion": 81.9,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-394",
+    "alumnoId": "ALU-066",
+    "materiaId": "MAT-005",
+    "calificacion": 89.2,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-395",
+    "alumnoId": "ALU-066",
+    "materiaId": "MAT-006",
+    "calificacion": 81.0,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-396",
+    "alumnoId": "ALU-066",
+    "materiaId": "MAT-012",
+    "calificacion": 81.3,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-397",
+    "alumnoId": "ALU-066",
+    "materiaId": "MAT-007",
+    "calificacion": 88.7,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-398",
+    "alumnoId": "ALU-066",
+    "materiaId": "MAT-011",
+    "calificacion": 86.7,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-399",
+    "alumnoId": "ALU-067",
+    "materiaId": "MAT-001",
+    "calificacion": 76.6,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-400",
+    "alumnoId": "ALU-067",
+    "materiaId": "MAT-002",
+    "calificacion": 72.0,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-401",
+    "alumnoId": "ALU-067",
+    "materiaId": "MAT-003",
+    "calificacion": 78.8,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-402",
+    "alumnoId": "ALU-067",
+    "materiaId": "MAT-004",
+    "calificacion": 81.8,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-403",
+    "alumnoId": "ALU-067",
+    "materiaId": "MAT-005",
+    "calificacion": 73.9,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-404",
+    "alumnoId": "ALU-067",
+    "materiaId": "MAT-006",
+    "calificacion": 84.1,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-405",
+    "alumnoId": "ALU-067",
+    "materiaId": "MAT-012",
+    "calificacion": 77.3,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-406",
+    "alumnoId": "ALU-067",
+    "materiaId": "MAT-007",
+    "calificacion": 77.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-407",
+    "alumnoId": "ALU-067",
+    "materiaId": "MAT-011",
+    "calificacion": 70.6,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-408",
+    "alumnoId": "ALU-067",
+    "materiaId": "MAT-008",
+    "calificacion": 73.4,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-409",
+    "alumnoId": "ALU-068",
+    "materiaId": "MAT-001",
+    "calificacion": 91.4,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-410",
+    "alumnoId": "ALU-068",
+    "materiaId": "MAT-002",
+    "calificacion": 83.8,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-411",
+    "alumnoId": "ALU-069",
+    "materiaId": "MAT-001",
+    "calificacion": 74.0,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-412",
+    "alumnoId": "ALU-069",
+    "materiaId": "MAT-002",
+    "calificacion": 73.2,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-413",
+    "alumnoId": "ALU-069",
+    "materiaId": "MAT-003",
+    "calificacion": 71.5,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-414",
+    "alumnoId": "ALU-069",
+    "materiaId": "MAT-004",
+    "calificacion": 74.3,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-415",
+    "alumnoId": "ALU-069",
+    "materiaId": "MAT-005",
+    "calificacion": 78.6,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-416",
+    "alumnoId": "ALU-069",
+    "materiaId": "MAT-006",
+    "calificacion": 70.5,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-417",
+    "alumnoId": "ALU-069",
+    "materiaId": "MAT-012",
+    "calificacion": 76.5,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-418",
+    "alumnoId": "ALU-071",
+    "materiaId": "MAT-001",
+    "calificacion": 82.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-419",
+    "alumnoId": "ALU-071",
+    "materiaId": "MAT-002",
+    "calificacion": 79.1,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-420",
+    "alumnoId": "ALU-072",
+    "materiaId": "MAT-001",
+    "calificacion": 82.6,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-421",
+    "alumnoId": "ALU-072",
+    "materiaId": "MAT-002",
+    "calificacion": 80.4,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-422",
+    "alumnoId": "ALU-073",
+    "materiaId": "MAT-001",
+    "calificacion": 86.8,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-423",
+    "alumnoId": "ALU-073",
+    "materiaId": "MAT-002",
+    "calificacion": 81.3,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-424",
+    "alumnoId": "ALU-073",
+    "materiaId": "MAT-003",
+    "calificacion": 79.8,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-425",
+    "alumnoId": "ALU-073",
+    "materiaId": "MAT-004",
+    "calificacion": 89.2,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-426",
+    "alumnoId": "ALU-073",
+    "materiaId": "MAT-005",
+    "calificacion": 83.9,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-427",
+    "alumnoId": "ALU-073",
+    "materiaId": "MAT-006",
+    "calificacion": 81.6,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-428",
+    "alumnoId": "ALU-073",
+    "materiaId": "MAT-012",
+    "calificacion": 81.2,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-429",
+    "alumnoId": "ALU-073",
+    "materiaId": "MAT-007",
+    "calificacion": 80.3,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-430",
+    "alumnoId": "ALU-073",
+    "materiaId": "MAT-011",
+    "calificacion": 85.2,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-431",
+    "alumnoId": "ALU-073",
+    "materiaId": "MAT-008",
+    "calificacion": 82.2,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-432",
+    "alumnoId": "ALU-073",
+    "materiaId": "MAT-015",
+    "calificacion": 82.3,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-433",
+    "alumnoId": "ALU-074",
+    "materiaId": "MAT-001",
+    "calificacion": 83.7,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-434",
+    "alumnoId": "ALU-074",
+    "materiaId": "MAT-002",
+    "calificacion": 93.2,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-435",
+    "alumnoId": "ALU-075",
+    "materiaId": "MAT-001",
+    "calificacion": 75.0,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-436",
+    "alumnoId": "ALU-075",
+    "materiaId": "MAT-002",
+    "calificacion": 70,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-437",
+    "alumnoId": "ALU-075",
+    "materiaId": "MAT-003",
+    "calificacion": 70,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-438",
+    "alumnoId": "ALU-075",
+    "materiaId": "MAT-004",
+    "calificacion": 71.7,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-439",
+    "alumnoId": "ALU-075",
+    "materiaId": "MAT-005",
+    "calificacion": 72.8,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-440",
+    "alumnoId": "ALU-075",
+    "materiaId": "MAT-006",
+    "calificacion": 74.4,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-441",
+    "alumnoId": "ALU-075",
+    "materiaId": "MAT-012",
+    "calificacion": 70,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-442",
+    "alumnoId": "ALU-075",
+    "materiaId": "MAT-007",
+    "calificacion": 70,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-443",
+    "alumnoId": "ALU-075",
+    "materiaId": "MAT-011",
+    "calificacion": 70.7,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-444",
+    "alumnoId": "ALU-075",
+    "materiaId": "MAT-008",
+    "calificacion": 74.0,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-445",
+    "alumnoId": "ALU-077",
+    "materiaId": "MAT-001",
+    "calificacion": 83.0,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-446",
+    "alumnoId": "ALU-077",
+    "materiaId": "MAT-002",
+    "calificacion": 85.5,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-447",
+    "alumnoId": "ALU-077",
+    "materiaId": "MAT-003",
+    "calificacion": 79.2,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-448",
+    "alumnoId": "ALU-077",
+    "materiaId": "MAT-004",
+    "calificacion": 72.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-449",
+    "alumnoId": "ALU-077",
+    "materiaId": "MAT-005",
+    "calificacion": 84.8,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-450",
+    "alumnoId": "ALU-077",
+    "materiaId": "MAT-006",
+    "calificacion": 80.2,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-451",
+    "alumnoId": "ALU-077",
+    "materiaId": "MAT-012",
+    "calificacion": 82.1,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-452",
+    "alumnoId": "ALU-077",
+    "materiaId": "MAT-007",
+    "calificacion": 72.5,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-453",
+    "alumnoId": "ALU-077",
+    "materiaId": "MAT-011",
+    "calificacion": 79.8,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-454",
+    "alumnoId": "ALU-078",
+    "materiaId": "MAT-001",
+    "calificacion": 83.9,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-455",
+    "alumnoId": "ALU-078",
+    "materiaId": "MAT-002",
+    "calificacion": 72.7,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-456",
+    "alumnoId": "ALU-078",
+    "materiaId": "MAT-003",
+    "calificacion": 81.0,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-457",
+    "alumnoId": "ALU-078",
+    "materiaId": "MAT-004",
+    "calificacion": 79.0,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-458",
+    "alumnoId": "ALU-078",
+    "materiaId": "MAT-005",
+    "calificacion": 82.0,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-459",
+    "alumnoId": "ALU-078",
+    "materiaId": "MAT-006",
+    "calificacion": 77.1,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-460",
+    "alumnoId": "ALU-078",
+    "materiaId": "MAT-012",
+    "calificacion": 84.3,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-461",
+    "alumnoId": "ALU-078",
+    "materiaId": "MAT-007",
+    "calificacion": 80.4,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-462",
+    "alumnoId": "ALU-078",
+    "materiaId": "MAT-011",
+    "calificacion": 70.9,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-463",
+    "alumnoId": "ALU-079",
+    "materiaId": "MAT-001",
+    "calificacion": 85.7,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-464",
+    "alumnoId": "ALU-079",
+    "materiaId": "MAT-002",
+    "calificacion": 80.5,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-465",
+    "alumnoId": "ALU-079",
+    "materiaId": "MAT-003",
+    "calificacion": 72.3,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-466",
+    "alumnoId": "ALU-079",
+    "materiaId": "MAT-004",
+    "calificacion": 81.1,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-467",
+    "alumnoId": "ALU-079",
+    "materiaId": "MAT-005",
+    "calificacion": 73.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-468",
+    "alumnoId": "ALU-079",
+    "materiaId": "MAT-006",
+    "calificacion": 82.6,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-469",
+    "alumnoId": "ALU-079",
+    "materiaId": "MAT-012",
+    "calificacion": 81.0,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-470",
+    "alumnoId": "ALU-079",
+    "materiaId": "MAT-007",
+    "calificacion": 81.0,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-471",
+    "alumnoId": "ALU-079",
+    "materiaId": "MAT-011",
+    "calificacion": 80.6,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-472",
+    "alumnoId": "ALU-079",
+    "materiaId": "MAT-008",
+    "calificacion": 85.2,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-473",
+    "alumnoId": "ALU-079",
+    "materiaId": "MAT-014",
+    "calificacion": 80.8,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-474",
+    "alumnoId": "ALU-080",
+    "materiaId": "MAT-001",
+    "calificacion": 83.9,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-475",
+    "alumnoId": "ALU-081",
+    "materiaId": "MAT-001",
+    "calificacion": 74.1,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-476",
+    "alumnoId": "ALU-082",
+    "materiaId": "MAT-001",
+    "calificacion": 78.7,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-477",
+    "alumnoId": "ALU-082",
+    "materiaId": "MAT-002",
+    "calificacion": 79.3,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-478",
+    "alumnoId": "ALU-082",
+    "materiaId": "MAT-003",
+    "calificacion": 83.6,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-479",
+    "alumnoId": "ALU-082",
+    "materiaId": "MAT-004",
+    "calificacion": 75.3,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-480",
+    "alumnoId": "ALU-082",
+    "materiaId": "MAT-005",
+    "calificacion": 80.4,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-481",
+    "alumnoId": "ALU-082",
+    "materiaId": "MAT-006",
+    "calificacion": 79.6,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-482",
+    "alumnoId": "ALU-082",
+    "materiaId": "MAT-012",
+    "calificacion": 82.1,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-483",
+    "alumnoId": "ALU-082",
+    "materiaId": "MAT-007",
+    "calificacion": 81.6,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-484",
+    "alumnoId": "ALU-082",
+    "materiaId": "MAT-011",
+    "calificacion": 80.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-485",
+    "alumnoId": "ALU-082",
+    "materiaId": "MAT-008",
+    "calificacion": 80.7,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-486",
+    "alumnoId": "ALU-082",
+    "materiaId": "MAT-009",
+    "calificacion": 79.1,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-487",
+    "alumnoId": "ALU-083",
+    "materiaId": "MAT-001",
+    "calificacion": 87.6,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-488",
+    "alumnoId": "ALU-083",
+    "materiaId": "MAT-002",
+    "calificacion": 88.3,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-489",
+    "alumnoId": "ALU-083",
+    "materiaId": "MAT-003",
+    "calificacion": 88.4,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-490",
+    "alumnoId": "ALU-083",
+    "materiaId": "MAT-004",
+    "calificacion": 94.2,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-491",
+    "alumnoId": "ALU-083",
+    "materiaId": "MAT-005",
+    "calificacion": 93.1,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-492",
+    "alumnoId": "ALU-083",
+    "materiaId": "MAT-006",
+    "calificacion": 99.2,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-493",
+    "alumnoId": "ALU-083",
+    "materiaId": "MAT-012",
+    "calificacion": 88.3,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-494",
+    "alumnoId": "ALU-084",
+    "materiaId": "MAT-001",
+    "calificacion": 97.8,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-495",
+    "alumnoId": "ALU-084",
+    "materiaId": "MAT-002",
+    "calificacion": 97.6,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-496",
+    "alumnoId": "ALU-084",
+    "materiaId": "MAT-003",
+    "calificacion": 99.7,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-497",
+    "alumnoId": "ALU-084",
+    "materiaId": "MAT-004",
+    "calificacion": 92.1,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-498",
+    "alumnoId": "ALU-084",
+    "materiaId": "MAT-005",
+    "calificacion": 95.4,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-499",
+    "alumnoId": "ALU-084",
+    "materiaId": "MAT-006",
+    "calificacion": 97.4,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-500",
+    "alumnoId": "ALU-084",
+    "materiaId": "MAT-012",
+    "calificacion": 92.6,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-501",
+    "alumnoId": "ALU-085",
+    "materiaId": "MAT-001",
+    "calificacion": 99.0,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-502",
+    "alumnoId": "ALU-085",
+    "materiaId": "MAT-002",
+    "calificacion": 99.8,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-503",
+    "alumnoId": "ALU-086",
+    "materiaId": "MAT-001",
+    "calificacion": 86.0,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-504",
+    "alumnoId": "ALU-086",
+    "materiaId": "MAT-002",
+    "calificacion": 78.3,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-505",
+    "alumnoId": "ALU-086",
+    "materiaId": "MAT-003",
+    "calificacion": 84.2,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-506",
+    "alumnoId": "ALU-086",
+    "materiaId": "MAT-004",
+    "calificacion": 89.6,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-507",
+    "alumnoId": "ALU-086",
+    "materiaId": "MAT-005",
+    "calificacion": 85.3,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-508",
+    "alumnoId": "ALU-086",
+    "materiaId": "MAT-006",
+    "calificacion": 80.6,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-509",
+    "alumnoId": "ALU-086",
+    "materiaId": "MAT-012",
+    "calificacion": 79.8,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-510",
+    "alumnoId": "ALU-087",
+    "materiaId": "MAT-001",
+    "calificacion": 79.1,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-511",
+    "alumnoId": "ALU-087",
+    "materiaId": "MAT-002",
+    "calificacion": 82.1,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-512",
+    "alumnoId": "ALU-087",
+    "materiaId": "MAT-003",
+    "calificacion": 85.4,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-513",
+    "alumnoId": "ALU-087",
+    "materiaId": "MAT-004",
+    "calificacion": 84.8,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-514",
+    "alumnoId": "ALU-087",
+    "materiaId": "MAT-005",
+    "calificacion": 84.4,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-515",
+    "alumnoId": "ALU-087",
+    "materiaId": "MAT-006",
+    "calificacion": 89.3,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-516",
+    "alumnoId": "ALU-087",
+    "materiaId": "MAT-012",
+    "calificacion": 78.5,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-517",
+    "alumnoId": "ALU-087",
+    "materiaId": "MAT-007",
+    "calificacion": 73.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-518",
+    "alumnoId": "ALU-087",
+    "materiaId": "MAT-011",
+    "calificacion": 85.2,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-519",
+    "alumnoId": "ALU-087",
+    "materiaId": "MAT-008",
+    "calificacion": 76.6,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-520",
+    "alumnoId": "ALU-087",
+    "materiaId": "MAT-015",
+    "calificacion": 83.1,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-521",
+    "alumnoId": "ALU-088",
+    "materiaId": "MAT-001",
+    "calificacion": 73.5,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-522",
+    "alumnoId": "ALU-088",
+    "materiaId": "MAT-002",
+    "calificacion": 78.1,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-523",
+    "alumnoId": "ALU-089",
+    "materiaId": "MAT-001",
+    "calificacion": 70.1,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-524",
+    "alumnoId": "ALU-089",
+    "materiaId": "MAT-002",
+    "calificacion": 77.1,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-525",
+    "alumnoId": "ALU-090",
+    "materiaId": "MAT-001",
+    "calificacion": 89.5,
+    "estatus": 0,
+    "periodo": "2022-2",
+    "fechaRegistro": "2022-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-526",
+    "alumnoId": "ALU-090",
+    "materiaId": "MAT-002",
+    "calificacion": 82.1,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-527",
+    "alumnoId": "ALU-090",
+    "materiaId": "MAT-003",
+    "calificacion": 94.5,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-528",
+    "alumnoId": "ALU-090",
+    "materiaId": "MAT-004",
+    "calificacion": 86.8,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-529",
+    "alumnoId": "ALU-090",
+    "materiaId": "MAT-005",
+    "calificacion": 91.6,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-530",
+    "alumnoId": "ALU-090",
+    "materiaId": "MAT-006",
+    "calificacion": 86.4,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-531",
+    "alumnoId": "ALU-090",
+    "materiaId": "MAT-012",
+    "calificacion": 84.7,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-532",
+    "alumnoId": "ALU-090",
+    "materiaId": "MAT-007",
+    "calificacion": 89.0,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-533",
+    "alumnoId": "ALU-090",
+    "materiaId": "MAT-011",
+    "calificacion": 89.5,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-534",
+    "alumnoId": "ALU-090",
+    "materiaId": "MAT-008",
+    "calificacion": 84.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-535",
+    "alumnoId": "ALU-091",
+    "materiaId": "MAT-001",
+    "calificacion": 78.5,
+    "estatus": 0,
+    "periodo": "2022-2",
+    "fechaRegistro": "2022-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-536",
+    "alumnoId": "ALU-091",
+    "materiaId": "MAT-002",
+    "calificacion": 82.1,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-537",
+    "alumnoId": "ALU-091",
+    "materiaId": "MAT-003",
+    "calificacion": 74.2,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-538",
+    "alumnoId": "ALU-091",
+    "materiaId": "MAT-004",
+    "calificacion": 81.5,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-539",
+    "alumnoId": "ALU-091",
+    "materiaId": "MAT-005",
+    "calificacion": 83.6,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-540",
+    "alumnoId": "ALU-091",
+    "materiaId": "MAT-006",
+    "calificacion": 82.3,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-541",
+    "alumnoId": "ALU-091",
+    "materiaId": "MAT-012",
+    "calificacion": 70.7,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-542",
+    "alumnoId": "ALU-091",
+    "materiaId": "MAT-007",
+    "calificacion": 75.1,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-543",
+    "alumnoId": "ALU-091",
+    "materiaId": "MAT-011",
+    "calificacion": 83.5,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-544",
+    "alumnoId": "ALU-091",
+    "materiaId": "MAT-008",
+    "calificacion": 73.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-545",
+    "alumnoId": "ALU-092",
+    "materiaId": "MAT-001",
+    "calificacion": 88.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-546",
+    "alumnoId": "ALU-092",
+    "materiaId": "MAT-002",
+    "calificacion": 85.2,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-547",
+    "alumnoId": "ALU-092",
+    "materiaId": "MAT-003",
+    "calificacion": 100,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-548",
+    "alumnoId": "ALU-092",
+    "materiaId": "MAT-004",
+    "calificacion": 87.3,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-549",
+    "alumnoId": "ALU-093",
+    "materiaId": "MAT-001",
+    "calificacion": 83.0,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-550",
+    "alumnoId": "ALU-093",
+    "materiaId": "MAT-002",
+    "calificacion": 81.7,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-551",
+    "alumnoId": "ALU-094",
+    "materiaId": "MAT-001",
+    "calificacion": 82.8,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-552",
+    "alumnoId": "ALU-094",
+    "materiaId": "MAT-002",
+    "calificacion": 89.0,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-553",
+    "alumnoId": "ALU-094",
+    "materiaId": "MAT-003",
+    "calificacion": 86.6,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-554",
+    "alumnoId": "ALU-094",
+    "materiaId": "MAT-004",
+    "calificacion": 90.6,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-555",
+    "alumnoId": "ALU-094",
+    "materiaId": "MAT-005",
+    "calificacion": 86.1,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-556",
+    "alumnoId": "ALU-094",
+    "materiaId": "MAT-006",
+    "calificacion": 82.5,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-557",
+    "alumnoId": "ALU-094",
+    "materiaId": "MAT-012",
+    "calificacion": 88.7,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-558",
+    "alumnoId": "ALU-094",
+    "materiaId": "MAT-007",
+    "calificacion": 84.3,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-559",
+    "alumnoId": "ALU-094",
+    "materiaId": "MAT-011",
+    "calificacion": 84.9,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-560",
+    "alumnoId": "ALU-094",
+    "materiaId": "MAT-008",
+    "calificacion": 79.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-561",
+    "alumnoId": "ALU-095",
+    "materiaId": "MAT-001",
+    "calificacion": 89.8,
+    "estatus": 0,
+    "periodo": "2022-2",
+    "fechaRegistro": "2022-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-562",
+    "alumnoId": "ALU-095",
+    "materiaId": "MAT-002",
+    "calificacion": 87.7,
+    "estatus": 0,
+    "periodo": "2023-1",
+    "fechaRegistro": "2023-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-563",
+    "alumnoId": "ALU-095",
+    "materiaId": "MAT-003",
+    "calificacion": 91.8,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-564",
+    "alumnoId": "ALU-095",
+    "materiaId": "MAT-004",
+    "calificacion": 94.0,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-565",
+    "alumnoId": "ALU-095",
+    "materiaId": "MAT-005",
+    "calificacion": 83.6,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-566",
+    "alumnoId": "ALU-095",
+    "materiaId": "MAT-006",
+    "calificacion": 83.9,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-567",
+    "alumnoId": "ALU-095",
+    "materiaId": "MAT-012",
+    "calificacion": 84.7,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-568",
+    "alumnoId": "ALU-095",
+    "materiaId": "MAT-007",
+    "calificacion": 89.6,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-569",
+    "alumnoId": "ALU-095",
+    "materiaId": "MAT-011",
+    "calificacion": 83.4,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-570",
+    "alumnoId": "ALU-095",
+    "materiaId": "MAT-008",
+    "calificacion": 93.8,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-571",
+    "alumnoId": "ALU-096",
+    "materiaId": "MAT-001",
+    "calificacion": 77.8,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-572",
+    "alumnoId": "ALU-096",
+    "materiaId": "MAT-002",
+    "calificacion": 74.8,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-573",
+    "alumnoId": "ALU-097",
+    "materiaId": "MAT-001",
+    "calificacion": 85.5,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-574",
+    "alumnoId": "ALU-098",
+    "materiaId": "MAT-001",
+    "calificacion": 85.8,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-575",
+    "alumnoId": "ALU-098",
+    "materiaId": "MAT-002",
+    "calificacion": 94.8,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-576",
+    "alumnoId": "ALU-098",
+    "materiaId": "MAT-003",
+    "calificacion": 85.0,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-577",
+    "alumnoId": "ALU-098",
+    "materiaId": "MAT-004",
+    "calificacion": 94.4,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-578",
+    "alumnoId": "ALU-098",
+    "materiaId": "MAT-005",
+    "calificacion": 90.7,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-579",
+    "alumnoId": "ALU-098",
+    "materiaId": "MAT-006",
+    "calificacion": 84.4,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-580",
+    "alumnoId": "ALU-098",
+    "materiaId": "MAT-012",
+    "calificacion": 91.6,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-581",
+    "alumnoId": "ALU-098",
+    "materiaId": "MAT-007",
+    "calificacion": 88.2,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-582",
+    "alumnoId": "ALU-098",
+    "materiaId": "MAT-011",
+    "calificacion": 87.8,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-583",
+    "alumnoId": "ALU-099",
+    "materiaId": "MAT-001",
+    "calificacion": 99.5,
+    "estatus": 0,
+    "periodo": "2023-2",
+    "fechaRegistro": "2023-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-584",
+    "alumnoId": "ALU-099",
+    "materiaId": "MAT-002",
+    "calificacion": 94.5,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-585",
+    "alumnoId": "ALU-099",
+    "materiaId": "MAT-003",
+    "calificacion": 94.6,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-586",
+    "alumnoId": "ALU-099",
+    "materiaId": "MAT-004",
+    "calificacion": 100,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-587",
+    "alumnoId": "ALU-099",
+    "materiaId": "MAT-005",
+    "calificacion": 91.0,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-588",
+    "alumnoId": "ALU-099",
+    "materiaId": "MAT-006",
+    "calificacion": 87.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-589",
+    "alumnoId": "ALU-099",
+    "materiaId": "MAT-012",
+    "calificacion": 92.2,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-590",
+    "alumnoId": "ALU-099",
+    "materiaId": "MAT-007",
+    "calificacion": 88.3,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-591",
+    "alumnoId": "ALU-099",
+    "materiaId": "MAT-011",
+    "calificacion": 89.4,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-592",
+    "alumnoId": "ALU-099",
+    "materiaId": "MAT-008",
+    "calificacion": 97.3,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-593",
+    "alumnoId": "ALU-100",
+    "materiaId": "MAT-001",
+    "calificacion": 80.1,
+    "estatus": 0,
+    "periodo": "2024-1",
+    "fechaRegistro": "2024-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-594",
+    "alumnoId": "ALU-100",
+    "materiaId": "MAT-002",
+    "calificacion": 72.5,
+    "estatus": 0,
+    "periodo": "2024-2",
+    "fechaRegistro": "2024-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-595",
+    "alumnoId": "ALU-100",
+    "materiaId": "MAT-003",
+    "calificacion": 75.7,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-596",
+    "alumnoId": "ALU-100",
+    "materiaId": "MAT-004",
+    "calificacion": 75.8,
+    "estatus": 0,
+    "periodo": "2025-1",
+    "fechaRegistro": "2025-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-597",
+    "alumnoId": "ALU-100",
+    "materiaId": "MAT-005",
+    "calificacion": 76.8,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-598",
+    "alumnoId": "ALU-100",
+    "materiaId": "MAT-006",
+    "calificacion": 79.9,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-599",
+    "alumnoId": "ALU-100",
+    "materiaId": "MAT-012",
+    "calificacion": 76.0,
+    "estatus": 0,
+    "periodo": "2025-2",
+    "fechaRegistro": "2025-12-15T00:00:00"
+  },
+  {
+    "id": "HIST-600",
+    "alumnoId": "ALU-100",
+    "materiaId": "MAT-007",
+    "calificacion": 70.4,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  },
+  {
+    "id": "HIST-601",
+    "alumnoId": "ALU-100",
+    "materiaId": "MAT-011",
+    "calificacion": 80.1,
+    "estatus": 0,
+    "periodo": "2026-1",
+    "fechaRegistro": "2026-06-15T00:00:00"
+  }
+]

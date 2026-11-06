@@ -1,0 +1,149 @@
+@model SmartAcademicAdvisor.Web.Perfiles.PortalData
+@using SmartAcademicAdvisor.Web.Perfiles
+@using System.Globalization
+@{
+    Layout = "_LayoutAlumno";
+    ViewData["Title"] = "Mi asesor";
+    var inv = CultureInfo.InvariantCulture;
+    string Pct(double x) => x.ToString("0.#", inv);
+}
+
+<div class="page-header">
+    <div class="header-content">
+        <div>
+            <h2 class="page-title-large">Mi asesor académico</h2>
+            <p class="page-subtitle">Se calcula en vivo con tu promedio, tus intereses, tus materias y las reglas del motor</p>
+        </div>
+    </div>
+</div>
+
+@if (Model.Oficial != null)
+{
+    <div class="alert alert-info"><i class="fas fa-robot"></i>
+        <span>El motor de inferencia te recomendó <strong>@Model.Oficial.Especialidad</strong> el @Model.Oficial.Fecha. Abajo ves el cálculo actualizado con tus datos de hoy.</span></div>
+}
+
+@if (!Model.Afinidades.Any())
+{
+    <div class="chart-card text-center py-5"><p class="text-muted mb-0">Todavía no hay especialidades registradas.</p></div>
+}
+else
+{
+<div class="asesor">
+    <aside class="esp-list" id="lista">
+        @for (int i = 0; i < Model.Afinidades.Count; i++)
+        {
+            var e = Model.Afinidades[i];
+            <button type="button" class="esp-item @(i == 0 ? "active" : "")" data-id="@e.Id">
+                <span class="pos">@(i + 1)</span>
+                <span class="mid"><b>@e.Nombre</b><span class="progress d-block"><i style="width:@Pct(e.Afinidad)%"></i></span></span>
+                <span class="pct">@e.Afinidad.ToString("0")%</span>
+            </button>
+        }
+    </aside>
+
+    <div>
+    @for (int i = 0; i < Model.Afinidades.Count; i++)
+    {
+        var e = Model.Afinidades[i];
+        var tw = e.WP + e.WI + e.WM + e.WR;
+        var color = e.Afinidad >= 80 ? "#10B981" : e.Afinidad >= 60 ? "#8B5CF6" : e.Afinidad >= 40 ? "#F59E0B" : "#F43F5E";
+        <section class="esp-panel @(i == 0 ? "active" : "")" id="ep-@e.Id">
+            <div class="chart-card mb-3">
+                <div class="d-flex align-items-center gap-4 flex-wrap">
+                    <div class="ring-lg light" style="--p:@Pct(e.Afinidad);--rc:@color"><b>@e.Afinidad.ToString("0")%</b><small>afinidad</small></div>
+                    <div class="flex-grow-1">
+                        @if (i == 0) { <span class="status-badge success mb-2">La mejor para ti ahora</span> }
+                        <h3 class="mb-1">@e.Nombre</h3>
+                        <p class="text-muted mb-2">@e.Descripcion</p>
+                        <div class="small text-muted"><i class="fas fa-briefcase"></i> @e.CampoLaboral</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-grid">
+                <div class="pc w12">
+                    <h4>Cómo se calcula tu afinidad</h4><div class="sub">Cada factor tiene el peso que define esta especialidad</div>
+                    <div class="score-row wide"><span>Promedio <small class="text-muted">(@((e.WP / tw * 100).ToString("0"))%)</small></span><div class="progress"><i style="width:@Pct(e.SP)%"></i></div><b>@e.SP.ToString("0")</b></div>
+                    <p class="small text-muted ms-1 mb-3">Tu promedio es @Model.Promedio.ToString("0.0", inv) y la especialidad pide @e.PromedioMinimo.ToString("0", inv).</p>
+                    <div class="score-row wide"><span>Intereses <small class="text-muted">(@((e.WI / tw * 100).ToString("0"))%)</small></span><div class="progress"><i style="width:@Pct(e.SI)%"></i></div><b>@e.SI.ToString("0")</b></div>
+                    <p class="small text-muted ms-1 mb-3">Coinciden @e.InteresesCoinciden.Count de @(e.InteresesCoinciden.Count + e.InteresesFaltan.Count): @(e.InteresesCoinciden.Any() ? string.Join(", ", e.InteresesCoinciden) : "ninguno todavía").</p>
+                    <div class="score-row wide"><span>Materias clave <small class="text-muted">(@((e.WM / tw * 100).ToString("0"))%)</small></span><div class="progress"><i style="width:@Pct(e.SM)%"></i></div><b>@e.SM.ToString("0")</b></div>
+                    <p class="small text-muted ms-1 mb-3">Aprobadas @e.MateriasClaveOk.Count de @(e.MateriasClaveOk.Count + e.MateriasClavePendientes.Count).</p>
+                    @if (e.WR > 0)
+                    {
+                        <div class="score-row wide"><span>Reglas <small class="text-muted">(@((e.WR / tw * 100).ToString("0"))%)</small></span><div class="progress"><i style="width:@Pct(e.SR)%"></i></div><b>@e.SR.ToString("0")</b></div>
+                        <p class="small text-muted ms-1 mb-0">Qué tan cerca estás de cumplir la mejor regla del motor.</p>
+                    }
+                </div>
+
+                <div class="pc w8">
+                    <h4><i class="fas fa-diagram-project text-primary"></i> Reglas del motor</h4><div class="sub">Por qué el sistema recomienda o no esta especialidad</div>
+                    @foreach (var r in e.Reglas)
+                    {
+                        <div class="rule-eval @(r.Cumplida ? "full" : "")">
+                            <header><b>@r.Nombre</b><span class="status-badge @(r.Cumplida ? "success" : "warning")">@(r.Cumplida ? "Se cumple" : (r.Fraccion * 100).ToString("0") + "% cumplida")</span></header>
+                            @if (r.Descripcion != "") { <p class="small text-muted mb-2">@r.Descripcion</p> }
+                            @foreach (var p in r.Premisas)
+                            {
+                                <div class="chk @(p.Cumple ? "ok" : "no")"><i class="fas @(p.Cumple ? "fa-circle-check" : "fa-circle-xmark")"></i><span>@p.Texto<small>@p.Detalle</small></span></div>
+                            }
+                        </div>
+                    }
+                    @if (!e.Reglas.Any()) { <p class="text-muted small mb-0">Esta especialidad todavía no tiene reglas definidas.</p> }
+                </div>
+
+                <div class="pc w4">
+                    <h4><i class="fas fa-flag-checkered text-primary"></i> Lo que te falta</h4><div class="sub">Para llegar al 100%</div>
+                    @foreach (var f in e.Faltan) { <div class="chk no"><i class="fas fa-circle-xmark"></i><span>@f</span></div> }
+                    @foreach (var i2 in e.InteresesFaltan) { <div class="chk no"><i class="fas fa-heart-crack"></i><span>Interés: @i2<small>agrégalo en tu perfil si te interesa</small></span></div> }
+                    @foreach (var m in e.MateriasClavePendientes) { <div class="chk no"><i class="fas fa-book"></i><span>@m<small>materia clave pendiente</small></span></div> }
+                    @if (!e.Faltan.Any() && !e.InteresesFaltan.Any() && !e.MateriasClavePendientes.Any()) { <div class="chk ok"><i class="fas fa-circle-check"></i><span>Cumples todo lo que pide esta especialidad.</span></div> }
+                    @if (e.Competencias.Any())
+                    {
+                        <hr /><small class="text-muted d-block mb-2">Competencias que se desarrollan</small>
+                        <div class="d-flex flex-wrap gap-1">@foreach (var c in e.Competencias) { <span class="tag">@c</span> }</div>
+                    }
+                </div>
+
+                <div class="pc w4">
+                    <h4><i class="fas fa-unlock text-primary"></i> Puedes cursar ahora</h4><div class="sub">Materias relacionadas disponibles</div>
+                    @foreach (var m in e.Sugeridas) { <div class="item-card"><span class="ic"><i class="fas fa-book-open"></i></span><span>@m.Nombre<small>Semestre @m.Semestre · @m.Creditos créditos</small></span></div> }
+                    @if (!e.Sugeridas.Any()) { <p class="text-muted small mb-0">Nada disponible por ahora.</p> }
+                    @if (e.Siguientes.Any())
+                    {
+                        <hr /><small class="text-muted d-block mb-2">Después, cuando cumplas prerrequisitos</small>
+                        @foreach (var m in e.Siguientes) { <div class="item-card" style="opacity:.7"><span class="ic" style="background:var(--gray-100);color:var(--gray-500)"><i class="fas fa-lock"></i></span><span>@m.Nombre<small>Requiere: @string.Join(", ", m.PrerreqNombres)</small></span></div> }
+                    }
+                </div>
+
+                <div class="pc w4">
+                    <h4><i class="fas fa-laptop-code text-primary"></i> Cursos</h4><div class="sub">Para reforzar esta especialidad</div>
+                    @foreach (var c in e.Cursos) { <a class="item-card text-decoration-none" href="@c.Url" target="_blank" rel="noopener"><span class="ic"><i class="fas fa-play"></i></span><span>@c.Nombre<small>@c.Proveedor · @c.Detalle · @(c.Costo == 0 ? "Gratis" : "$" + c.Costo.ToString("0", inv))</small></span></a> }
+                    @if (!e.Cursos.Any()) { <p class="text-muted small mb-0">Sin cursos registrados.</p> }
+                </div>
+
+                <div class="pc w4">
+                    <h4><i class="fas fa-certificate text-primary"></i> Certificaciones</h4><div class="sub">Para tu perfil profesional</div>
+                    @foreach (var c in e.Certificaciones) { <a class="item-card text-decoration-none" href="@c.Url" target="_blank" rel="noopener"><span class="ic"><i class="fas fa-award"></i></span><span>@c.Nombre<small>@c.Proveedor · @c.Detalle</small></span></a> }
+                    @if (!e.Certificaciones.Any()) { <p class="text-muted small mb-0">Sin certificaciones registradas.</p> }
+                </div>
+            </div>
+        </section>
+    }
+    </div>
+</div>
+}
+
+@section Scripts {
+<script>
+    const botones = document.querySelectorAll('.esp-item'), paneles = document.querySelectorAll('.esp-panel');
+    function ver(id) {
+        botones.forEach(b => b.classList.toggle('active', b.dataset.id === id));
+        paneles.forEach(p => p.classList.toggle('active', p.id === 'ep-' + id));
+    }
+    botones.forEach(b => b.addEventListener('click', () => { ver(b.dataset.id); history.replaceState(null, '', '#' + b.dataset.id); }));
+    const ini = (location.hash || '').slice(1);
+    if (ini && document.getElementById('ep-' + ini)) ver(ini);
+</script>
+}

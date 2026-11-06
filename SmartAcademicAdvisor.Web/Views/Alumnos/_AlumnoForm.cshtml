@@ -1,0 +1,107 @@
+@model SmartAcademicAdvisor.Web.Models.AlumnoFormModel
+@using SmartAcademicAdvisor.Core.Models
+@{
+    var est = (int)(Model?.Estatus ?? EstatusAlumno.Activo);
+    var sem = Model != null && Model.Semestre > 0 ? Model.Semestre : 1;
+    var sel = Model?.InteresesSeleccionados ?? Array.Empty<string>();
+    var estatusOps = new[] { (0, "Activo", "fa-circle-check"), (1, "Inactivo", "fa-circle-pause"), (2, "Egresado", "fa-graduation-cap"), (3, "Baja temporal", "fa-clock") };
+}
+<div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+<input type="hidden" asp-for="Id" />
+
+<div class="form-layout">
+    <div>
+        <section class="form-sec">
+            <div class="form-sec-h"><span class="n">1</span><div><h5>Datos personales</h5><small>Cómo se identifica el alumno</small></div></div>
+            <div class="mb-3">
+                <label asp-for="Nombre" class="form-label">Nombre completo</label>
+                <div class="field"><input asp-for="Nombre" id="f-nombre" class="form-control" placeholder="Ej: Ana García Pérez" /><i class="fas fa-user"></i></div>
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Correo" class="form-label">Correo electrónico</label>
+                <div class="field"><input asp-for="Correo" id="f-correo" type="email" class="form-control" placeholder="alumno@tese.edu.mx" /><i class="fas fa-envelope"></i></div>
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+        </section>
+
+        <section class="form-sec">
+            <div class="form-sec-h"><span class="n">2</span><div><h5>Información académica</h5><small>Semestre, promedio y situación actual</small></div></div>
+            <label class="form-label">Semestre</label>
+            <div class="pill-grid mb-3">
+                @for (int i = 1; i <= 10; i++)
+                {
+                    <label class="pill sq"><input type="radio" name="Semestre" value="@i" checked="@(sem == i)" /><span>@i</span></label>
+                }
+            </div>
+            <label asp-for="Promedio" class="form-label">Promedio (0 a 100)</label>
+            <div class="range-row mb-3">
+                <input type="range" id="f-prom-r" min="0" max="100" step="0.1" value="@(Model != null && Model.Promedio > 0 ? Model.Promedio.ToString("0.#", System.Globalization.CultureInfo.InvariantCulture) : "80")" />
+                <input asp-for="Promedio" id="f-prom" type="number" class="form-control" min="0" max="100" step="0.1" placeholder="85.5" />
+            </div>
+            <span asp-validation-for="Promedio" class="text-danger d-block mb-2"></span>
+            <label class="form-label">Estatus</label>
+            <div class="pill-grid">
+                @foreach (var (v, texto, icono) in estatusOps)
+                {
+                    <label class="pill seg"><input type="radio" name="Estatus" value="@v" checked="@(est == v)" /><span><i class="fas @icono"></i> @texto</span></label>
+                }
+            </div>
+        </section>
+
+        <section class="form-sec">
+            <div class="form-sec-h"><span class="n">3</span><div><h5>Intereses</h5><small>Con ellos el motor calcula la afinidad con cada especialidad</small></div></div>
+            <div class="pill-grid">
+                @foreach (var interes in SmartAcademicAdvisor.Web.Models.AlumnoFormModel.InteresesDisponibles)
+                {
+                    <label class="pill"><input type="checkbox" name="InteresesSeleccionados" value="@interes" checked="@sel.Contains(interes)" /><span>@interes</span></label>
+                }
+            </div>
+        </section>
+    </div>
+
+    <aside class="live">
+        <div class="live-label"><i class="fas fa-eye"></i> Vista previa en vivo</div>
+        <article class="alumno-card" id="pv" style="--h:160">
+            <div class="banner"></div>
+            <div class="avatar" id="pv-av">AA</div>
+            <div class="ring mid" id="pv-ring" style="--p:0"><b id="pv-prom">–</b></div>
+            <div class="body">
+                <h5 id="pv-nombre">Nombre del alumno</h5>
+                <div class="meta"><span class="dot on"></span> <span id="pv-est">Activo</span> · <code>ID automático</code></div>
+                <div class="text-muted small mb-2"><i class="fas fa-envelope"></i> <span id="pv-correo">correo@tese.edu.mx</span></div>
+                <div class="d-flex flex-wrap gap-1" id="pv-ints"></div>
+            </div>
+            <div class="foot"><span class="sem" id="pv-sem">SEM 1</span><span class="text-muted small">así se verá en la lista</span></div>
+        </article>
+        <div class="tip mt-3"><i class="fas fa-lightbulb"></i> El alumno podrá ver sus recomendaciones en su portal en cuanto tenga calificaciones registradas.</div>
+    </aside>
+</div>
+
+<script>
+(function () {
+    const $ = id => document.getElementById(id);
+    const hue = n => { let h = 7; for (const c of n) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h % 360; };
+    const nivel = p => p >= 90 ? 'top' : p >= 80 ? 'ok' : p >= 70 ? 'mid' : 'risk';
+    const num = $('f-prom'), rng = $('f-prom-r');
+    rng.addEventListener('input', () => { num.value = rng.value; render(); });
+    num.addEventListener('input', () => { if (num.value !== '') rng.value = num.value; });
+    function render() {
+        const nom = $('f-nombre').value.trim() || 'Nombre del alumno';
+        $('pv').style.setProperty('--h', hue(nom));
+        $('pv-av').textContent = nom.split(/\s+/).slice(0, 2).map(s => s[0] || '').join('').toUpperCase() || 'AA';
+        $('pv-nombre').textContent = nom;
+        $('pv-correo').textContent = $('f-correo').value || 'correo@tese.edu.mx';
+        const p = parseFloat(num.value), ring = $('pv-ring');
+        ring.className = 'ring ' + (isNaN(p) ? 'mid' : nivel(p));
+        ring.style.setProperty('--p', isNaN(p) ? 0 : Math.min(100, p));
+        $('pv-prom').textContent = isNaN(p) ? '–' : Math.round(p);
+        const s = document.querySelector('input[name=Semestre]:checked'); $('pv-sem').textContent = 'SEM ' + (s ? s.value : '–');
+        const e = document.querySelector('input[name=Estatus]:checked'); $('pv-est').textContent = e ? e.parentElement.textContent.trim() : 'Activo';
+        const ints = [...document.querySelectorAll('input[name=InteresesSeleccionados]:checked')].map(i => i.value);
+        $('pv-ints').innerHTML = ints.slice(0, 3).map(i => '<span class="tag">' + i + '</span>').join('') + (ints.length > 3 ? '<span class="tag">+' + (ints.length - 3) + '</span>' : '');
+    }
+    document.querySelectorAll('.form-layout input').forEach(i => i.addEventListener('input', render));
+    render();
+})();
+</script>

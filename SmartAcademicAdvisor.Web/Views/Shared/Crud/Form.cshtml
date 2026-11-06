@@ -1,0 +1,137 @@
+@model SmartAcademicAdvisor.Web.Crud.CrudFormVm
+@using SmartAcademicAdvisor.Web.Crud
+@{
+    var s = Model.Schema;
+    ViewData["Title"] = (Model.IsEdit ? "Editar " : "Nuevo ") + s.Singular;
+    string V(string key) => Model.Values.GetValueOrDefault(key) ?? "";
+    string Err(string key) => Model.Errors.GetValueOrDefault(key) ?? "";
+
+    string Sec(string k) => k switch
+    {
+        "nombre" or "proveedor" or "alumnoId" or "materiaId" => "Identificación",
+        "cabeza" or "cuerpo" => "Lógica del motor",
+        "descripcion" or "url" or "urlInformacion" or "prerequisitosRecomendados" or "especialidadesRelacionadas" => "Contenido y relaciones",
+        _ => "Datos clave"
+    };
+    string SecSub(string t) => t switch
+    {
+        "Identificación" => "Cómo se llama y quién lo ofrece",
+        "Lógica del motor" => "Programación lógica: cabeza :- cuerpo",
+        "Contenido y relaciones" => "Descripción, enlaces y especialidades vinculadas",
+        _ => "Valores que usa el motor y las estadísticas"
+    };
+    string Ico(string k) => k switch
+    {
+        "nombre" => "fa-tag", "proveedor" => "fa-building", "horasDuracion" => "fa-clock", "nivel" => "fa-signal", "costo" => "fa-dollar-sign",
+        "url" or "urlInformacion" => "fa-link", "descripcion" => "fa-align-left", "validezAnios" => "fa-hourglass-half", "peso" => "fa-scale-balanced",
+        "calificacion" => "fa-star", "periodo" => "fa-calendar-days", "alumnoId" => "fa-user-graduate", "materiaId" => "fa-book",
+        "cabeza" => "fa-bullseye", "cuerpo" => "fa-list-check", "prerequisitosRecomendados" => "fa-list", _ => "fa-pen"
+    };
+    string HeroIco = s.File switch
+    {
+        "cursos.json" => "fa-laptop-code", "certificaciones.json" => "fa-certificate", "reglas.json" => "fa-diagram-project", "historial.json" => "fa-clock-rotate-left", _ => "fa-table"
+    };
+    var secciones = s.Fields.GroupBy(f => Sec(f.Key)).ToList();
+}
+
+<section class="form-hero">
+    <div class="fh-ico"><i class="fas @HeroIco"></i></div>
+    <div><h2>@ViewData["Title"]</h2><p>@s.Title · @s.Subtitle</p></div>
+    <a asp-action="Index" class="btn-hero back"><i class="fas fa-arrow-left"></i> Volver</a>
+</section>
+
+<form asp-action="@(Model.IsEdit ? "Edit" : "Create")" asp-route-id="@(Model.IsEdit ? Model.Id : null)" method="post">
+    @if (Model.Errors.Count > 0)
+    {
+        <div class="alert alert-danger"><i class="fas fa-exclamation-circle"></i><span>Revisa los campos marcados en rojo.</span></div>
+    }
+
+    <div class="form-layout">
+        <div>
+        @for (int si = 0; si < secciones.Count; si++)
+        {
+            var grupo = secciones[si];
+            <section class="form-sec">
+                <div class="form-sec-h"><span class="n">@(si + 1)</span><div><h5>@grupo.Key</h5><small>@SecSub(grupo.Key)</small></div></div>
+                <div class="row">
+                    @if (si == 0 && s.ManualId)
+                    {
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">ID</label>
+                            <div class="field"><input name="id" class="form-control text-mono" value="@(Model.IsEdit ? Model.Id : V("id"))" readonly="@Model.IsEdit" placeholder="Ej: R-IA-03" /><i class="fas fa-fingerprint"></i></div>
+                            @if (Err("id") != "") { <span class="text-danger small">@Err("id")</span> }
+                        </div>
+                    }
+                    @foreach (var f in grupo)
+                    {
+                        <div class="col-md-@f.Width mb-3">
+                            @if (f.Kind == FieldKind.Bool)
+                            {
+                                <label class="toggle mt-4"><input type="checkbox" name="@f.Key" value="true" checked="@(V(f.Key) == "true")" /> <span>@f.Label</span></label>
+                            }
+                            else
+                            {
+                                <label class="form-label" for="@f.Key">@f.Label @if (f.Required) { <span class="text-danger">*</span> }</label>
+                                @if (f.Kind == FieldKind.Multi)
+                                {
+                                    <div class="pill-grid">
+                                        @foreach (var o in Model.Options.GetValueOrDefault(f.Key) ?? new List<Opt>())
+                                        {
+                                            <label class="pill"><input type="checkbox" name="@f.Key" value="@o.Value" checked="@(Model.Selected.GetValueOrDefault(f.Key)?.Contains(o.Value) == true)" /><span>@o.Label</span></label>
+                                        }
+                                    </div>
+                                }
+                                else if (f.Kind == FieldKind.Json)
+                                {
+                                    <div class="field area"><textarea class="form-control text-mono" id="@f.Key" name="@f.Key" rows="9" spellcheck="false">@V(f.Key)</textarea><i class="fas @Ico(f.Key)"></i></div>
+                                }
+                                else if (f.Kind == FieldKind.TextArea || f.Kind == FieldKind.Lines)
+                                {
+                                    <div class="field area"><textarea class="form-control" id="@f.Key" name="@f.Key" rows="3">@V(f.Key)</textarea><i class="fas @Ico(f.Key)"></i></div>
+                                }
+                                else if (f.Kind == FieldKind.Number)
+                                {
+                                    <div class="field"><input class="form-control" id="@f.Key" name="@f.Key" type="number" step="any" min="@f.Min" max="@f.Max" value="@V(f.Key)" /><i class="fas @Ico(f.Key)"></i></div>
+                                }
+                                else if (f.Kind == FieldKind.Select)
+                                {
+                                    <div class="field">
+                                        <select class="form-select" id="@f.Key" name="@f.Key">
+                                            <option value="">Selecciona…</option>
+                                            @foreach (var o in Model.Options.GetValueOrDefault(f.Key) ?? new List<Opt>())
+                                            {
+                                                <option value="@o.Value" selected="@(V(f.Key) == o.Value)">@o.Label</option>
+                                            }
+                                        </select><i class="fas @Ico(f.Key)"></i>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="field"><input class="form-control" id="@f.Key" name="@f.Key" value="@V(f.Key)" /><i class="fas @Ico(f.Key)"></i></div>
+                                }
+                                @if (f.Help != null) { <div class="form-text">@f.Help</div> }
+                                @if (Err(f.Key) != "") { <span class="text-danger small">@Err(f.Key)</span> }
+                            }
+                        </div>
+                    }
+                </div>
+            </section>
+        }
+        </div>
+
+        <aside class="live">
+            <div class="live-label"><i class="fas fa-circle-info"></i> Ayuda</div>
+            <div class="tip mb-3"><i class="fas fa-database"></i> Se guarda en <b>Data/@s.File</b>. Los campos con <span class="text-danger">*</span> son obligatorios.</div>
+            @foreach (var f in s.Fields.Where(x => x.Help != null))
+            {
+                <div class="chart-card mb-2" style="padding:12px 14px"><b class="small">@f.Label</b><div class="text-muted small">@f.Help</div></div>
+            }
+        </aside>
+    </div>
+
+    <div class="sticky-actions">
+        <span class="hint"><i class="fas fa-circle-info"></i> Revisa los datos antes de guardar</span>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
+    </div>
+</form>

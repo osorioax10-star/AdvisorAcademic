@@ -1,0 +1,75 @@
+@model SmartAcademicAdvisor.Web.Perfiles.PortalData
+@using SmartAcademicAdvisor.Web.Perfiles
+@using System.Globalization
+@using System.Text.Json
+@{
+    Layout = "_LayoutAlumno";
+    ViewData["Title"] = "Mi historial";
+    var inv = CultureInfo.InvariantCulture;
+    var puntos = JsonSerializer.Serialize(Model.Periodos.Select(p => new { periodo = p.Periodo, promedio = p.Promedio, cantidad = p.Cantidad }));
+    var mejorNota = Model.Historial.OrderByDescending(n => n.Calificacion).FirstOrDefault();
+}
+
+<div class="page-header">
+    <div class="header-content">
+        <div>
+            <h2 class="page-title-large">Mi historial académico</h2>
+            <p class="page-subtitle">Todas tus calificaciones, periodo por periodo</p>
+        </div>
+    </div>
+</div>
+
+<div class="cards-grid">
+    <div class="metric-card-white"><div class="metric-header"><span class="metric-title">Materias cursadas</span><div class="metric-icon-small" style="background:#EDE9FE;color:#8B5CF6"><i class="fas fa-book"></i></div></div><div class="metric-value-large">@Model.Historial.Count</div></div>
+    <div class="metric-card-white"><div class="metric-header"><span class="metric-title">Mejor calificación</span><div class="metric-icon-small" style="background:#D1FAE5;color:#059669"><i class="fas fa-trophy"></i></div></div>
+        <div class="metric-value-large">@(mejorNota == null ? "—" : mejorNota.Calificacion.ToString("0.#", inv))</div><div class="text-muted small mt-1">@(mejorNota?.Materia)</div></div>
+    <div class="metric-card-white"><div class="metric-header"><span class="metric-title">Promedio actual</span><div class="metric-icon-small" style="background:#CFFAFE;color:#0891B2"><i class="fas fa-star"></i></div></div><div class="metric-value-large">@Model.Promedio.ToString("0.0", inv)</div></div>
+</div>
+
+@if (Model.Periodos.Any())
+{
+    <div class="pc w12" style="margin-bottom:18px;padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:14px">
+        <h4>Promedio por periodo</h4><div class="sub">Línea: promedio · Barras: materias cursadas</div>
+        <div class="cv" style="height:260px"><canvas id="evo"></canvas></div>
+    </div>
+}
+
+<div class="table-card">
+    @if (!Model.Historial.Any())
+    {
+        <p class="text-muted text-center py-4 mb-0">Aún no tienes calificaciones registradas.</p>
+    }
+    else
+    {
+        <input id="q" class="form-control mb-3" style="max-width:320px" placeholder="Buscar materia o periodo…" autocomplete="off" />
+        <table class="data-table" id="tabla">
+            <thead><tr><th>Periodo</th><th>Materia</th><th>Calificación</th><th>Resultado</th></tr></thead>
+            <tbody>
+                @foreach (var n in Model.Historial.OrderByDescending(x => x.Periodo).ThenBy(x => x.Materia))
+                {
+                    <tr>
+                        <td class="text-mono">@n.Periodo</td>
+                        <td><strong>@n.Materia</strong></td>
+                        <td><div class="d-flex align-items-center gap-2"><div class="progress" style="width:110px"><i style="width:@Math.Clamp(n.Calificacion, 0, 100).ToString("0.#", inv)%"></i></div><span class="text-mono">@n.Calificacion.ToString("0.0", inv)</span></div></td>
+                        <td><span class="status-badge @(n.Aprobada ? "success" : "warning")">@(n.Aprobada ? "Aprobada" : "No aprobada")</span></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+
+@section Scripts {
+<script>
+    const datos = @Html.Raw(puntos), cv = document.getElementById('evo');
+    if (cv && datos.length) {
+        new Chart(cv, { type: 'bar',
+            data: { labels: datos.map(d => d.periodo), datasets: [
+                { type: 'bar', label: 'Materias', data: datos.map(d => d.cantidad), backgroundColor: '#8B5CF655', borderRadius: 6, yAxisID: 'y1' },
+                { type: 'line', label: 'Promedio', data: datos.map(d => d.promedio), borderColor: '#10B981', backgroundColor: '#10B981', tension: .35, pointRadius: 5, yAxisID: 'y' }] },
+            options: { responsive: true, maintainAspectRatio: false, scales: { x: { grid: { display: false } }, y: { min: 60, max: 100, grid: { color: 'rgba(120,134,170,.18)' } }, y1: { position: 'right', beginAtZero: true, ticks: { precision: 0 }, grid: { display: false } } } } });
+    }
+    const q = document.getElementById('q');
+    if (q) q.addEventListener('input', () => { const t = q.value.toLowerCase(); document.querySelectorAll('#tabla tbody tr').forEach(r => r.style.display = r.textContent.toLowerCase().includes(t) ? '' : 'none'); });
+</script>
+}

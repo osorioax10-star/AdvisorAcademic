@@ -1,0 +1,81 @@
+@model List<SmartAcademicAdvisor.Web.Perfiles.AlumnoResumen>
+@{
+    Layout = null;
+    int Matiz(string n) { unchecked { uint h = 7; foreach (var c in n) h = h * 31 + c; return (int)(h % 360); } }
+    string Ini(string n) => string.Concat(n.Split(' ', StringSplitOptions.RemoveEmptyEntries).Take(2).Select(p => char.ToUpper(p[0])));
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elige tu perfil · Smart Academic Advisor</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/dashboard-modern.css" asp-append-version="true" />
+</head>
+<body style="margin:0">
+<div class="acceso">
+    <div class="acceso-box">
+        <div class="acceso-top">
+            <div>
+                <span class="hero-eyebrow"><i class="fas fa-circle"></i> Smart Academic Advisor</span>
+                <h1 class="mt-3">¿Cómo quieres entrar?</h1>
+                <p>Elige un perfil. El administrador gestiona todo el sistema; el alumno ve su panel, su plan de estudios y las recomendaciones de su asesor.</p>
+            </div>
+            <partial name="_Mascota" />
+        </div>
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger"><i class="fas fa-exclamation-circle"></i><span>@TempData["Error"]</span></div>
+        }
+
+        <div class="perfiles">
+            <section class="perfil-card">
+                <div class="ico" style="background:linear-gradient(135deg,#8B5CF6,#6D28D9)"><i class="fas fa-user-shield"></i></div>
+                <h3>Administrador</h3>
+                <p>Control completo del sistema académico.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Dashboard con analítica detallada</li>
+                    <li><i class="fas fa-check"></i> Gestión de alumnos, materias y especialidades</li>
+                    <li><i class="fas fa-check"></i> Reglas y motor de inferencia</li>
+                    <li><i class="fas fa-check"></i> Generar recomendaciones</li>
+                </ul>
+                <form asp-action="Entrar" method="post">
+                    <input type="hidden" name="tipo" value="admin" />
+                    <button type="submit" class="btn-acceso"><i class="fas fa-arrow-right-to-bracket"></i> Entrar como administrador</button>
+                </form>
+            </section>
+
+            <section class="perfil-card">
+                <div class="ico" style="background:linear-gradient(135deg,#10B981,#047857)"><i class="fas fa-user-graduate"></i></div>
+                <h3>Alumno</h3>
+                <p>Busca tu nombre y entra a tu portal personal (@Model.Count alumnos registrados).</p>
+                <form asp-action="Entrar" method="post">
+                    <input type="hidden" name="tipo" value="alumno" />
+                    <div class="al-search"><i class="fas fa-search"></i><input id="busca" placeholder="Buscar por nombre o ID…" autocomplete="off" /></div>
+                    <div class="al-list" id="lista">
+                        @foreach (var a in Model)
+                        {
+                            <button type="submit" name="alumnoId" value="@a.Id" class="al-item" data-t="@((a.Nombre + " " + a.Id).ToLowerInvariant())">
+                                <span class="av" style="--h:@Matiz(a.Nombre)">@Ini(a.Nombre)</span>
+                                <span><b>@a.Nombre</b><small>@a.Id · semestre @a.Semestre</small></span>
+                                <i class="fas fa-chevron-right go"></i>
+                            </button>
+                        }
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>
+<script>
+    const items = [...document.querySelectorAll('.al-item')];
+    document.getElementById('busca').addEventListener('input', e => {
+        const t = e.target.value.toLowerCase().trim();
+        items.forEach(i => i.style.display = i.dataset.t.includes(t) ? '' : 'none');
+    });
+</script>
+</body>
+</html>

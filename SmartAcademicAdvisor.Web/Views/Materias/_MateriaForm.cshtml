@@ -1,0 +1,105 @@
+@model SmartAcademicAdvisor.Web.Models.MateriaFormModel
+@using SmartAcademicAdvisor.Core.Models
+@{
+    var materias = (ViewBag.Materias as IEnumerable<Materia>) ?? Enumerable.Empty<Materia>();
+    var especialidades = (ViewBag.Especialidades as IEnumerable<Especialidad>) ?? Enumerable.Empty<Especialidad>();
+    var prereq = Model?.PrerrequisitoIds ?? Array.Empty<string>();
+    var espSel = Model?.EspecialidadIds ?? Array.Empty<string>();
+    int cred = Model != null && Model.Creditos > 0 ? Model.Creditos : 8;
+    int sem = Model != null && Model.Semestre > 0 ? Model.Semestre : 1;
+}
+<div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+<input type="hidden" asp-for="Id" />
+
+<div class="form-layout">
+    <div>
+        <section class="form-sec">
+            <div class="form-sec-h"><span class="n">1</span><div><h5>Identificación</h5><small>Nombre y contenido de la materia</small></div></div>
+            <div class="mb-3">
+                <label asp-for="Nombre" class="form-label">Nombre de la materia</label>
+                <div class="field"><input asp-for="Nombre" id="f-nombre" class="form-control" placeholder="Ej: Programación Orientada a Objetos" /><i class="fas fa-book"></i></div>
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Descripcion" class="form-label">Descripción</label>
+                <div class="field area"><textarea asp-for="Descripcion" id="f-desc" class="form-control" rows="3" placeholder="Contenido y objetivos de la materia"></textarea><i class="fas fa-align-left"></i></div>
+            </div>
+        </section>
+
+        <section class="form-sec">
+            <div class="form-sec-h"><span class="n">2</span><div><h5>Carga académica</h5><small>Créditos, semestre, área y tipo</small></div></div>
+            <label class="form-label">Créditos</label>
+            <div class="pill-grid mb-3">
+                @for (int i = 1; i <= 12; i++) { <label class="pill sq"><input type="radio" name="Creditos" value="@i" checked="@(cred == i)" /><span>@i</span></label> }
+            </div>
+            <label class="form-label">Semestre</label>
+            <div class="pill-grid mb-3">
+                @for (int i = 1; i <= 10; i++) { <label class="pill sq"><input type="radio" name="Semestre" value="@i" checked="@(sem == i)" /><span>@i</span></label> }
+            </div>
+            <div class="row g-3 align-items-end">
+                <div class="col-md-7">
+                    <label asp-for="Area" class="form-label">Área de conocimiento</label>
+                    <div class="field"><select asp-for="Area" id="f-area" class="form-select" asp-items="Html.GetEnumSelectList<AreaConocimiento>()"></select><i class="fas fa-shapes"></i></div>
+                </div>
+                <div class="col-md-5">
+                    <label class="toggle mb-2"><input asp-for="EsOptativa" id="f-opt" type="checkbox" /> <span>Es optativa</span></label>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-sec">
+            <div class="form-sec-h"><span class="n">3</span><div><h5>Relaciones</h5><small>Qué necesita antes y a qué especialidades aporta</small></div></div>
+            <label class="form-label">Prerrequisitos</label>
+            <div class="pill-grid mb-3">
+                @foreach (var m in materias.Where(x => x.Id != Model?.Id))
+                {
+                    <label class="pill"><input type="checkbox" name="PrerrequisitoIds" value="@m.Id" checked="@prereq.Contains(m.Id)" /><span>@m.Nombre</span></label>
+                }
+                @if (!materias.Any()) { <span class="text-muted small">Aún no hay otras materias.</span> }
+            </div>
+            <label class="form-label">Especialidades relacionadas</label>
+            <div class="pill-grid">
+                @foreach (var e in especialidades)
+                {
+                    <label class="pill"><input type="checkbox" name="EspecialidadIds" value="@e.Id" checked="@espSel.Contains(e.Id)" /><span>@e.Nombre</span></label>
+                }
+            </div>
+        </section>
+    </div>
+
+    <aside class="live">
+        <div class="live-label"><i class="fas fa-eye"></i> Vista previa en vivo</div>
+        <article class="alumno-card" style="--h:265">
+            <div class="banner"></div>
+            <div class="avatar"><i class="fas fa-book-open"></i></div>
+            <div class="ring ok" id="pv-ring" style="--p:67"><b id="pv-cred">8</b></div>
+            <div class="body">
+                <h5 id="pv-nombre">Nombre de la materia</h5>
+                <div class="meta"><span class="dot on"></span> <span id="pv-area">Área</span> · <span id="pv-tipo">Obligatoria</span></div>
+                <p class="text-muted small mb-2" id="pv-desc">Descripción de la materia.</p>
+                <div class="d-flex flex-wrap gap-1"><span class="tag" id="pv-pre">0 prerrequisitos</span></div>
+            </div>
+            <div class="foot"><span class="sem" id="pv-sem">SEM 1</span><span class="text-muted small">créditos en el aro</span></div>
+        </article>
+        <div class="tip mt-3"><i class="fas fa-lightbulb"></i> Las materias clave de cada especialidad se eligen en el formulario de la especialidad.</div>
+    </aside>
+</div>
+
+<script>
+(function () {
+    const $ = id => document.getElementById(id);
+    function render() {
+        $('pv-nombre').textContent = $('f-nombre').value.trim() || 'Nombre de la materia';
+        const d = $('f-desc').value.trim(); $('pv-desc').textContent = d || 'Descripción de la materia.';
+        const a = $('f-area'); $('pv-area').textContent = a.options[a.selectedIndex] ? a.options[a.selectedIndex].text : 'Área';
+        $('pv-tipo').textContent = $('f-opt').checked ? 'Optativa' : 'Obligatoria';
+        const c = document.querySelector('input[name=Creditos]:checked'), s = document.querySelector('input[name=Semestre]:checked');
+        $('pv-cred').textContent = c ? c.value : '–'; $('pv-ring').style.setProperty('--p', c ? c.value / 12 * 100 : 0);
+        $('pv-sem').textContent = 'SEM ' + (s ? s.value : '–');
+        const n = document.querySelectorAll('input[name=PrerrequisitoIds]:checked').length;
+        $('pv-pre').textContent = n + (n === 1 ? ' prerrequisito' : ' prerrequisitos');
+    }
+    document.querySelectorAll('.form-layout input, .form-layout select, .form-layout textarea').forEach(i => { i.addEventListener('input', render); i.addEventListener('change', render); });
+    render();
+})();
+</script>

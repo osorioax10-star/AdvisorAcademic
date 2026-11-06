@@ -1,0 +1,96 @@
+@model SmartAcademicAdvisor.Web.Perfiles.PortalData
+@using SmartAcademicAdvisor.Web.Perfiles
+@using System.Globalization
+@using System.Text.Json
+@{
+    Layout = "_LayoutAlumno";
+    ViewData["Title"] = "Mi panel";
+    var inv = CultureInfo.InvariantCulture;
+    var mejor = Model.Mejor;
+    var primer = Model.Nombre.Split(' ')[0];
+    var ini = string.Concat(Model.Nombre.Split(' ', StringSplitOptions.RemoveEmptyEntries).Take(2).Select(p => char.ToUpper(p[0])));
+    int matiz = 0; unchecked { uint h = 7; foreach (var c in Model.Nombre) h = h * 31 + c; matiz = (int)(h % 360); }
+    var color = Model.Promedio >= 90 ? "#10B981" : Model.Promedio >= 80 ? "#22D3EE" : Model.Promedio >= 70 ? "#F59E0B" : "#F43F5E";
+    var puntos = JsonSerializer.Serialize(Model.Periodos.Select(p => new { periodo = p.Periodo, promedio = p.Promedio, cantidad = p.Cantidad }));
+    var top = Math.Max(1, (int)Math.Round(100 - Model.Percentil));
+}
+
+<section class="hero">
+    <div class="d-flex align-items-center gap-3">
+        <div class="avatar-lg" style="--h:@matiz">@ini</div>
+        <div>
+            <span class="hero-eyebrow"><i class="fas fa-circle"></i> @Model.Estatus · semestre @Model.Semestre</span>
+            <h2>Hola, @primer</h2>
+            <p>@Model.Id · @Model.Correo</p>
+        </div>
+    </div>
+    <div class="ring-lg" style="--p:@Math.Clamp(Model.Promedio, 0, 100).ToString("0.#", inv);--rc:@color"><b>@Model.Promedio.ToString("0")</b><small>promedio</small></div>
+</section>
+
+@if (Model.Promedio < 70)
+{
+    <div class="alert alert-warning"><i class="fas fa-triangle-exclamation"></i><span>Tu promedio está por debajo de 70. Revisa «Mi plan de estudios» y busca apoyo con tu tutor: aún hay margen para mejorar.</span></div>
+}
+
+<div class="kpi-row k4">
+    <div class="kpi static" style="--c:#10B981"><div class="kpi-top"><span class="kpi-label">Promedio</span><span class="kpi-ico"><i class="fas fa-star"></i></span></div>
+        <div class="kpi-value">@Model.Promedio.ToString("0.0", inv)</div><div class="kpi-sub">escala de 0 a 100</div></div>
+    <div class="kpi static" style="--c:#22D3EE"><div class="kpi-top"><span class="kpi-label">Materias aprobadas</span><span class="kpi-ico"><i class="fas fa-circle-check"></i></span></div>
+        <div class="kpi-value">@Model.MateriasAprobadas<span style="font-size:18px;color:var(--gray-400)">/@Model.MateriasTotal</span></div><div class="kpi-sub">del plan de estudios</div></div>
+    <div class="kpi static" style="--c:#8B5CF6"><div class="kpi-top"><span class="kpi-label">Créditos</span><span class="kpi-ico"><i class="fas fa-layer-group"></i></span></div>
+        <div class="kpi-value">@Model.CreditosAprobados<span style="font-size:18px;color:var(--gray-400)">/@Model.CreditosTotal</span></div>
+        <div class="progress mt-2"><i style="width:@(Model.CreditosTotal == 0 ? 0 : Model.CreditosAprobados * 100 / Model.CreditosTotal)%"></i></div></div>
+    <div class="kpi static" style="--c:#F97316"><div class="kpi-top"><span class="kpi-label">Tu posición</span><span class="kpi-ico"><i class="fas fa-ranking-star"></i></span></div>
+        <div class="kpi-value">Top @top%</div><div class="kpi-sub">lugar @Model.Posicion de @Model.TotalAlumnos</div></div>
+</div>
+
+<div class="panel-grid" style="margin-bottom:18px">
+    <div class="pc w8">
+        <h4>Tu evolución por periodo</h4><div class="sub">Promedio de tus calificaciones en cada periodo</div>
+        @if (Model.Periodos.Any()) { <div class="cv"><canvas id="evo"></canvas></div> }
+        else { <p class="text-muted mb-0">Aún no tienes calificaciones registradas.</p> }
+    </div>
+    <div class="pc w4">
+        <h4>Tu mejor especialidad</h4><div class="sub">Según tu promedio, intereses y materias</div>
+        @if (mejor != null)
+        {
+            <div class="text-center py-2">
+                <div class="ring-lg light mx-auto" style="--p:@mejor.Afinidad.ToString("0.#", inv);--rc:#8B5CF6"><b>@mejor.Afinidad.ToString("0")%</b><small>afinidad</small></div>
+                <h5 class="mt-3 mb-1">@mejor.Nombre</h5>
+                <p class="text-muted small">@mejor.CampoLaboral</p>
+                @if (Model.Oficial != null) { <span class="status-badge success">El motor la recomendó el @Model.Oficial.Fecha</span> }
+                <div class="mt-3"><a asp-action="Asesor" class="btn btn-primary w-100"><i class="fas fa-lightbulb"></i> Ver cómo se calcula</a></div>
+            </div>
+        }
+    </div>
+</div>
+
+@if (mejor != null)
+{
+    <div class="panel-head"><h3>Tus próximos pasos</h3><span>Sugerencias para llegar a @mejor.Nombre</span></div>
+    <div class="panel-grid">
+        <div class="pc w4"><h4><i class="fas fa-book text-primary"></i> Materias que puedes cursar</h4><div class="sub">Ya cumples sus prerrequisitos</div>
+            @foreach (var m in mejor.Sugeridas.Take(4)) { <div class="item-card"><span class="ic"><i class="fas fa-unlock"></i></span><span>@m.Nombre<small>Semestre @m.Semestre · @m.Creditos créditos</small></span></div> }
+            @if (!mejor.Sugeridas.Any()) { <p class="text-muted small mb-0">No hay materias disponibles por ahora.</p> }</div>
+        <div class="pc w4"><h4><i class="fas fa-laptop-code text-primary"></i> Cursos recomendados</h4><div class="sub">Para reforzar tu perfil</div>
+            @foreach (var c in mejor.Cursos.Take(3)) { <a class="item-card text-decoration-none" href="@c.Url" target="_blank" rel="noopener"><span class="ic"><i class="fas fa-play"></i></span><span>@c.Nombre<small>@c.Proveedor · @c.Detalle · @(c.Costo == 0 ? "Gratis" : "$" + c.Costo.ToString("0", inv))</small></span><i class="fas fa-up-right-from-square go text-muted"></i></a> }
+            @if (!mejor.Cursos.Any()) { <p class="text-muted small mb-0">Sin cursos para esta especialidad.</p> }</div>
+        <div class="pc w4"><h4><i class="fas fa-certificate text-primary"></i> Certificaciones</h4><div class="sub">Para tu carrera profesional</div>
+            @foreach (var c in mejor.Certificaciones.Take(3)) { <a class="item-card text-decoration-none" href="@c.Url" target="_blank" rel="noopener"><span class="ic"><i class="fas fa-award"></i></span><span>@c.Nombre<small>@c.Proveedor · @c.Detalle</small></span><i class="fas fa-up-right-from-square go text-muted"></i></a> }
+            @if (!mejor.Certificaciones.Any()) { <p class="text-muted small mb-0">Sin certificaciones para esta especialidad.</p> }</div>
+    </div>
+}
+
+@section Scripts {
+<script>
+    const datos = @Html.Raw(puntos);
+    const cv = document.getElementById('evo');
+    if (cv && datos.length) {
+        const g = cv.getContext('2d').createLinearGradient(0, 0, 0, 260); g.addColorStop(0, '#10B98166'); g.addColorStop(1, '#10B98105');
+        new Chart(cv, { type: 'line',
+            data: { labels: datos.map(d => d.periodo), datasets: [{ label: 'Promedio', data: datos.map(d => d.promedio), borderColor: '#10B981', backgroundColor: g, fill: true, tension: .35, pointRadius: 5, pointBackgroundColor: '#10B981' }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+                scales: { x: { grid: { display: false } }, y: { min: 60, max: 100, grid: { color: 'rgba(120,134,170,.18)' } } } } });
+    }
+</script>
+}

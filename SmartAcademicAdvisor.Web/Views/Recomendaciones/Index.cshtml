@@ -1,0 +1,97 @@
+@model IEnumerable<SmartAcademicAdvisor.Core.Models.Recomendacion>
+@{
+    ViewData["Title"] = "Recomendaciones";
+    var alumnos = ViewBag.Alumnos as Dictionary<string, string> ?? new();
+    var materias = ViewBag.Materias as Dictionary<string, string> ?? new();
+    var certs = ViewBag.Certificaciones as Dictionary<string, string> ?? new();
+    string Nom(Dictionary<string, string> d, string id) => d.TryGetValue(id, out var n) ? n : id;
+
+    // Solo la recomendación más reciente de cada alumno
+    var ultimas = Model.GroupBy(r => r.AlumnoId)
+                       .Select(g => g.OrderByDescending(r => r.FechaGeneracion).First())
+                       .OrderBy(r => Nom(alumnos, r.AlumnoId))
+                       .ToList();
+    double Principal(SmartAcademicAdvisor.Core.Models.Recomendacion r) =>
+        r.Afinidades.Select(a => a.PorcentajeAfinidad).DefaultIfEmpty(0).Max();
+}
+
+<div class="page-header">
+    <div class="header-content">
+        <div>
+            <h2 class="page-title-large">Recomendaciones académicas</h2>
+            <p class="page-subtitle">Generadas por el motor de inferencia, con la explicación de cada una</p>
+        </div>
+        <form asp-action="GenerarTodas" method="post">
+            <button type="submit" class="btn btn-primary"><i class="fas fa-brain"></i> Generar recomendaciones</button>
+        </form>
+    </div>
+</div>
+
+@if (!ultimas.Any())
+{
+    <div class="chart-card text-center py-5">
+        <div class="metric-icon-small mb-3" style="width:72px;height:72px;margin:0 auto;font-size:1.8rem;background:var(--primary-soft);color:var(--primary)"><i class="fas fa-lightbulb"></i></div>
+        <p class="mb-1"><strong>Aún no hay recomendaciones</strong></p>
+        <p class="text-muted mb-0">Pulsa «Generar recomendaciones»: el motor evalúa el promedio, los intereses y las materias aprobadas de cada alumno.</p>
+    </div>
+}
+else
+{
+    <div class="cards-grid">
+        <div class="metric-card-white">
+            <div class="metric-header"><span class="metric-title">Alumnos con recomendación</span><div class="metric-icon-small" style="background:var(--primary-soft);color:var(--primary)"><i class="fas fa-users"></i></div></div>
+            <div class="metric-value-large">@ultimas.Count</div>
+        </div>
+        <div class="metric-card-white">
+            <div class="metric-header"><span class="metric-title">Afinidad promedio</span><div class="metric-icon-small" style="background:var(--primary-soft);color:var(--primary)"><i class="fas fa-bullseye"></i></div></div>
+            <div class="metric-value-large">@(ultimas.Average(r => Principal(r)).ToString("0"))%</div>
+        </div>
+        <div class="metric-card-white">
+            <div class="metric-header"><span class="metric-title">Más recomendada</span><div class="metric-icon-small" style="background:var(--primary-soft);color:var(--primary)"><i class="fas fa-graduation-cap"></i></div></div>
+            <div class="metric-value-large" style="font-size:20px;line-height:1.2">@(ultimas.GroupBy(r => r.EspecialidadRecomendada).OrderByDescending(g => g.Count()).First().Key)</div>
+        </div>
+    </div>
+
+    <div class="row">
+        @foreach (var r in ultimas)
+        {
+            var afin = Principal(r);
+            <div class="col-lg-6 mb-4">
+                <div class="chart-card h-100">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h5 class="mb-0">@Nom(alumnos, r.AlumnoId)</h5>
+                            <small class="text-muted"><code>@r.AlumnoId</code> · @r.FechaGeneracion.ToString("dd/MM/yyyy HH:mm")</small>
+                        </div>
+                        <a asp-action="PorAlumno" asp-route-matricula="@r.AlumnoId" class="btn btn-sm btn-info"><i class="fas fa-project-diagram"></i> Ver explicación</a>
+                    </div>
+
+                    <small class="text-muted d-block">Especialidad recomendada</small>
+                    <h4 class="mb-3" style="color:var(--primary)"><i class="fas fa-graduation-cap"></i> @r.EspecialidadRecomendada</h4>
+
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="progress flex-grow-1"><i style="width:@afin.ToString("0.#", System.Globalization.CultureInfo.InvariantCulture)%"></i></div>
+                        <strong class="text-mono">@afin.ToString("0")%</strong>
+                    </div>
+
+                    @if (r.MateriasRecomendadas.Any())
+                    {
+                        <small class="text-muted d-block mb-1">Materias sugeridas</small>
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            @foreach (var m in r.MateriasRecomendadas.Take(3)) { <span class="tag">@Nom(materias, m)</span> }
+                            @if (r.MateriasRecomendadas.Count > 3) { <span class="tag">+@(r.MateriasRecomendadas.Count - 3)</span> }
+                        </div>
+                    }
+                    @if (r.CertificacionesRecomendadas.Any())
+                    {
+                        <small class="text-muted d-block mb-1">Certificaciones sugeridas</small>
+                        <div class="d-flex flex-wrap gap-2">
+                            @foreach (var c in r.CertificacionesRecomendadas.Take(2)) { <span class="status-badge warning">@Nom(certs, c)</span> }
+                            @if (r.CertificacionesRecomendadas.Count > 2) { <span class="tag">+@(r.CertificacionesRecomendadas.Count - 2)</span> }
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}

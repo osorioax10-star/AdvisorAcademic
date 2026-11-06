@@ -1,0 +1,41 @@
+@model SmartAcademicAdvisor.Core.Models.Materia
+@{
+    ViewData["Title"] = "Eliminar materia";
+}
+
+<div class="page-header">
+    <div class="header-content">
+        <div>
+            <h2 class="page-title-large">Eliminar materia</h2>
+            <p class="page-subtitle">Esta acción no se puede deshacer</p>
+        </div>
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Cancelar</a>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="chart-card">
+            <div class="alert alert-danger"><i class="fas fa-exclamation-triangle"></i>
+                <span>Vas a eliminar <strong>@Model.Nombre</strong>. Las materias que la tengan como prerrequisito podrían quedar sin referencia.</span></div>
+
+            <div class="student-summary">
+                <div class="row">
+                    <div class="col-md-4 mb-2"><span class="text-muted small d-block">ID</span><code>@Model.Id</code></div>
+                    <div class="col-md-4 mb-2"><span class="text-muted small d-block">Créditos</span>@Model.Creditos</div>
+                    <div class="col-md-4 mb-2"><span class="text-muted small d-block">Semestre</span>@Model.Semestre</div>
+                    <div class="col-md-6"><span class="text-muted small d-block">Área</span>@Model.Area</div>
+                    <div class="col-md-6"><span class="text-muted small d-block">Tipo</span>@(Model.EsOptativa ? "Optativa" : "Obligatoria")</div>
+                </div>
+            </div>
+
+            <form asp-action="Delete" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="d-flex gap-2 justify-content-end">
+                    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Sí, eliminar materia</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

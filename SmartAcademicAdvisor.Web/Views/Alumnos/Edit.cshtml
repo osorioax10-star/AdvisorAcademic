@@ -1,0 +1,23 @@
+@model SmartAcademicAdvisor.Web.Models.AlumnoFormModel
+@{
+    ViewData["Title"] = "Editar alumno";
+}
+
+<section class="form-hero">
+    <div class="fh-ico"><i class="fas fa-user-pen"></i></div>
+    <div><h2>Editar alumno</h2><p>Actualiza los datos del alumno</p></div>
+    <a asp-action="Index" class="btn-hero back"><i class="fas fa-arrow-left"></i> Volver</a>
+</section>
+
+<form asp-action="Edit" asp-route-id="@Model.Id" method="post">
+    <partial name="_AlumnoForm" model="Model" />
+    <div class="sticky-actions">
+        <span class="hint"><i class="fas fa-circle-info"></i> Los cambios se guardan en alumnos.json</span>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Guardar cambios</button>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
