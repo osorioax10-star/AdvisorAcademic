@@ -20,6 +20,7 @@ builder.Services.AddSingleton<IRepository<Recomendacion>>(sp =>
 // Register services
 builder.Services.AddScoped<AlumnoService>();
 builder.Services.AddScoped<MateriaService>();
+builder.Services.AddScoped<EspecialidadService>();
 builder.Services.AddScoped<CertificacionService>();
 builder.Services.AddScoped<RecommendationService>();
 
