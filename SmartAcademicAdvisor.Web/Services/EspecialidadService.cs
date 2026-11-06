@@ -21,4 +21,19 @@ public class EspecialidadService
     {
         return await _repository.GetByIdAsync(id);
     }
+
+    public async Task CrearAsync(Especialidad especialidad)
+    {
+        await _repository.AddAsync(especialidad);
+    }
+
+    public async Task ActualizarAsync(Especialidad especialidad)
+    {
+        await _repository.UpdateAsync(especialidad);
+    }
+
+    public async Task EliminarAsync(string id)
+    {
+        await _repository.DeleteAsync(id);
+    }
 }

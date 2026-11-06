@@ -45,11 +45,13 @@ public class Especialidad
 {
     public string Id { get; set; } = "";
     public string Nombre { get; set; } = "";
+    public string Descripcion { get; set; } = "";
     public string CampoLaboral { get; set; } = "";
     public double PromedioMinimo { get; set; }
     public PesosAfinidad Pesos { get; set; } = new();
     public List<string> InteresesClave { get; set; } = new();
     public List<string> MateriasClave { get; set; } = new();
+    public List<string> CompetenciasRequeridas { get; set; } = new();
 }
 
 public class PesosAfinidad
@@ -68,4 +70,7 @@ public class Recomendacion
     public double Afinidad { get; set; }
     public DateTime FechaGeneracion { get; set; }
     public string Justificacion { get; set; } = "";
+    public Dictionary<string, double> Afinidades { get; set; } = new();
+    public List<string> MateriasRecomendadas { get; set; } = new();
+    public List<string> CertificacionesRecomendadas { get; set; } = new();
 }

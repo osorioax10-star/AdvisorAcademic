@@ -2,8 +2,8 @@
 @using SmartAcademicAdvisor.Web.Crud
 @{
     var materias = (ViewBag.MateriasOpciones as List<Opt>) ?? new List<Opt>();
-    var sel = Model?.MateriasClaveIds ?? Array.Empty<string>();
-    var intsSel = Model?.InteresesSeleccionados ?? Array.Empty<string>();
+    string[] sel = Model?.MateriasClaveIds?.ToArray() ?? Array.Empty<string>();
+    string[] intsSel = Model?.InteresesSeleccionados?.ToArray() ?? Array.Empty<string>();
 }
 <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
 <input type="hidden" asp-for="Id" />

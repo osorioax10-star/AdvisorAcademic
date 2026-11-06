@@ -12,7 +12,7 @@
                        .OrderBy(r => Nom(alumnos, r.AlumnoId))
                        .ToList();
     double Principal(SmartAcademicAdvisor.Core.Models.Recomendacion r) =>
-        r.Afinidades.Select(a => a.PorcentajeAfinidad).DefaultIfEmpty(0).Max();
+        r.Afinidades.Select(a => a.Value).DefaultIfEmpty(0).Max();
 }
 
 <div class="page-header">

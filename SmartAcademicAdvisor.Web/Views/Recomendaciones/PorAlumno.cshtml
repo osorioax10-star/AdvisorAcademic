@@ -44,26 +44,14 @@ else
                 <h6 class="mb-3">Afinidad con cada especialidad</h6>
                 @try
                 {
-                    foreach (dynamic a in ultima.Afinidades.OrderByDescending(x => x.PorcentajeAfinidad))
+                    foreach (var a in ultima.Afinidades.OrderByDescending(x => x.Value))
                     {
                         <div class="mb-4">
                             <div class="d-flex justify-content-between mb-1">
-                                <strong>@((string)a.NombreEspecialidad)</strong>
-                                <strong class="text-mono">@(((double)a.PorcentajeAfinidad).ToString("0"))%</strong>
+                                <strong>@a.Key</strong>
+                                <strong class="text-mono">@(a.Value.ToString("0"))%</strong>
                             </div>
-                            <div class="progress mb-3"><i style="width:@W((double)a.PorcentajeAfinidad)%"></i></div>
-                            @try
-                            {
-                                <div class="score-row"><span class="text-muted">Promedio</span><div class="progress"><i style="width:@W(Norm((double)a.Detalles.PuntajePromedio))%"></i></div><b>@Norm((double)a.Detalles.PuntajePromedio).ToString("0")</b></div>
-                                <div class="score-row"><span class="text-muted">Intereses</span><div class="progress"><i style="width:@W((double)a.Detalles.PuntajeIntereses)%"></i></div><b>@(((double)a.Detalles.PuntajeIntereses).ToString("0"))</b></div>
-                                <div class="score-row"><span class="text-muted">Materias clave</span><div class="progress"><i style="width:@W((double)a.Detalles.PuntajeMateriasClave)%"></i></div><b>@(((double)a.Detalles.PuntajeMateriasClave).ToString("0"))</b></div>
-                                <div class="score-row"><span class="text-muted">Reglas</span><div class="progress"><i style="width:@W((double)a.Detalles.PuntajeReglas)%"></i></div><b>@(((double)a.Detalles.PuntajeReglas).ToString("0"))</b></div>
-                                var coinc = Texto((object?)a.Detalles.InteresesCoincidentes);
-                                var reglas = Texto((object?)a.Detalles.ReglasSatisfechas);
-                                if (coinc != "") { <p class="small text-muted mb-1"><i class="fas fa-heart"></i> Intereses que coinciden: @coinc</p> }
-                                if (reglas != "") { <p class="small text-muted mb-0"><i class="fas fa-cogs"></i> Reglas satisfechas: @reglas</p> }
-                            }
-                            catch { }
+                            <div class="progress mb-3"><i style="width:@W(a.Value)%"></i></div>
                         </div>
                     }
                 }

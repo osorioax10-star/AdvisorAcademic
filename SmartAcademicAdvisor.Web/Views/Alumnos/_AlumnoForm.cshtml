@@ -3,7 +3,7 @@
 @{
     var est = (int)(Model?.Estatus ?? EstatusAlumno.Activo);
     var sem = Model != null && Model.Semestre > 0 ? Model.Semestre : 1;
-    var sel = Model?.InteresesSeleccionados ?? Array.Empty<string>();
+    var sel = Model?.InteresesSeleccionados?.ToArray() ?? Array.Empty<string>();
     var estatusOps = new[] { (0, "Activo", "fa-circle-check"), (1, "Inactivo", "fa-circle-pause"), (2, "Egresado", "fa-graduation-cap"), (3, "Baja temporal", "fa-clock") };
 }
 <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>

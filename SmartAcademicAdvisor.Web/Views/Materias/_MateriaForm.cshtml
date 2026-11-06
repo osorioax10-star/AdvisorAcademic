@@ -3,8 +3,8 @@
 @{
     var materias = (ViewBag.Materias as IEnumerable<Materia>) ?? Enumerable.Empty<Materia>();
     var especialidades = (ViewBag.Especialidades as IEnumerable<Especialidad>) ?? Enumerable.Empty<Especialidad>();
-    var prereq = Model?.PrerrequisitoIds ?? Array.Empty<string>();
-    var espSel = Model?.EspecialidadIds ?? Array.Empty<string>();
+    string[] prereq = Model?.PrerrequisitoIds?.ToArray() ?? Array.Empty<string>();
+    string[] espSel = Model?.EspecialidadIds?.ToArray() ?? Array.Empty<string>();
     int cred = Model != null && Model.Creditos > 0 ? Model.Creditos : 8;
     int sem = Model != null && Model.Semestre > 0 ? Model.Semestre : 1;
 }

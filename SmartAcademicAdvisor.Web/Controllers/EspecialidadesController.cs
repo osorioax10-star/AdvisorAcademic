@@ -81,7 +81,7 @@ public class EspecialidadesController : Controller
                         PesoReglas = model.PesoReglas
                     },
                     CampoLaboral = model.CampoLaboral,
-                    CompetenciasRequeridas = model.CompetenciasRequeridas?.Split(',').Select(c => c.Trim()).Where(c => c != "").ToList()
+                    CompetenciasRequeridas = model.CompetenciasRequeridas?.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(c => c.Trim()).ToList() ?? new List<string>()
                 };
 
                 await _especialidadService.CrearAsync(especialidad);
@@ -115,14 +115,14 @@ public class EspecialidadesController : Controller
             Nombre = JsonFileStore.Str(n, "nombre"),
             Descripcion = JsonFileStore.Str(n, "descripcion"),
             PromedioMinimo = D(n["promedioMinimo"], 0),
-            InteresesSeleccionados = Lista(n["interesesClave"]),
-            MateriasClaveIds = Lista(n["materiasClave"]),
+            InteresesSeleccionados = Lista(n["interesesClave"]).ToList(),
+            MateriasClaveIds = Lista(n["materiasClave"]).ToList(),
             PesoPromedio = D(pesos?["pesoPromedio"], 0.25),
             PesoIntereses = D(pesos?["pesoIntereses"], 0.30),
             PesoMateriasClave = D(pesos?["pesoMateriasClave"], 0.25),
             PesoReglas = D(pesos?["pesoReglas"], 0.20),
             CampoLaboral = JsonFileStore.Str(n, "campoLaboral"),
-            CompetenciasRequeridas = string.Join(", ", Lista(n["competenciasRequeridas"]))
+            CompetenciasRequeridas = string.Join(", ", Lista(n["competenciasRequeridas"]).ToList())
         });
     }
 
@@ -151,7 +151,7 @@ public class EspecialidadesController : Controller
         };
         nodo["campoLaboral"] = model.CampoLaboral;
         nodo["competenciasRequeridas"] = ComoArreglo(
-            model.CompetenciasRequeridas?.Split(',').Select(c => c.Trim()).Where(c => c != ""));
+            model.CompetenciasRequeridas?.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(c => c.Trim()) ?? Enumerable.Empty<string>());
         _store.Save(Archivo, todas);
 
         TempData["Success"] = "Especialidad actualizada exitosamente";

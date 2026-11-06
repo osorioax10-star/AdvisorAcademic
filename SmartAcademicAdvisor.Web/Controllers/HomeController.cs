@@ -258,7 +258,7 @@ public class HomeController : Controller
             TotalEspecialidades = especialidades.Count,
             PromedioGeneral = promedioGeneral,
             AlumnosNuevos = alumnosNuevos,
-            AlumnosRecientes = alumnosRecientes,
+            AlumnosRecientes = alumnosRecientes.Cast<object>().ToList(),
             AlumnosPorEspecialidad = alumnosPorEsp,
             TopIntereses = topIntereses,
             EspecialidadesPopulares = especialidadesPopulares
